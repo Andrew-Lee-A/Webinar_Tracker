@@ -42,7 +42,7 @@ export default function Login() {
 const LoginStyle = styled.div`
     
     .loginContainer{
-        margin: -10px;
+        margin: -8px;
         padding: 0;
         height: 697px;
     
@@ -88,10 +88,6 @@ const LoginStyle = styled.div`
   
 
   form {
-      display: inline-block; 
-      /* background-color: #f3f3f3; */
-      /* border: 1px solid #ddd; */
-      /* border-radius: 2px; */
       padding: 2rem;
       margin: 2rem 0 1rem 0;
   }
@@ -150,7 +146,7 @@ const LoginStyle = styled.div`
     font-weight: bold;
 
     :hover {
-        background: #FFF;
+        background: teal;
         color: #000000;
         font-weight: bold;
         transition: all .5s;
