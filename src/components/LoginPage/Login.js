@@ -139,7 +139,6 @@ const LoginStyle = styled.div`
     padding: .3rem;
     border: none;
     background: darkgoldenrod;
-    /* background-color: transparent; */
     color: #fff;
     border-radius: 50px;
     cursor: pointer;

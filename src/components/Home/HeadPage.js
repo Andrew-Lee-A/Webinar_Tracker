@@ -13,7 +13,7 @@ function HeadPage () {
 
 const HeadPageStyle = styled.div`
 
-    width: 100%;
+    width: 99%;
     height: 35rem;
     clip-path: polygon(0 100%, 0 0, 100% 0, 100% 85%);
     background-image: url(${headImage});
