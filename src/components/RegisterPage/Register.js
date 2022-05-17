@@ -1,6 +1,9 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 
+// image
+import RegisterImg from '../../img/register/avel-chuklanov-DUmFLtMeAbQ-unsplash.jpg';
+
 // styled-components
 import styled from "styled-components";
 
@@ -52,18 +55,35 @@ const Register = () => {
 
 // styled
 const RegisterStyle = styled.div`
+    margin: -10px;
+    padding: 0;
+
+    
+
+    background-image: url(${RegisterImg});
+    background-size: cover;
+    background-position: center;
+    height: 696px;
 
     .registerContainer {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+
+    }
+
+    h2 {
+        color: #FFF;
+        font-weight: bold;
+        font-size: 45px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     }
 
     form {
         display: inline-block;
-        background-color: #f3f3f3;
-        border: 1px solid #ddd;
+        background-color: transparent;
+        border: 5px solid #000000;
         padding: 2rem;
     }
     

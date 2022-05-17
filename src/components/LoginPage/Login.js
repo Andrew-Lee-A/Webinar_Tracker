@@ -12,25 +12,27 @@ export default function Login() {
       <>
         <LoginStyle>
                 <div className='loginContainer'>
-                    <h2>Customer log in</h2>
-                    <form action="/home">
-                        <p>
-                            <label className='usernameLabel' >Username or Email Address</label><br/>
-                            <input type="text" name='firstName' required/>
-                        </p>
-                        <p>
-                            <label className='usernamePassword' >Password</label>
-                            <br/>
-                            <input  className='passInput' type="password" name='password' required />
-                        </p>
-                        <p>
-                            <button className='submitButton' id='sub_btn' type='submit'>Login</button>
-                        </p>
-                    </form>
-                            <Link to="/forgetpassword"><label className='right-label'>Forget Password</label></Link>
-                    <footer>
-                        <p className='footerWrapper' >New to us? <Link  className='linkWrapper' to="/register">Create an account</Link>.</p>
-                    </footer>
+                    <div className="formContainer">
+                        <h2>Customer log in</h2>
+                        <form action="/home">
+                            <p>
+                                <label className='usernameLabel' >Username or Email Address</label><br/>
+                                <input type="text" name='firstName' required/>
+                            </p>
+                            <p>
+                                <label className='usernamePassword' >Password</label>
+                                <br/>
+                                <input  className='passInput' type="password" name='password' required />
+                            </p>
+                            <p>
+                                <button className='submitButton' id='sub_btn' type='submit'>Login</button>
+                            </p>
+                        </form>
+                                <Link to="/forgetpassword"><label className='right-label'>Forget Password</label></Link>
+                        <footer>
+                            <p className='footerWrapper' >New to us? <Link  className='linkWrapper' to="/register">create an account</Link></p>
+                        </footer>
+                    </div>
                 </div>
         </LoginStyle>
       </>
@@ -39,20 +41,23 @@ export default function Login() {
 
 const LoginStyle = styled.div`
     
-    margin: -10px;
-    padding: 0;
-    height: 697px;
-
-    background-image: url(${LoginImg});
-    background-size: cover;
-    background-position: center;
-    /* filter: blur(5px); */
-
     .loginContainer{
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+        margin: -10px;
+        padding: 0;
+        height: 697px;
+    
+        background-image: url(${LoginImg});
+        background-size: cover;
+        background-position: center;
+        background-image: blur(2px);
+        /* filter: blur(1px); */
+    }
+    
+    .formContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
   
   h2 {
