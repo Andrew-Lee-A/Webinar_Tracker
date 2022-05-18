@@ -32,6 +32,10 @@ export default function Login() {
                         <footer>
                             <p className='footerWrapper' >New to us? <Link  className='linkWrapper' to="/register">create an account</Link></p>
                         </footer>
+                        {/* Test for getting to dashboard page  */}
+                        <footer>
+                            <button className='demolinkButton' ><Link  className='demoLink' to="/dashboard">dashboard demo</Link></button>
+                        </footer>
                     </div>
                 </div>
         </LoginStyle>
@@ -40,7 +44,13 @@ export default function Login() {
 }
 
 const LoginStyle = styled.div`
-    
+    .demoLinkButton{
+      background-color: #800080;
+    }    
+    .demoLink{
+      color: 	#800080;
+    }    
+
     .loginContainer{
         margin: -8px;
         padding: 0;
