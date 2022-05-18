@@ -22,6 +22,7 @@ const InputBaseStyle  = styled(InputBase)({
     opacity: '0.6',
     padding: '0px 8px',
     fontSize: '0.8rem',
+    width: '100%',
     '&:hover': {
         backgroundColor: '#f2f2f2'
     },
@@ -39,7 +40,7 @@ export default function Header() {
                     <Grid item>
                         <InputBaseStyle
                             placeholder='Search Webinars'
-                            startAdornment={<SearchIcon fontSize='small'/>}
+                            startAdornment={<SearchIcon fontSize='medium'/>}
                             />
                             
                     </Grid>
@@ -49,17 +50,17 @@ export default function Header() {
                     <Grid item >
                         <IconButton>
                             <Badge badgeContent = {4} color = "primary">
-                                <NotificationsNoneIcon fontSize='small'/>
+                                <NotificationsNoneIcon fontSize='medium'/>
                             </Badge>
                         </IconButton>
                         <IconButton>
                             <Badge badgeContent = {3} color = 'primary'>
-                                <CalendarTodayIcon fontSize='small'/>
+                                <CalendarTodayIcon fontSize='medium'/>
                             </Badge>
                         </IconButton>
                         <IconButton>
                             <Badge>
-                                <PowerSettingsNewIcon fontSize='small'/>
+                                <PowerSettingsNewIcon fontSize='medium'/>
                             </Badge>
                         </IconButton>
                     </Grid>
