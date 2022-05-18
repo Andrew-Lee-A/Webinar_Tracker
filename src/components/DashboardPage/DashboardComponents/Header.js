@@ -4,47 +4,68 @@ import {
     Grid,
     IconButton, 
     InputBase,
+    styled,
     Toolbar,
 } from '@mui/material'
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import PowerSettingsNewIcon from '@mui/icons-material/PowerSettingsNew';
-import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
+import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
+import SearchIcon from '@mui/icons-material/Search'
 import React from 'react'
+
+
+const AppBarStyle  = styled(AppBar)({
+    backgroundColor: 'white',
+  });
+
+const InputBaseStyle  = styled(InputBase)({
+    opacity: '0.6',
+    padding: '0px 8px',
+    fontSize: '0.8rem',
+    '&:hover': {
+        backgroundColor: '#f2f2f2'
+    },
+    '& .MuiSvgIcon-root': {
+        marginRight: '8px'
+    }
+  });
 
 export default function Header() {
   return (
     <>
-        <AppBar position='static'>
+        <AppBarStyle position='static'>
             <Toolbar>
-                <Grid container>
+                <Grid container alignItems="center">
                     <Grid item>
-                        <InputBase>
-
-                        </InputBase>
+                        <InputBaseStyle
+                            placeholder='Search Webinars'
+                            startAdornment={<SearchIcon fontSize='small'/>}
+                            />
+                            
                     </Grid>
                     <Grid item sm>
 
                     </Grid>
                     <Grid item >
                         <IconButton>
-                            <Badge badgeContent = {4} color = "secondary">
-                                <NotificationsNoneIcon/>
+                            <Badge badgeContent = {4} color = "primary">
+                                <NotificationsNoneIcon fontSize='small'/>
                             </Badge>
                         </IconButton>
                         <IconButton>
                             <Badge badgeContent = {3} color = 'primary'>
-                                <ChatBubbleOutlineIcon/>
+                                <CalendarTodayIcon fontSize='small'/>
                             </Badge>
                         </IconButton>
                         <IconButton>
                             <Badge>
-                                <PowerSettingsNewIcon/>
+                                <PowerSettingsNewIcon fontSize='small'/>
                             </Badge>
                         </IconButton>
                     </Grid>
                 </Grid>
             </Toolbar>
-        </AppBar>
+        </AppBarStyle>
     </>
   )
 }
