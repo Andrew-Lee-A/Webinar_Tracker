@@ -13,7 +13,7 @@ function Footer() {
         <FooterStyle>
             <div className="footerContainer">
                 <div className="babcockCompany">
-                    Babcock Company
+                    CPD Hub Company
 
                     <div className="babcockCompanyDetails">
                         <span>Webinar Tracker</span>                        
@@ -47,7 +47,7 @@ function Footer() {
             </div>
 
             <div className="bottomPart">
-                <p className="babcockBottom" >Babcock company </p> copy right reserved
+                <p className="babcockBottom" >CPD hub company </p> copy right reserved
             </div>
         </FooterStyle>
         </>

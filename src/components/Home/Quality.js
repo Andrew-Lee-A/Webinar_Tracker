@@ -33,6 +33,7 @@ function Quality() {
 
 // styled components
 const QualityStyle = styled.div`
+
     margin: 0;
     padding: 0;
     width: 100%;
@@ -71,7 +72,6 @@ const QualityStyle = styled.div`
     .webinarImageOne {
         width: 80%;
     }
-    
 `
 
 export default Quality;

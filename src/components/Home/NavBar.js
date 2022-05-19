@@ -16,7 +16,7 @@ function NavBar() {
       <NavBarContainerStyled>
           <div className="navbarItems">
             <img className="babcock" src={Babcock} alt=""></img>
-            <span>BABCOCK</span>
+            <span>CPD Hub</span>
             <ul>
               <li className='about' href="">About</li>
               <li className='services' href="">Services</li>
