@@ -60,7 +60,7 @@ export default function Header() {
                         </IconButton>
                         <IconButton>
                             <Badge>
-                                <PowerSettingsNewIcon fontSize='medium'/>
+                                <PowerSettingsNewIcon fontSize='medium' onClick={event =>  window.location.href='/'}/>
                             </Badge>
                         </IconButton>
                     </Grid>

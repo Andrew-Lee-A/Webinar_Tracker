@@ -1,6 +1,7 @@
 import React from 'react'
-import {Box, styled} from '@mui/material';
+import {Box, styled, Grid, Typography} from '@mui/material';
 import { flexbox } from '@mui/system';
+import PageHeader from './PageHeader';
 
 const StyledBox  = styled(Box)({
   display: flexbox,
@@ -16,7 +17,12 @@ export default function SideMenu() {
   return (
       <>
         <StyledBox>
-          Styled Side menu
+          <Grid container>
+            <Grid item >
+
+            Side menu
+            </Grid>
+          </Grid>
         </StyledBox>
       </>
   )
