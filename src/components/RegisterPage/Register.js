@@ -1,13 +1,48 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
-
 // image
 import RegisterImg from '../../img/register/pexels-hasan-albari-1229861.jpg';
-
 // styled-components
 import styled from "styled-components";
+import "react-toastify/dist/ReactToastify.css";
+// Validate JavaScript file
+import { validate } from "./Validate";
+// Toast folder and react-toastify
+import { ToastContainer, toast } from "react-toastify";
+import { notify } from "./QuickMessage";
+// Axios
+import Axios from "axios";
+
 
 const Register = () => {
+
+    const [data, setData] = useState ({
+        name: "",
+        email: "",
+        password: "",
+        confirmPassword: "",
+        IsAccepted: false,
+    })
+
+    const [errors, setErrors] = useState({});
+    const [touched, setTouched] = useState({});
+
+    useEffect(() => {
+        setErrors(validate(data, "register"));
+    }, [data, touched]);
+
+    const handleChange = (e) => {
+        if (e.target.name === "isAccepted") {
+            setData({ ...data, [e.target.name]: e.target.checked});
+        } else {
+            setData({ ...data, [e.target.name]: e.target.value});
+        }
+    };
+
+    const handleFocus = (e) => {
+        setTouched({ ...touched, [e.target.name]: true});
+    }
+    
     return (
         <>
             <RegisterStyle>
