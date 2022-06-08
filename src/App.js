@@ -7,6 +7,7 @@ import Login from './components/LoginPage/Login'
 import Register from './components/RegisterPage/Register'
 import Dashboard from './components/DashboardPage/Dashboard'
 // import ForgetPassword from './components/ForgetPasswordPage/ForgetPassword'
+import UserDetails from './components/AdditionalDetailsPage/UserDetails'
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
             <Route path='/login' element={<Login/>} />
             <Route path='/register' element={<Register/>} />
             <Route path='/dashboard' element={<Dashboard/>} />
+            <Route path='/userdetails' element={<UserDetails/>} />
             {/* <Route path='/forget-password' element={<ForgetPassword/>} /> */}
         </Routes>
       </div>

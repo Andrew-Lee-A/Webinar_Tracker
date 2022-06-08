@@ -1,5 +1,5 @@
 export const validate = (data, type) => {
-    
+
     const errors = {};
 
     if (!data.email) {
@@ -18,7 +18,7 @@ export const validate = (data, type) => {
         delete errors.password;
     }
 
-    if (type === "signUp") {
+    if (type === "register") {
 
         if (!data.name.trim()) {
             errors.name = "Username cannot be blank!";

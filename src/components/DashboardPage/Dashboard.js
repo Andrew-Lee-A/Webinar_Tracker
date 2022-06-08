@@ -6,7 +6,6 @@ import { styled } from '@mui/system';
 import { CssBaseline } from '@mui/material';
 import OndemandVideoIcon from '@mui/icons-material/OndemandVideo';
 
-
 const AppMain  = styled('div')({
   paddingLeft: '320px',
   width: '100%',
@@ -26,6 +25,5 @@ export default function Dashboard() {
           </AppMain>
         <CssBaseline />
     </>
-    
   )
 }

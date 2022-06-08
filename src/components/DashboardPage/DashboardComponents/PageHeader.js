@@ -14,7 +14,6 @@ const TypographyTitle = styled('div')(({ theme }) => ({
     },
 }))
 
-
 export default function PageHeader(props) {
 
     const { title, subTitle, icon } = props;
@@ -25,6 +24,7 @@ export default function PageHeader(props) {
             },
         }}>
             <HeaderDivStyled>
+
                 <Card sx = {{
                     '&.MuiCard-root':{
                         color: '#0e111d',
@@ -36,6 +36,7 @@ export default function PageHeader(props) {
                  }}>
                     {icon}
                 </Card>
+                
                 <TypographyTitle sx = {{
                     '&:hover ': {
                         backgroundColor: '#f2f2f2',

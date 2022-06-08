@@ -9,7 +9,6 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Babcock from '../../img/approved (2).png'
 
-
 function NavBar() {
   return (
     <>
@@ -18,9 +17,9 @@ function NavBar() {
             <img className="babcock" src={Babcock} alt=""></img>
             <span>CPD Hub</span>
             <ul>
-              <li className='about' href="">About</li>
+              {/* <li className='about' href="">About</li>
               <li className='services' href="">Services</li>
-              <li className='contact' href="">Contact</li>
+              <li className='contact' href="">Contact</li> */}
             </ul>
             
             <Link to="/login">
