@@ -110,12 +110,10 @@ const UserDetailsStyle = styled.div`
         justify-content: center;
         align-items: center;
         height: 110vh;
-        /* background-color: red; */
 
         background-image: url(${backgroundImg});
         background-size:  contain;
         background-position: center;
-        background-image: blur(2px);
     }
 
     .UserDetailsForm {
