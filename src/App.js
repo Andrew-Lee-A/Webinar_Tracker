@@ -8,6 +8,7 @@ import Register from './components/RegisterPage/Register'
 import Dashboard from './components/DashboardPage/Dashboard'
 // import ForgetPassword from './components/ForgetPasswordPage/ForgetPassword'
 import UserDetails from './components/AdditionalDetailsPage/UserDetails'
+import UserProfile from './components/UserProfilePage/UserProfile'
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
             <Route path='/register' element={<Register/>} />
             <Route path='/dashboard' element={<Dashboard/>} />
             <Route path='/userdetails' element={<UserDetails/>} />
+            <Route path='/userprofile' element={<UserProfile/>} />
             {/* <Route path='/forget-password' element={<ForgetPassword/>} /> */}
         </Routes>
       </div>

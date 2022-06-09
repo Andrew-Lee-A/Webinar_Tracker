@@ -1,18 +1,23 @@
 import React, { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
+
 // image
-import RegisterImg from '../../img/register/pexels-hasan-albari-1229861.jpg';
+import RegisterImg from '../../img/register/greta-scholderle-moller-Rc6zleeWrTM-unsplash.jpg';
+
 // styled-components
 import styled from "styled-components";
 import "react-toastify/dist/ReactToastify.css";
-// Validate JavaScript file
+import styles from './Register.module.css'
+
+// JavaScript files
 import { validate } from "./Validate";
+import { reminder } from "./QuickMessage";
+
 // Toast folder and react-toastify
 import { ToastContainer, toast } from "react-toastify";
-import { notify } from "./QuickMessage";
+
 // Axios
 import Axios from "axios";
-
 
 const Register = () => {
 
@@ -31,16 +36,53 @@ const Register = () => {
         setErrors(validate(data, "register"));
     }, [data, touched]);
 
-    const handleChange = (e) => {
-        if (e.target.name === "isAccepted") {
-            setData({ ...data, [e.target.name]: e.target.checked});
+    const handleChange = (event) => {
+        if (event.target.name === "isAccepted") {
+            setData({ ...data, [event.target.name]: event.target.checked });
         } else {
-            setData({ ...data, [e.target.name]: e.target.value});
+            setData({ ...data, [event.target.name]: event.target.value });
         }
     };
 
-    const handleFocus = (e) => {
-        setTouched({ ...touched, [e.target.name]: true});
+    const handleFocus = (event) => {
+        setTouched({ ...touched, [event.target.name]: true });
+    }
+
+    const onSubmit = (event) => {
+        event.preventDefault();
+
+        if(!Object.keys(errors).length) {
+
+            // Code to push the data to the database
+            const api = ``;
+
+            const sendData = async () => {
+                const apiResponse = Axios.get(api);
+                const responseTypes = await toast.promise(apiResponse, {
+                    pending: "We are processing your data...",
+                    success: "Successfully created!",
+                    error: "Whooops...your data is invalid!",
+                });
+
+                if (responseTypes.data.ok) {
+                    reminder("Congratulation your account is created succesfully!", "success");
+                } else {
+                    reminder("Your account is already exist!", "warning");
+                }
+            };
+
+            sendData();
+
+        } else {
+            reminder("The registration form is not yet completed, please check it again!", "error");
+            setTouched({
+                name: true,
+                email: true,
+                password: true,
+                confirmPassword: true,
+                IsAccepted: false,
+            });
+        }
     }
     
     return (
@@ -51,39 +93,96 @@ const Register = () => {
                     <h2>Come and join us</h2>
                     <h5>Create your account now!</h5>
 
-                    <form action="/home">
+                    <form  className={styles.formLogin} onSubmit={onSubmit} autoComplete="off">
 
                         <div className="inputContainer">
 
-                            <p>
-                                {/* <label>Username:</label> */}
-                                <input  className="username"  placeholder="Your Username" type="text" name="firstname" required/>
-                            </p>
+                            <div>
+                                <div className={errors.name && touched.name ? styles.invalidSign : !errors.name && touched.name ? styles.validSign : undefined} >
+                                    <input  
+                                        className="username"  
+                                        placeholder="Your Username" 
+                                        type="text" 
+                                        name="name"
+                                        onChange={handleChange}
+                                        onFocus={handleFocus}
+                                        autoComplete="off"
+                                    />
+                                </div>
+                                {errors.name && touched.name && <span className={styles.error}>{errors.name}</span>}
+                            </div>
 
-                            <p>
-                                {/* <label>Email Address:</label> */}
-                                <input className="emailAddress"  placeholder="Your Email" type="email" name="email" required/>
-                            </p>
+                            <div> 
+                                <div className={errors.email && touched.email ? styles.invalidSign : !errors.email && touched.email ? styles.validSign : undefined} >
+                                    <input 
+                                        className="emailAddress"  
+                                        placeholder="Your Email" 
+                                        type="text" 
+                                        name="email"
+                                        onChange={handleChange}
+                                        onFocus={handleFocus}
+                                        autoComplete="off"
+                                    />
+                                </div>
+                                {errors.email && touched.email && <span className={styles.error}>{errors.email}</span>}
+                            </div>
+                        
+                            <div>
+                                <div className={errors.password && touched.password ? styles.invalidSign : !errors.password && touched.password ? styles.validSign : undefined} >
+                                    <input 
+                                        className="password"  
+                                        placeholder="Your Password" 
+                                        type="password" 
+                                        name="password"
+                                        onChange={handleChange}
+                                        onFocus={handleFocus}
+                                        autoComplete="off"
+                                    />
+                                </div>
+                                {errors.password && touched.password && <span className={styles.error}>{errors.password}</span>}
+                            </div>
 
-                            <p>
-                                {/* <label>Password:</label> */}
-                                <input className="password"  placeholder="your password" type="password" name="password" required/>
-                            </p>
+                            <div>
+                                <div className={errors.confirmPassword && touched.confirmPassword ? styles.invalidSign : !errors.confirmPassword && touched.confirmPassword ? styles.validSign : undefined}>
+                                    <input 
+                                        className="password"  
+                                        placeholder="Your Confirm Password" 
+                                        type="password" 
+                                        name="confirmPassword"
+                                        onChange={handleChange}
+                                        onFocus={handleFocus}
+                                        autoComplete="off"
+                                    />
+                                </div>
+                                {errors.confirmPassword && touched.confirmPassword && <span className={styles.error}>{errors.confirmPassword}</span>}
+                            </div>
+                            
+                            <div>
+                                <div>
+                                    <input 
+                                        type="checkbox" 
+                                        name="checkbox" 
+                                        id="checkbox" 
+                                    /> 
+                                    
+                                    <span>I agree to all statement in <a href="https://google.com" target="_blank" rel="noopener noreferrer">terms of service</a> </span>
+                                </div>
+                            </div>
 
-                            <p>
-                                <input type="checkbox" name="checkbox" id="checkbox" required/> <span>I agree to all statement in <a href="https://google.com" target="_blank" rel="noopener noreferrer">terms of service</a></span>
-                            </p>
-
-                            <p>
-                                <button className="registerButton" id="sub_btn" type="submit">Register</button>
-                            </p>
+                            <div>
+                                <div>
+                                    <button className="registerButton" id="sub_btn" type="submit">Register</button>
+                                </div>
+                            </div>
 
                         </div>
                         
                     </form>
 
+                    <ToastContainer />
+
                     <footer>
-                        <p><Link to="/">Back to Homepage</Link>.</p>
+                        <p className="homepageLink" ><Link to="/">Back to Homepage</Link>.</p>
                     </footer>
                 </div>
                 
@@ -94,13 +193,13 @@ const Register = () => {
 
 // styled
 const RegisterStyle = styled.div`
-    margin: -8px;
+    margin: 0px;
     padding: 0px;
 
     background-image: url(${RegisterImg});
     background-size: cover;
     background-position: center;
-    height: 696px;
+    height: 100vh;
 
     .registerContainer {
         display: flex;
@@ -122,11 +221,13 @@ const RegisterStyle = styled.div`
         font-size: 50px;
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         margin-bottom: 10px;
+
+        margin-top: 5px;
     }
 
     H5 {
         color: white;
-        margin-top: 20px;
+        margin-top: 5px;
     }
 
     form {
@@ -138,9 +239,15 @@ const RegisterStyle = styled.div`
         border: 1px solid #FFF;
     }
 
-    label {
-        font-weight: bold;
+    input {
+
+        outline: none;
+
+        ::placeholder {
+            font-weight: bold;
+        }
     }
+    
 
     span {
         color: #FFF;
@@ -148,11 +255,22 @@ const RegisterStyle = styled.div`
 
     a {
         color: #FFF;
+        text-decoration: none;
+
+        :hover {
+            color: teal;
+        }
+    }
+
+    .homepageLink {
+        font-size: 20px;
+        font-weight: bold;
     }
 
     .username {
-        margin-right: 100px;
-        
+        margin-right: 150px;
+        margin-bottom: 20px;
+
         width: 100%;
         height: 40px;
         border-radius: 50px;
@@ -160,10 +278,15 @@ const RegisterStyle = styled.div`
         border: 2px solid #000000;
 
         text-align: center;
+
+        :hover {
+            border: 2px solid #fff;
+        }
     }
 
     .emailAddress {
-        margin-right: 100px;
+        margin-right: 150px;
+        margin-bottom: 20px;
 
         width: 100%;
         height: 40px;
@@ -172,10 +295,15 @@ const RegisterStyle = styled.div`
         border: 2px solid #000000;
 
         text-align: center;
+
+        :hover {
+            border: 2px solid #fff;
+        }
     }
 
     .password {
-        margin-right: 100px;
+        margin-right: 150px;
+        margin-bottom: 20px;
         
         width: 100%;
         height: 40px;
@@ -184,20 +312,31 @@ const RegisterStyle = styled.div`
         border: 2px solid #000000;
 
         text-align: center;
+
+        :hover {
+            border: 2px solid #fff;
+        }
     }
 
+
     .registerButton {
-        width: 16rem;
+        margin-top: 20px;
+        margin-left: 6px;
+        
+        width: 18rem;
         height: 40px;
-        border-radius: 50px;
+        border-radius: 5px;
         border: 2px solid #000000;
 
         background-color: #FFF;
+        font-weight: bold;
 
         :hover {
             background-color: teal;
             color: #FFF;
             cursor: pointer;
+
+            border: 2px solid #fff;
         }
     }
 

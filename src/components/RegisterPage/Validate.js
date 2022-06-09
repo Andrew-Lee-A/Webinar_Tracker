@@ -12,7 +12,7 @@ export const validate = (data, type) => {
 
     if (!data.password) {
         errors.password = "Password is required!";
-    } else if (!(data.password.length >= 6)) {
+    } else if (!(data.password.length >= 5)) {
         errors.password = "Your password is too short, must be greater than 4 digits";
     } else {
         delete errors.password;
@@ -21,7 +21,7 @@ export const validate = (data, type) => {
     if (type === "register") {
 
         if (!data.name.trim()) {
-            errors.name = "Username cannot be blank!";
+            errors.name = "Username field is empty, please fill it up to proceed";
         } else {
             delete errors.name;
         }
@@ -42,4 +42,4 @@ export const validate = (data, type) => {
     }
 
     return errors;
-}
+};

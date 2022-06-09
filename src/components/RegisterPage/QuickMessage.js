@@ -1,10 +1,10 @@
 import { toast } from "react-toastify";
 
-export const notify = (text, type) => {
+export const reminder = (text, type) => {
 
     if (type === "success") {
         toast.success(text, {
-            position: "top-center",
+            position: "top-left",
             autoClose: 5000,
             hideProgressBar: false,
             closeOnClick: true,
@@ -14,7 +14,7 @@ export const notify = (text, type) => {
         });
     } else if (type === "warning") {
         toast.warn(text, {
-          position: "top-center",
+          position: "top-left",
           autoClose: 5000,
           hideProgressBar: false,
           closeOnClick: true,
@@ -24,7 +24,7 @@ export const notify = (text, type) => {
         });
       } else {
         toast.error(text, {
-          position: "top-center",
+          position: "top-left",
           autoClose: 5000,
           hideProgressBar: false,
           closeOnClick: true,
