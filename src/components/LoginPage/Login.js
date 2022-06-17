@@ -1,29 +1,90 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-
 // image
 import LoginImg from '../../img/login/andrew-neel-cckf4TsHAuw-unsplash.jpg';
-
 // styled components
 import styled from 'styled-components'
+// toast
+import { reminder } from '../RegisterPage/QuickMessage';
+import { ToastContainer, toast } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
+// Axios
+import Axios from 'axios';
 
 export default function Login() {
+
+  const [data, setData] = useState({
+    username: "",
+    password: "",
+  });
+
+  const [touched, setTouched] = useState({});
+
+  const confirmData = (object) => {
+    const {username, password} = object;
+
+    // TO DO 
+    const urlAPI = ``;
+
+    const api = Axios
+      .get(urlAPI)
+      .then((response) => response.data)
+      .then((data) => (data.ok ? reminder("You have logged in successfully!" ,"success") : reminder("Username or password is incorrect, try again!" , "error")));
+      toast.promise(api, {
+        pending: "Loading. . . please wait",
+        success: false,
+        error: "Error occurs, please try again!",
+      });
+  }; 
+
+  const onChange = (e) => {
+    if (e.target.name === "IsAccepted") {
+      setData({ ...data, [e.target.name]: e.target.checked });
+    } else {
+      setData({ ...data, [e.target.name]: e.target.value });
+    }
+  };
+
+  const onFocus = (e) => {
+    setTouched({ ...touched, [e.target.name]: true})
+  }
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    confirmData(data);
+  }
+  
   return (
       <>
         <LoginStyle>
                 <div className='loginContainer'>
                     <div className="formContainer">
                         <h2>Customer log in</h2>
-                        <form action="/home">
-                            <p>
-                                <label className='usernameLabel' >Username or Email Address</label><br/>
-                                <input type="text" name='firstName' required/>
-                            </p>
-                            <p>
-                                <label className='usernamePassword' >Password</label>
+                        <form onSubmit={onSubmit} autoComplete="off">
+                            <div>
+                                <label className='usernameLabel' >Your Username</label><br/>
+                                <input 
+                                  type="text" 
+                                  name='username'
+                                  value={data.username}
+                                  onChange={onChange} 
+                                  onFocus={onFocus}
+                                  autoComplete="off"
+                                />
+                            </div>
+                            <div>
+                                <label className='usernamePassword' >Your Password</label>
                                 <br/>
-                                <input  className='passInput' type="password" name='password' required />
-                            </p>
+                                <input  
+                                  className='passInput' 
+                                  type="password" 
+                                  name='password'
+                                  value={data.password}
+                                  onChange={onChange} 
+                                  onFocus={onFocus}
+                                  autoComplete="off" 
+                                />
+                            </div>
                             <p>
                                 <button className='submitButton' id='sub_btn' type='submit'>Login</button>
                             </p>
@@ -32,6 +93,8 @@ export default function Login() {
                         <footer>
                             <p className='footerWrapper' >New to us? <Link  className='linkWrapper' to="/register">create an account</Link></p>
                         </footer>
+
+
                         {/* Test for getting to dashboard page  */}
                         <footer>
                             <button className='demolinkButton' ><Link  className='demoLink' to="/dashboard">dashboard demo</Link></button>
@@ -54,7 +117,8 @@ const LoginStyle = styled.div`
     .loginContainer{
         margin: -8px;
         padding: 0;
-        height: 697px;
+        height: 719px;
+        width: 1544px;
     
         background-image: url(${LoginImg});
         background-size: cover;
@@ -89,11 +153,12 @@ const LoginStyle = styled.div`
   }
 
   .usernameLabel {
-    margin-left: 60px;
+    margin-left: 100px;
   }
 
   .usernamePassword {
-    margin-left: 120px;
+    margin-left: 100px;
+    margin-top: 10px;
   }
   
 

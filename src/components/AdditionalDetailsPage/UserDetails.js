@@ -11,7 +11,7 @@ export default function UserDetails() {
 
             <div className="userDetailsWrapper">
 
-                <form action="" className="UserDetailsForm">
+                <form action="" className="UserDetailsForm" onSubmit="/* TODO HERE */">
 
                     <h2 className="formTitle">Additional Details Form</h2>
                     <p>Dear customer you are required to fill in the form to proceed</p>

@@ -6,7 +6,7 @@ import RegisterImg from '../../img/register/greta-scholderle-moller-Rc6zleeWrTM-
 
 // styled-components
 import styled from "styled-components";
-import "react-toastify/dist/ReactToastify.css";
+// import "react-toastify/dist/ReactToastify.css";
 import styles from './Register.module.css'
 
 // JavaScript files
@@ -48,7 +48,7 @@ const Register = () => {
         setTouched({ ...touched, [event.target.name]: true });
     }
 
-    const onSubmit = (event) => {
+    const onSubmit = (event) => {   
         event.preventDefault();
 
         if(!Object.keys(errors).length) {
@@ -104,6 +104,7 @@ const Register = () => {
                                         placeholder="Your Username" 
                                         type="text" 
                                         name="name"
+                                        value={data.username}
                                         onChange={handleChange}
                                         onFocus={handleFocus}
                                         autoComplete="off"
@@ -119,6 +120,7 @@ const Register = () => {
                                         placeholder="Your Email" 
                                         type="text" 
                                         name="email"
+                                        value={data.email}
                                         onChange={handleChange}
                                         onFocus={handleFocus}
                                         autoComplete="off"
@@ -134,6 +136,7 @@ const Register = () => {
                                         placeholder="Your Password" 
                                         type="password" 
                                         name="password"
+                                        value={data.password}
                                         onChange={handleChange}
                                         onFocus={handleFocus}
                                         autoComplete="off"
@@ -149,6 +152,7 @@ const Register = () => {
                                         placeholder="Your Confirm Password" 
                                         type="password" 
                                         name="confirmPassword"
+                                        value={data.confirmPassword}
                                         onChange={handleChange}
                                         onFocus={handleFocus}
                                         autoComplete="off"
