@@ -59,7 +59,7 @@ export default function Login() {
         <LoginStyle>
                 <div className='loginContainer'>
                     <div className="formContainer">
-                        <h2>Customer log in</h2>
+                        <h2>Happy to see you here</h2>
                         <form onSubmit={onSubmit} autoComplete="off">
                             <div>
                                 <label className='usernameLabel' >Your Username</label><br/>
@@ -97,9 +97,9 @@ export default function Login() {
 
                         {/* Test for getting to dashboard page  */}
                         <footer>
-                            <button className='demolinkButton'>
+                            {/* <button className='demolinkButton'>
                               <Link  className='demoLink' to="/dashboard">dashboard demo</Link>
-                            </button>
+                            </button> */}
                         </footer>
                     </div>
                 </div>
@@ -109,26 +109,24 @@ export default function Login() {
 }
 
 const LoginStyle = styled.div`
-    .demoLinkButton{
+
+    /* TEMPORARY */
+    .demoLinkButton {
       background-color: #800080;
     }    
-    .demoLink{
+    .demoLink {
       color: 	#800080;
-    }    
+    }
 
-    margin: -8px;
-    padding: 0;
-    height: 101.1vh;
-    width: 217.1vh;
+    // ============================ //
+
+    margin: 0px;
+    padding: 0px;
+    height: 100vh;
     
     background-image: url(${LoginImg});
     background-size: cover;
     background-position: center;
-    
-    .loginContainer{
-    
-        /* filter: blur(1px); */
-    }
     
     .formContainer {
         display: flex;
@@ -140,8 +138,12 @@ const LoginStyle = styled.div`
   h2 {
       font-weight: bold;
       font-size: 45px;
-      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
       color: #FFF;
+
+      :hover {
+        color: darkgoldenrod;
+      }
   }
 
   .footerWrapper {
@@ -156,18 +158,21 @@ const LoginStyle = styled.div`
   }
 
   .usernameLabel {
-    margin-left: 100px;
+    margin-left: 90px;
   }
 
   .usernamePassword {
-    margin-left: 100px;
+    margin-left: 90px;
     margin-top: 10px;
   }
   
-
   form {
       padding: 2rem;
       margin: 2rem 0 1rem 0;
+  }
+
+  p {
+    font-family: 'Space Grotesk', sans-serif;
   }
 
   form label {
@@ -178,6 +183,7 @@ const LoginStyle = styled.div`
 
       color: #FFF;
       font-weight: bold;
+      font-family: 'Space Grotesk', sans-serif;
   }
 
   .right-label {
@@ -186,6 +192,8 @@ const LoginStyle = styled.div`
 
     color: #FFF;
     margin-bottom: 10px;
+
+    font-family: 'Space Grotesk', sans-serif;
   }
 
   input {
@@ -198,6 +206,10 @@ const LoginStyle = styled.div`
       border: none;
 
       text-align: center;
+  }
+
+  Link {
+    font-family: 'Space Grotesk', sans-serif;
   }
 
   .passInput {
@@ -221,6 +233,7 @@ const LoginStyle = styled.div`
     border-radius: 50px;
     cursor: pointer;
     font-weight: bold;
+    font-family: 'Space Grotesk', sans-serif;
 
     :hover {
         background: teal;

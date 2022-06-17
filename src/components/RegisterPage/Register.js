@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 
 // image
-import RegisterImg from '../../img/register/greta-scholderle-moller-Rc6zleeWrTM-unsplash.jpg';
+import RegisterImg from '../RegisterPage/RegisterImages/kelly-sikkema-tk9RQCq5eQo-unsplash.jpg';
 
 // styled-components
 import styled from "styled-components";
@@ -186,7 +186,7 @@ const Register = () => {
                     <ToastContainer />
 
                     <footer>
-                        <p className="homepageLink" ><Link to="/">Back to Homepage</Link>.</p>
+                        <p className="homepageLink" ><Link to="/">Back to Homepage</Link></p>
                     </footer>
                 </div>
                 
@@ -223,15 +223,24 @@ const RegisterStyle = styled.div`
         color: #FFF;
         font-weight: bold;
         font-size: 50px;
-        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-family: 'Krona One', sans-serif;
         margin-bottom: 10px;
 
-        margin-top: 5px;
+        margin-top: 35px;
+
+        :hover {
+            color: teal;
+        }
     }
 
     H5 {
         color: white;
         margin-top: 5px;
+        font-family: 'Krona One', sans-serif;
+
+        :hover {
+            color: teal;
+        }
     }
 
     form {
@@ -252,7 +261,6 @@ const RegisterStyle = styled.div`
         }
     }
     
-
     span {
         color: #FFF;
     }
@@ -321,7 +329,6 @@ const RegisterStyle = styled.div`
             border: 2px solid #fff;
         }
     }
-
 
     .registerButton {
         margin-top: 20px;

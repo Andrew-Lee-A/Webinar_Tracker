@@ -36,7 +36,7 @@ const QualityStyle = styled.div`
 
     margin: 0;
     padding: 0;
-    width: 100%;
+    width: 99.9%;
     height: 500px;
     background-color: #000000;
     color: darkgoldenrod;
@@ -59,7 +59,7 @@ const QualityStyle = styled.div`
 
     .qualiyContainer {
         display: grid;
-        grid-template-columns: repeat(2, 40rem);
+        grid-template-columns: repeat(2, 39rem);
     }
 
     .leftArea, .rightArea {

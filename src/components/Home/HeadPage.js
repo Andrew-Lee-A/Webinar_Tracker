@@ -12,15 +12,16 @@ function HeadPage () {
 }
 
 const HeadPageStyle = styled.div`
-
-    width: 99%;
+    margin: 0;
+    padding: 0;
+    width: 99.9%;
     height: 35rem;
     clip-path: polygon(0 100%, 0 0, 100% 0, 100% 85%);
     background-image: url(${headImage});
     background-size: cover;
     background-repeat: no-repeat;
     color: darkorange;
-    border: 1px solid #000;
+    /* border: 1px solid #000; */
 
     .headMessage {
         font-size: 70px;

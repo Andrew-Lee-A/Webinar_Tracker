@@ -58,7 +58,7 @@ function Footer() {
 const FooterStyle = styled.div`
 
     // GLOBAL STYLE
-    width: 100%;
+    width: 99.9%;
     height: 15rem;
     color: white;
     background-color: #000000;

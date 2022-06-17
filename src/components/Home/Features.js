@@ -40,7 +40,7 @@ function Features() {
 
 // Styled-components
 const FeaturesStyle = styled.div`   
-    width: 100%;
+    width: 99.9%;
     height: 30rem;
     background-color: #000000;
     color: orange;
