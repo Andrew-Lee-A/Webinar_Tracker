@@ -3,7 +3,6 @@ import React from 'react';
 
 // JavaScript files
 import GlobalStyle from '../../components/Home/GlobalStyle';
-import NavBar from '../../components/Home/NavBar';
 import HeadPage from '../../components/Home/HeadPage';
 import Features from '../../components/Home/Features';
 import Quality from '../../components/Home/Quality';
@@ -14,7 +13,6 @@ export default function HomeIndex() {
   return (
     <>
         <GlobalStyle />
-        <NavBar />
         <HeadPage />
         <Features/>
         <Quality/>
