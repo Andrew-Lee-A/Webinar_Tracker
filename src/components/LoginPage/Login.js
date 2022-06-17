@@ -118,8 +118,8 @@ const LoginStyle = styled.div`
 
     margin: -8px;
     padding: 0;
-    height: 100%;
-    /* width: 1544px; */
+    height: 101.1vh;
+    width: 217.1vh;
     
     background-image: url(${LoginImg});
     background-size: cover;
