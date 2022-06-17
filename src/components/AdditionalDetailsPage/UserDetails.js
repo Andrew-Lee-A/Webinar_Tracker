@@ -1,8 +1,18 @@
 import React from 'react'
 import styled from 'styled-components'
 
-// background image
+// background images
 import backgroundImg from '../../img/luke-chesser-3rWagdKBF7U-unsplash.jpg'
+import nameIcon from '../AdditionalDetailsPage/AdditionalDetailsImages/preferedname.png'
+import company from '../AdditionalDetailsPage/AdditionalDetailsImages/company.png'
+import experience from '../AdditionalDetailsPage/AdditionalDetailsImages/experience.png'
+import industry from '../AdditionalDetailsPage/AdditionalDetailsImages/industrial.png'
+import occupation from '../AdditionalDetailsPage/AdditionalDetailsImages/occupation.png'
+import country from '../AdditionalDetailsPage/AdditionalDetailsImages/country.png'
+import skill from '../AdditionalDetailsPage/AdditionalDetailsImages/skill.png'
+import total from '../AdditionalDetailsPage/AdditionalDetailsImages/platform.png'
+import platform from '../AdditionalDetailsPage/AdditionalDetailsImages/amount.png'
+
 
 export default function UserDetails() {
   return (
@@ -17,6 +27,7 @@ export default function UserDetails() {
                     <p>Dear customer you are required to fill in the form to proceed</p>
 
                     <div className="inputWrapper">
+                        <img src={nameIcon} alt="" />
                         <input
                             type="text" 
                             className="input"
@@ -25,6 +36,7 @@ export default function UserDetails() {
                     </div>
 
                     <div className="inputWrapper">
+                        <img src={company} alt="" />
                         <input 
                             type="text" 
                             className="input" 
@@ -33,6 +45,7 @@ export default function UserDetails() {
                     </div>
 
                     <div className="inputWrapper">
+                        <img src={experience} alt="" />
                         <input 
                             type="text" 
                             className="input" 
@@ -41,6 +54,7 @@ export default function UserDetails() {
                     </div>
 
                     <div className="inputWrapper">
+                        <img src={industry} alt="" />
                         <input 
                             type="text" 
                             className="input" 
@@ -49,6 +63,7 @@ export default function UserDetails() {
                     </div>
 
                     <div className="inputWrapper">
+                        <img src={occupation} alt="" />
                         <input 
                             type="text" 
                             className="input" 
@@ -57,6 +72,7 @@ export default function UserDetails() {
                     </div>
 
                     <div className="inputWrapper">
+                        <img src={country} alt="" />
                         <input 
                             type="text" 
                             className="input" 
@@ -65,6 +81,7 @@ export default function UserDetails() {
                     </div>
 
                     <div className="inputWrapper">
+                        <img src={skill} alt="" />
                         <input 
                             type="text" 
                             className="input" 
@@ -73,6 +90,7 @@ export default function UserDetails() {
                     </div>
 
                     <div className="inputWrapper">
+                        <img src={total} alt="" />
                         <input 
                             type="text" 
                             className="input" 
@@ -81,6 +99,7 @@ export default function UserDetails() {
                     </div>
 
                     <div className="inputWrapper">
+                        <img src={platform} alt="" />
                         <input 
                             type="text" 
                             className="input" 
@@ -184,7 +203,7 @@ const UserDetailsStyle = styled.div`
         color: #DADCE0;
         /* color: #D3D3D3; */
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        font-weight: bold;
+        /* font-weight: bold; */
         transition: 0.5s;
         z-index: 0;
 
@@ -211,5 +230,12 @@ const UserDetailsStyle = styled.div`
             color: cyan;
             transition: ease-in-out 0.1s;
         }
+    }
+
+    img {
+        width: 25px;
+        height: 25px;
+        margin-left: 10px;
+        margin-top: 8px;
     }
 `

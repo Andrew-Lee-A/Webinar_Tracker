@@ -1,21 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
-
 // image
 import RegisterImg from '../RegisterPage/RegisterImages/kelly-sikkema-tk9RQCq5eQo-unsplash.jpg';
-
+// import username from '../RegisterPage/RegisterImages/user.png'
+// import email from '../RegisterPage/RegisterImages/mail.png'
+// import pwd from '../RegisterPage/RegisterImages/lock.png'
+// import confirmpwd from '../RegisterPage/RegisterImages/reset-password.png'
 // styled-components
 import styled from "styled-components";
 // import "react-toastify/dist/ReactToastify.css";
 import styles from './Register.module.css'
-
 // JavaScript files
 import { validate } from "./Validate";
 import { reminder } from "./QuickMessage";
-
 // Toast folder and react-toastify
 import { ToastContainer, toast } from "react-toastify";
-
 // Axios
 import Axios from "axios";
 
@@ -99,6 +98,7 @@ const Register = () => {
 
                             <div>
                                 <div className={errors.name && touched.name ? styles.invalidSign : !errors.name && touched.name ? styles.validSign : undefined} >
+
                                     <input  
                                         className="username"  
                                         placeholder="Your Username" 
@@ -108,7 +108,9 @@ const Register = () => {
                                         onChange={handleChange}
                                         onFocus={handleFocus}
                                         autoComplete="off"
-                                    />
+                                    >
+
+                                    </input>
                                 </div>
                                 {errors.name && touched.name && <span className={styles.error}>{errors.name}</span>}
                             </div>
@@ -290,6 +292,7 @@ const RegisterStyle = styled.div`
         border: 2px solid #000000;
 
         text-align: center;
+        /* text-indent: 40px; */
 
         :hover {
             border: 2px solid #fff;
@@ -307,6 +310,7 @@ const RegisterStyle = styled.div`
         border: 2px solid #000000;
 
         text-align: center;
+        /* text-indent: 40px; */
 
         :hover {
             border: 2px solid #fff;
@@ -324,6 +328,7 @@ const RegisterStyle = styled.div`
         border: 2px solid #000000;
 
         text-align: center;
+        /* text-indent: 40px; */
 
         :hover {
             border: 2px solid #fff;
@@ -357,6 +362,12 @@ const RegisterStyle = styled.div`
 
     form span {
         font-size: .8rem;
+    }
+
+    img {
+        width: 25px;
+        height: 25px;
+        /* margin-top: 30px; */
     }
 
 `
