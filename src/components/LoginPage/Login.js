@@ -97,7 +97,9 @@ export default function Login() {
 
                         {/* Test for getting to dashboard page  */}
                         <footer>
-                            <button className='demolinkButton' ><Link  className='demoLink' to="/dashboard">dashboard demo</Link></button>
+                            <button className='demolinkButton'>
+                              <Link  className='demoLink' to="/dashboard">dashboard demo</Link>
+                            </button>
                         </footer>
                     </div>
                 </div>
@@ -114,16 +116,17 @@ const LoginStyle = styled.div`
       color: 	#800080;
     }    
 
-    .loginContainer{
-        margin: -8px;
-        padding: 0;
-        height: 719px;
-        width: 1544px;
+    margin: -8px;
+    padding: 0;
+    height: 100%;
+    /* width: 1544px; */
     
-        background-image: url(${LoginImg});
-        background-size: cover;
-        background-position: center;
-        background-image: blur(2px);
+    background-image: url(${LoginImg});
+    background-size: cover;
+    background-position: center;
+    
+    .loginContainer{
+    
         /* filter: blur(1px); */
     }
     
