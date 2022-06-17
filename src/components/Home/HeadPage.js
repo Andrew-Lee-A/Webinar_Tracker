@@ -100,6 +100,7 @@ const HeadPageStyle = styled.div`
         border-radius: 50px;
         color: white;
         transition: all ease 0.3s ease 0s;
+        font-family: 'Space Grotesk', sans-serif;
 
         cursor: pointer;
 

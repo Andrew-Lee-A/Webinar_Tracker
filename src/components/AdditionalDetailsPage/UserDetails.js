@@ -147,17 +147,19 @@ const UserDetailsStyle = styled.div`
         height: 100%;
         width: 100%;
 
-        border: 1px solid #DADCE0;
+        border: 1px solid #D3D3D3;
         border-radius: 50px;
-        font-size: 14px;
+        font-size: 17px;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        text-align: center;
+        font-weight: bold;
+        text-align: left;
+        text-indent: 30px;
         padding: 0 20px;
         z-index: 1;
 
         :focus + .label {
             top: -7px;
-            left: 6px;
+            left: 50px;
             z-index: 10;
             font-size: 10px;
             font-weight: bold;
@@ -176,10 +178,11 @@ const UserDetailsStyle = styled.div`
     .label {
         position: absolute;
         top: 9px;
-        left: 20px;
+        left: 44px;
         padding: 0 4px;
         background-color: #FFF;
         color: #DADCE0;
+        /* color: #D3D3D3; */
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         font-weight: bold;
         transition: 0.5s;
