@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 // background images
-import backgroundImg from '../../img/luke-chesser-3rWagdKBF7U-unsplash.jpg'
+import backgroundImg from '../AdditionalDetailsPage/AdditionalDetailsImages/gradienta-bKESVqfxass-unsplash.jpg'
 import nameIcon from '../AdditionalDetailsPage/AdditionalDetailsImages/preferedname.png'
 import company from '../AdditionalDetailsPage/AdditionalDetailsImages/company.png'
 import experience from '../AdditionalDetailsPage/AdditionalDetailsImages/experience.png'
@@ -12,7 +12,6 @@ import country from '../AdditionalDetailsPage/AdditionalDetailsImages/country.pn
 import skill from '../AdditionalDetailsPage/AdditionalDetailsImages/skill.png'
 import total from '../AdditionalDetailsPage/AdditionalDetailsImages/platform.png'
 import platform from '../AdditionalDetailsPage/AdditionalDetailsImages/amount.png'
-
 
 export default function UserDetails() {
   return (
@@ -28,7 +27,7 @@ export default function UserDetails() {
 
                     <div className="inputWrapper">
                         <img src={nameIcon} alt="" />
-                        <input
+                        <input  
                             type="text" 
                             className="input"
                         />
@@ -131,7 +130,7 @@ const UserDetailsStyle = styled.div`
         height: 110vh;
 
         background-image: url(${backgroundImg});
-        background-size:  contain;
+        background-size:  cover;
         background-position: center;
     }
 
@@ -230,6 +229,10 @@ const UserDetailsStyle = styled.div`
             color: cyan;
             transition: ease-in-out 0.1s;
         }
+    }
+
+    h2 {
+        margin-top: 0px;
     }
 
     img {

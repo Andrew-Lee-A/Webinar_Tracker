@@ -1,4 +1,5 @@
 import React from 'react'
+import { useState } from 'react'
 // styled-component
 import styled from 'styled-components';
 // Link
@@ -9,32 +10,75 @@ import Setting from '../UserProfilePage/UserProfileImages/skills.png'
 import Logout from '../UserProfilePage/UserProfileImages/log-out.png'
 
 export default function UserProfile() {
+
+  /* handling the icons' names */
+  const [HoverDashboard, setHoveringDashboard] = useState(false);
+  const [HoverSetting, setHoveringSetting] = useState(false);
+  const [HoverLogout, setHoveringLogout] = useState(false);
+
+  const MouseOverHandlerOne = () => {
+    setHoveringDashboard(true);
+  }
+
+  const MouseOverHandlerTwo = () => {
+    setHoveringSetting(true);
+  }
+
+  const MouseOverHandlerThree = () => {
+    setHoveringLogout(true);
+  }
+  
+  const MouseOutHandlerOne = () => {
+    setHoveringDashboard(false);
+  }
+
+  const MouseOutHandlerTwo = () => {
+    setHoveringSetting(false);
+  }
+
+  const MouseOutHandlerThree = () => {
+    setHoveringLogout(false);
+  }
+
+  // ============================================================ //
+  
   return (
       <>
         <UserProfileStyle>
           <div className="userProfileContainer">
               <div className="imagesContainer">
-                  <Link to="/dashboard">
-                    <img 
-                      src={Home} 
-                      alt="" />
-                  </Link>
 
+                <div className="dashboardContainer" onMouseOver={MouseOverHandlerOne} onMouseOut={MouseOutHandlerOne}>
+                    <Link to="/dashboard">
+                      <img 
+                        src={Home} 
+                        alt="" 
+                      />
+                    </Link>
+                  {HoverDashboard && <label className='dashboard'>Dashboard</label>}
+                </div>
+
+                <div className="settingContainer" onMouseOver={MouseOverHandlerTwo} onMouseOut={MouseOutHandlerTwo}>
                   <Link to="">
                     <img 
                     src={Setting} 
                     alt="" />
                   </Link>
+                  {HoverSetting && <label className='setting'>Setting</label>}
+                </div>
 
+                <div className="logoutContainer" onMouseOver={MouseOverHandlerThree} onMouseOut={MouseOutHandlerThree}>
                   <Link to="/">
                     <img  
                       src={Logout} 
                       alt="">
                     </img>
                   </Link>
+                  {HoverLogout && <label className='logout'>Logout</label> }
+                </div>
               </div>
 
-              <div className="userProfileDetailsContainer">
+              <div className="userProfileDetailsContainer" >
                 <div className="leftSide">
                     <h1>About Me</h1>
                     <div className="titleBorder"></div>
@@ -67,10 +111,13 @@ export default function UserProfile() {
 const UserProfileStyle = styled.div`
     padding: 0;
     margin: 0;
-    /* background-color: #030E4F; */
-    /* background-color: #E2D1F9; */
     background-color: #FFF;
-    
+
+    label {
+      color: #317773;
+      font-weight: bold;
+    }
+
     .userProfileContainer {
       width: 100%;
       height: 100vh;
@@ -83,23 +130,30 @@ const UserProfileStyle = styled.div`
     }
 
     .imagesContainer {
-      width: 50vh;
-      height: 40px;
+      width: 60vh;
+      height: 80px;
       border-radius: 50px;
       background-color: #FFF;
 
       display: flex;
-      /* margin-top: -85vh; */
       align-items: center;
       justify-content: space-evenly;
       background-color: #FFF;
 
-      border: 2px solid #317773;
+      border-bottom: 2px solid #317773;
 
       img {
         width: 25px;
         height: 25px;
+
       }
+    }
+
+    .dashboardContainer, .settingContainer, .logoutContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
 
     .userProfileDetailsContainer {
