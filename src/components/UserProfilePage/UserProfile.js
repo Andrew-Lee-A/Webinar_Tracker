@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom'
 import Home from '../UserProfilePage/UserProfileImages/home.png'
 import Setting from '../UserProfilePage/UserProfileImages/skills.png'
 import Logout from '../UserProfilePage/UserProfileImages/log-out.png'
+import BGimg from '../UserProfilePage/UserProfileImages/kevin-kandlbinder-WrjxzLskZK0-unsplash.jpg'
 
 export default function UserProfile() {
 
@@ -111,11 +112,19 @@ export default function UserProfile() {
 const UserProfileStyle = styled.div`
     padding: 0;
     margin: 0;
-    background-color: #FFF;
+    /* background-color: #101820FF; */
+
+    background-image: url(${BGimg});
+    background-size: cover;
+    background-repeat: no-repeat;
 
     label {
       color: #317773;
       font-weight: bold;
+    }
+
+    h1 {
+      color: #FFF;
     }
 
     .userProfileContainer {
@@ -130,17 +139,16 @@ const UserProfileStyle = styled.div`
     }
 
     .imagesContainer {
-      width: 60vh;
-      height: 80px;
+      width: 50vh;
+      height: 55px;
       border-radius: 50px;
-      background-color: #FFF;
 
       display: flex;
       align-items: center;
       justify-content: space-evenly;
       background-color: #FFF;
 
-      border-bottom: 2px solid #317773;
+      border-bottom: 2px solid #FFF;
 
       img {
         width: 25px;
@@ -163,7 +171,7 @@ const UserProfileStyle = styled.div`
       width: 160vh;
       height: 80vh;
       // background-color: #FFF; /* WHITE COLOUR */
-      color: #317773;
+      color: #FEE715FF;
 
       display: flex;
       align-items: center;
@@ -176,13 +184,14 @@ const UserProfileStyle = styled.div`
         /* border: 1px solid #000000; */
 
         .titleBorder {
-          border-bottom: 2px solid #000000;
+          border-bottom: 2px solid #FFF;
           width: 50vh;
           margin: -10px 0px 20px 0px; /* TOP, LEFT, BOTTOM, RIGHT */
         }
 
         span {
           font-weight: bold;
+          color: #FFF;
         }
       }
 
@@ -190,17 +199,16 @@ const UserProfileStyle = styled.div`
         padding: 20px 80px;
         
         .titleBorder {
-          border-bottom: 2px solid #000000;
+          border-bottom: 2px solid #FFF;
           width: 50vh;
           margin: -10px 0px 0px 0px;
         }
 
         p {
           font-weight: bold;
+          color: #FFF;
         }
       }
     }
-
-    
     
 `
