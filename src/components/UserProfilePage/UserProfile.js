@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 import Home from '../UserProfilePage/UserProfileImages/home.png'
 import Setting from '../UserProfilePage/UserProfileImages/skills.png'
 import Logout from '../UserProfilePage/UserProfileImages/log-out.png'
-import BGimg from '../UserProfilePage/UserProfileImages/kevin-kandlbinder-WrjxzLskZK0-unsplash.jpg'
+import BGimg from '../UserProfilePage/UserProfileImages/circle-scatter.png'
 
 export default function UserProfile() {
 
@@ -47,7 +47,13 @@ export default function UserProfile() {
       <>
         <UserProfileStyle>
           <div className="userProfileContainer">
+
+          <span></span>
+          <span></span>
+          <span></span>
+
               <div className="imagesContainer">
+
 
                 <div className="dashboardContainer" onMouseOver={MouseOverHandlerOne} onMouseOut={MouseOutHandlerOne}>
                     <Link to="/dashboard">
@@ -60,7 +66,7 @@ export default function UserProfile() {
                 </div>
 
                 <div className="settingContainer" onMouseOver={MouseOverHandlerTwo} onMouseOut={MouseOutHandlerTwo}>
-                  <Link to="">
+                  <Link to="/usersetting">
                     <img 
                     src={Setting} 
                     alt="" />
@@ -136,6 +142,7 @@ const UserProfileStyle = styled.div`
       align-items: center;
       justify-content: center;
       color: #F49F1C;
+
     }
 
     .imagesContainer {
@@ -210,5 +217,4 @@ const UserProfileStyle = styled.div`
         }
       }
     }
-    
 `
