@@ -32,6 +32,7 @@ function HeadPage () {
 }
 
 const HeadPageStyle = styled.div`
+
     margin: 0;
     padding: 0;
     width: 99.9%;
@@ -75,7 +76,7 @@ const HeadPageStyle = styled.div`
         list-style: none;
         display: inline-block;
         padding: 0px 20px;
-        transition: all 0.3s ease 0s;
+        transition:  0.3s ease 0s;
         cursor: pointer;
         font-family: 'Space Grotesk', sans-serif;
         font-weight: bold;
@@ -89,7 +90,6 @@ const HeadPageStyle = styled.div`
             transform-origin: left;
             transition: all 0.5s ease;
         }
-        
     }
 
     .loginButton, .signupButton {
@@ -104,10 +104,19 @@ const HeadPageStyle = styled.div`
 
         cursor: pointer;
 
+    }
+
+    .loginButton, .signupButton {
+        background-color: transparent;
+        border: 3px solid #000000;
+        color: red;
+        font-weight: bold;
+
         :hover {
+            background-color: #000000;
             color: darkorange;
         }
     }
-`
 
+`
 export default HeadPage;

@@ -9,7 +9,18 @@ export default function UserSetting() {
                 <span></span>
                 <span></span>
                 <span></span>
+                <span></span>
+                <span></span>
+
+                <Form>
+                    <form className='form'>
+                        <div className="formContainer">
+
+                        </div>
+                    </form>
+                </Form>
             </div>
+
         </UserSettingStyle>
     </>
   )
@@ -25,6 +36,10 @@ const UserSettingStyle = styled.div`
         left: 0;
         background: #3E1E68;
         overflow: hidden;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .background span {
@@ -99,30 +114,18 @@ const UserSettingStyle = styled.div`
         box-shadow: -28vmin 0 3.8744997423586973vmin currentColor;
     }
 
-    .background span:nth-child(6) {
-        color: #E45A84;
-        top: 27%;
-        left: 90%;
-        animation-duration: 214s;
-        animation-delay: -68s;
-        transform-origin: 3vw -3vh;
-        box-shadow: -28vmin 0 4.0694858471481465vmin currentColor;
-    }
-
-    .background span:nth-child(7) {
-        color: #E45A84;
-        top: 10%;
-        left: 11%;
-        animation-duration: 49s;
-        animation-delay: -144s;
-        transform-origin: -14vw -16vh;
-        box-shadow: -28vmin 0 3.710279650373738vmin currentColor;
-    }
-
     @keyframes move {
         100% {
             transform: translate3d(0, 0, 1px) rotate(360deg);
         }
     }
 
+`
+
+const Form = styled.div`
+    height: 90vh;
+    width: 80vw;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(14px);
+    border-radius: 0.8rem;
 `

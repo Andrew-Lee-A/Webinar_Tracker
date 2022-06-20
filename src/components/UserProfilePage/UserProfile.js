@@ -125,7 +125,7 @@ const UserProfileStyle = styled.div`
     background-repeat: no-repeat;
 
     label {
-      color: #317773;
+      color: crimson;
       font-weight: bold;
     }
 

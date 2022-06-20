@@ -56,195 +56,185 @@ export default function Login() {
   
   return (
       <>
-        <LoginStyle>
-                <div className='loginContainer'>
-                    <div className="formContainer">
-                        <h2>Happy to see you here</h2>
-                        <form onSubmit={onSubmit} autoComplete="off">
-                            <div>
-                                <label className='usernameLabel' >Your Username</label><br/>
-                                <input 
-                                  type="text" 
-                                  name='username'
-                                  value={data.username}
-                                  onChange={onChange} 
-                                  onFocus={onFocus}
-                                  autoComplete="off"
-                                />
-                            </div>
-                            <div>
-                                <label className='usernamePassword' >Your Password</label>
-                                <br/>
-                                <input  
-                                  className='passInput' 
-                                  type="password" 
-                                  name='password'
-                                  value={data.password}
-                                  onChange={onChange} 
-                                  onFocus={onFocus}
-                                  autoComplete="off" 
-                                />
-                            </div>
-                            <p>
-                                <button className='submitButton' id='sub_btn' type='submit'>Login</button>
-                            </p>
-                        </form>
-                                <Link to="/forgetpassword"><label className='right-label'>Forget Password</label></Link>
-                        <footer>
-                            <p className='footerWrapper' >New to us? <Link  className='linkWrapper' to="/register">create an account</Link></p>
-                        </footer>
-
-
-                        {/* Test for getting to dashboard page  */}
-                        <footer>
-                            {/* <button className='demolinkButton'>
-                              <Link  className='demoLink' to="/dashboard">dashboard demo</Link>
-                            </button> */}
-                        </footer>
+          <LoginWrapperStyle>
+            <div className="formContainer">
+              
+                <h2>Happy to see you here</h2>
+                <form onSubmit={onSubmit} autoComplete="off">
+                    <div>
+                        <label className='usernameLabel' >Your Username</label><br/>
+                        <input 
+                          type="text" 
+                          name='username'
+                          value={data.username}
+                          onChange={onChange} 
+                          onFocus={onFocus}
+                          autoComplete="off"
+                        />
                     </div>
-                </div>
-        </LoginStyle>
+                    <div>
+                        <label className='usernamePassword' >Your Password</label>
+                        <br/>
+                        <input  
+                          className='passInput' 
+                          type="password" 
+                          name='password'
+                          value={data.password}
+                          onChange={onChange} 
+                          onFocus={onFocus}
+                          autoComplete="off" 
+                        />
+                    </div>
+                    <p>
+                        <button className='submitButton' id='sub_btn' type='submit'>Login</button>
+                    </p>
+                </form>
+                        <Link to="/forgetpassword"><label className='right-label'>Forget Password</label></Link>
+                <footer>
+                    <p className='footerWrapper' >New to us? <Link  className='linkWrapper' to="/register">create an account</Link></p>
+                </footer>
+                {/* Test for getting to dashboard page  */}
+                <footer>
+                    {/* <button className='demolinkButton'>
+                      <Link  className='demoLink' to="/dashboard">dashboard demo</Link>
+                    </button> */}
+                </footer>
+            </div>
+          </LoginWrapperStyle>
       </>
   )
 }
 
-const LoginStyle = styled.div`
+const LoginWrapperStyle = styled.div`
 
-    /* TEMPORARY */
-    .demoLinkButton {
-      background-color: #800080;
-    }    
-    .demoLink {
-      color: 	#800080;
-    }
+  margin: 0px;
+  padding: 0px;
 
-    // ============================ //
+  height: 100vh;
+  width: 100vw;
 
-    margin: 0px;
-    padding: 0px;
-    height: 100vh;
-    
-    background-image: url(${LoginImg});
-    background-size: cover;
-    background-position: center;
-    
-    .formContainer {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-  
+  background-image: url(${LoginImg});
+  background-size: cover;
+  background-position: center;
+
+  .formContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+  }
+
   h2 {
-      font-weight: bold;
-      font-size: 45px;
-      font-family: 'Space Grotesk', sans-serif;
-      color: #FFF;
+    font-weight: bold;
+    font-size: 45px;
+    font-family: 'Space Grotesk', sans-serif;
+    color: #FFF;
 
-      :hover {
-        color: darkgoldenrod;
-      }
+    :hover {
+      color: darkgoldenrod;
+    }
   }
 
   .footerWrapper {
-    color: #FFF;
-    font-size: 20px;
-    font-weight: bold;
+  color: #FFF;
+  font-size: 20px;
+  font-weight: bold;
   }
 
   .linkWrapper {
-    color: #FFF;
-    font-weight: lighter;
+  color: #FFF;
+  font-weight: lighter;
   }
 
   .usernameLabel {
-    margin-left: 90px;
+  margin-left: 90px;
   }
 
   .usernamePassword {
-    margin-left: 90px;
-    margin-top: 10px;
+  margin-left: 90px;
+  margin-top: 10px;
   }
-  
+
   form {
-      padding: 2rem;
-      margin: 2rem 0 1rem 0;
+    padding: 2rem;
+    margin: 2rem 0 1rem 0;
   }
 
   p {
-    font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   }
 
   form label {
-      float: left;
-      font-size: .9rem;
-      margin: 0;
-      padding: 0;
+    float: left;
+    font-size: .9rem;
+    margin: 0;
+    padding: 0;
 
-      color: #FFF;
-      font-weight: bold;
-      font-family: 'Space Grotesk', sans-serif;
+    color: #FFF;
+    font-weight: bold;
+    font-family: 'Space Grotesk', sans-serif;
   }
 
   .right-label {
-    float: right;
-    cursor: pointer;
+  float: right;
+  cursor: pointer;
 
-    color: #FFF;
-    margin-bottom: 10px;
+  color: #FFF;
+  margin-bottom: 10px;
 
-    font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   }
 
   input {
-      width: 18rem;
+    width: 18rem;
 
-      padding: .3 rem;
-      border-radius: 50px;
-      height: 40px;
-      outline: none;
-      border: none;
+    padding: .3 rem;
+    border-radius: 50px;
+    height: 40px;
+    outline: none;
+    border: none;
 
-      text-align: center;
+    text-align: center;
   }
 
   Link {
-    font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   }
 
   .passInput {
-      text-decoration: none;
-      list-style: none;
-      background-color: transparent;
-      border: 2px solid #FFF;
-      
+    text-decoration: none;
+    list-style: none;
+    background-color: transparent;
+    border: 2px solid #FFF;
+    
   }
 
   #sub_btn {
-    margin-top: 40px;
-    
-    display: block;
-    width: 100%;
-    height: 40px;
-    padding: .3rem;
-    border: none;
-    background: darkgoldenrod;
-    color: #fff;
-    border-radius: 50px;
-    cursor: pointer;
-    font-weight: bold;
-    font-family: 'Space Grotesk', sans-serif;
+  margin-top: 40px;
 
-    :hover {
-        background: teal;
-        color: #000000;
-        font-weight: bold;
-        transition: all .5s;
-    }
+  display: block;
+  width: 100%;
+  height: 40px;
+  padding: .3rem;
+  border: none;
+  background: darkgoldenrod;
+  color: #fff;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: 'Space Grotesk', sans-serif;
+
+  :hover {
+      background: teal;
+      color: #000000;
+      font-weight: bold;
+      transition: all .5s;
+  }
   }
 
   footer p {
-      margin: 0;
-      font-size: .9rem;
+    margin: 0;
+    font-size: .9rem;
   }
+
 `
