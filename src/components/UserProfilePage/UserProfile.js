@@ -89,24 +89,48 @@ export default function UserProfile() {
                     <h1>About Me</h1>
                     <div className="titleBorder"></div>
 
-                    <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur dolore explicabo laborum eum officia quae accusantium dolorum. Nostrum ea sint cupiditate? A, repudiandae. Maxime sapiente perferendis, odio provident repellat nesciunt!</span>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur dolore explicabo laborum eum officia quae accusantium dolorum. Nostrum ea sint cupiditate? A, repudiandae. Maxime sapiente perferendis, odio provident repellat nesciunt!</p>
+                    <p>lorem ipsum</p>
                 </div>
 
                 <div className="rightSide">
                     <h1>Personal Information</h1>
                     <div className="titleBorder"></div>
 
-                    <p>Full Name:</p>
-                    <p>Date of Birth:</p>
-                    <p>Age:</p>
-                    <p>Status:</p>
-                    <p>Home Address:</p>
-                    <p>Occupation:</p>
+                    <div className="userInfoContainer">
+                      <div>
+                        <h3>Full Name</h3>
+                        <p>Jay Smith</p>
+                      </div>
+
+                      <div>
+                        <h3>Date of Birth</h3>
+                        <p>25/1/2022</p>
+                      </div>
+
+                      <div>
+                        <h3>Age</h3>
+                        <p>37</p>
+                      </div>
+
+                      <div>
+                        <h3>Status</h3>
+                        <p>Secret</p>
+                      </div>
+
+                      <div>
+                        <h3>Home Address</h3>
+                        <p>Auckland CBD</p>
+                      </div>
+
+                      <div>
+                        <h3>Occupation</h3>
+                        <p>Programmer</p>
+                      </div>
+                    </div>
 
                 </div>
-
               </div>
-
           </div>
             
         </UserProfileStyle>
@@ -117,18 +141,26 @@ export default function UserProfile() {
 const UserProfileStyle = styled.div`
     padding: 0;
     margin: 0;
-    /* background-color: #101820FF; */
 
     background-image: url(${BGimg});
     background-size: cover;
     background-repeat: no-repeat;
 
-    label {
-      color: crimson;
-      font-weight: bold;
-    }
 
     h1 {
+      color: #FFF;
+    }
+
+    h3 {
+      color: crimson;
+    }
+
+    label {
+      color: crimson;
+    }
+
+    p {
+      font-family: 'Space Grotesk', sans-serif;
       color: #FFF;
     }
 
@@ -141,7 +173,6 @@ const UserProfileStyle = styled.div`
       align-items: center;
       justify-content: center;
       color: #F49F1C;
-
     }
 
     .imagesContainer {
@@ -159,7 +190,6 @@ const UserProfileStyle = styled.div`
       img {
         width: 25px;
         height: 25px;
-
       }
     }
 
@@ -174,20 +204,16 @@ const UserProfileStyle = styled.div`
 
       margin-top: 5vh;
 
-      width: 160vh;
+      width: 120vh;
       height: 80vh;
-      // background-color: #FFF; /* WHITE COLOUR */
-      color: #FEE715FF;
-
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
+      /* border: 1px solid crimson; */
+      
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      
       .leftSide {
-        padding: 0px 50px 20px 80px;
-        margin-top: -16vh;
-
-        /* border: 1px solid #000000; */
+        padding: 20px 40px;
+        border: 1px solid crimson;
 
         .titleBorder {
           border-bottom: 2px solid #FFF;
@@ -202,18 +228,26 @@ const UserProfileStyle = styled.div`
       }
 
       .rightSide {
-        padding: 20px 80px;
-        
+        padding: 20px 40px;
+        background: rgba(255, 255, 255, 0.08);
+
         .titleBorder {
           border-bottom: 2px solid #FFF;
           width: 50vh;
           margin: -10px 0px 0px 0px;
         }
 
-        p {
-          font-weight: bold;
-          color: #FFF;
+        .titleBorderName {
+          width: 50px;
+          border-bottom: 1px solid #FFF;
+        }
+
+        .userInfoContainer {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          grid-auto-rows: minmax(120px, auto);
         }
       }
+      
     }
 `
