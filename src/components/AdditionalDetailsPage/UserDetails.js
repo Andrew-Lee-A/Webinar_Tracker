@@ -169,7 +169,7 @@ const UserDetailsStyle = styled.div`
         border-radius: 50px;
         font-size: 17px;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        font-weight: bold;
+        /* font-weight: bold; */
         text-align: left;
         text-indent: 30px;
         padding: 0 20px;

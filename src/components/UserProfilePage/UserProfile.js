@@ -54,7 +54,6 @@ export default function UserProfile() {
 
               <div className="imagesContainer">
 
-
                 <div className="dashboardContainer" onMouseOver={MouseOverHandlerOne} onMouseOut={MouseOutHandlerOne}>
                     <Link to="/dashboard">
                       <img 

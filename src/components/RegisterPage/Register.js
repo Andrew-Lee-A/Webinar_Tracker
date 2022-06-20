@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 // image
 import RegisterImg from '../RegisterPage/RegisterImages/kelly-sikkema-tk9RQCq5eQo-unsplash.jpg';
-// import username from '../RegisterPage/RegisterImages/user.png'
-// import email from '../RegisterPage/RegisterImages/mail.png'
-// import pwd from '../RegisterPage/RegisterImages/lock.png'
-// import confirmpwd from '../RegisterPage/RegisterImages/reset-password.png'
+import username from '../RegisterPage/RegisterImages/user.png'
+import email from '../RegisterPage/RegisterImages/mail.png'
+import pwd from '../RegisterPage/RegisterImages/lock.png'
+import confirmpwd from '../RegisterPage/RegisterImages/reset-password.png'
 // styled-components
 import styled from "styled-components";
 // import "react-toastify/dist/ReactToastify.css";
@@ -83,6 +83,8 @@ const Register = () => {
             });
         }
     }
+
+    /* handles the visibility of the password and confirm password input */
     
     return (
         <>
@@ -99,6 +101,7 @@ const Register = () => {
                             <div>
                                 <div className={errors.name && touched.name ? styles.invalidSign : !errors.name && touched.name ? styles.validSign : undefined} >
 
+                                    <img src={username} alt="" className="usernameImg"/>
                                     <input  
                                         className="username"  
                                         placeholder="Your Username" 
@@ -117,6 +120,9 @@ const Register = () => {
 
                             <div> 
                                 <div className={errors.email && touched.email ? styles.invalidSign : !errors.email && touched.email ? styles.validSign : undefined} >
+
+                                     <img src={email} alt="" className="emailImg"/>
+
                                     <input 
                                         className="emailAddress"  
                                         placeholder="Your Email" 
@@ -133,10 +139,14 @@ const Register = () => {
                         
                             <div>
                                 <div className={errors.password && touched.password ? styles.invalidSign : !errors.password && touched.password ? styles.validSign : undefined} >
+
+                                     <img src={pwd} alt="" />
+
                                     <input 
                                         className="password"  
                                         placeholder="Your Password" 
-                                        type="password" 
+                                        type="password"
+                                        id="pass" 
                                         name="password"
                                         value={data.password}
                                         onChange={handleChange}
@@ -149,10 +159,14 @@ const Register = () => {
 
                             <div>
                                 <div className={errors.confirmPassword && touched.confirmPassword ? styles.invalidSign : !errors.confirmPassword && touched.confirmPassword ? styles.validSign : undefined}>
+
+                                    <img src={confirmpwd} alt="" />
+
                                     <input 
                                         className="password"  
                                         placeholder="Your Confirm Password" 
-                                        type="password" 
+                                        type="password"
+                                        id="pass"
                                         name="confirmPassword"
                                         value={data.confirmPassword}
                                         onChange={handleChange}
@@ -291,8 +305,8 @@ const RegisterStyle = styled.div`
         border-style: none;
         border: 2px solid #000000;
 
-        text-align: center;
-        /* text-indent: 40px; */
+        text-align: left;
+        text-indent: 40px;
 
         :hover {
             border: 2px solid #fff;
@@ -309,8 +323,8 @@ const RegisterStyle = styled.div`
         border-style: none;
         border: 2px solid #000000;
 
-        text-align: center;
-        /* text-indent: 40px; */
+        text-align: left;
+        text-indent: 40px;
 
         :hover {
             border: 2px solid #fff;
@@ -327,8 +341,8 @@ const RegisterStyle = styled.div`
         border-style: none;
         border: 2px solid #000000;
 
-        text-align: center;
-        /* text-indent: 40px; */
+        text-align: left;
+        text-indent: 40px;
 
         :hover {
             border: 2px solid #fff;
@@ -367,7 +381,23 @@ const RegisterStyle = styled.div`
     img {
         width: 25px;
         height: 25px;
-        /* margin-top: 30px; */
+
+        position: absolute;
+        margin-top: 10px;
+        margin-left: 10px;
+    }
+
+    .usernameImg {
+        width: 22px;
+        height: 22px;
+        margin-left: 12px;
+    }
+
+    .emailImg {
+        width: 22px;
+        height: 22px;
+
+        margin-left: 12px;
     }
 
 `

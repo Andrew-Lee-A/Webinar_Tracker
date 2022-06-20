@@ -59,7 +59,7 @@ const QualityStyle = styled.div`
 
     .qualiyContainer {
         display: grid;
-        grid-template-columns: repeat(2, 39rem);
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .leftArea, .rightArea {
