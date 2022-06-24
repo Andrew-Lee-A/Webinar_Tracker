@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 
 // background images
@@ -13,8 +13,30 @@ import skill from '../AdditionalDetailsPage/AdditionalDetailsImages/skill.png'
 import total from '../AdditionalDetailsPage/AdditionalDetailsImages/platform.png'
 import platform from '../AdditionalDetailsPage/AdditionalDetailsImages/amount.png'
 
+// JS file
+// import { validate } from "./ValidateForm"
+
 export default function UserDetails() {
-  return (
+
+    const [data, setData] = useState ({
+        name: "",
+        company: "",
+        experience: "",
+        industry: "",
+        occupation: "",
+        country: "",
+        skill: '',
+        notification: "",
+        platform: "",
+    })
+
+    // const [errors, setErrors] = useState({});
+
+
+
+    const [fruit, setFruit] = useState();
+    
+    return (
       <>
         <UserDetailsStyle>
 
@@ -30,6 +52,7 @@ export default function UserDetails() {
                         <input  
                             type="text" 
                             className="input"
+                            value={data.name}
                         />
                         <label className="label">Prefered Name </label>
                     </div>
@@ -38,7 +61,8 @@ export default function UserDetails() {
                         <img src={company} alt="" />
                         <input 
                             type="text" 
-                            className="input" 
+                            className="input"
+                            value={data.company}
                         />
                         <label className="label">Company's Name </label>
                     </div>
@@ -48,6 +72,7 @@ export default function UserDetails() {
                         <input 
                             type="text" 
                             className="input" 
+                            value={data.experience}
                         />
                         <label className="label">Years of Experience </label>
                     </div>
@@ -56,7 +81,8 @@ export default function UserDetails() {
                         <img src={industry} alt="" />
                         <input 
                             type="text" 
-                            className="input" 
+                            className="input"
+                            value={data.industry}
                         />
                         <label className="label">Industry or Study Field </label>
                     </div>
@@ -65,7 +91,8 @@ export default function UserDetails() {
                         <img src={occupation} alt="" />
                         <input 
                             type="text" 
-                            className="input" 
+                            className="input"
+                            value={data.occupation}
                         />
                         <label className="label">Occupation </label>
                     </div>
@@ -75,17 +102,38 @@ export default function UserDetails() {
                         <input 
                             type="text" 
                             className="input" 
+                            value={data.country}
                         />
                         <label className="label">Country of Origin </label>
                     </div>
 
-                    <div className="inputWrapper">
-                        <img src={skill} alt="" />
-                        <input 
-                            type="text" 
-                            className="input" 
-                        />
-                        <label className="label">Interested skills to learn from our webinar </label>
+                    <div className="inputWrapperSkillsContainer">
+
+                        <div className="inputWrapperSkill">
+
+                            <img src={skill} alt="" />
+                            <input
+                                type="text" 
+                                className="input" 
+                                value={data}
+                                disabled="yes"
+                            >
+                            </input>
+                            <label className="label">Programming Skill</label>
+                            
+                        </div>
+
+                        <select id="fruits" className="progLanguagesSelection" value={data.skill} onChange={(e) => setData(e.target.value)}>
+                            <option selected value="" disabled="yes" >Programming Languages</option>
+                            <option value="Java">Java</option>
+                            <option value="C">C</option>
+                            <option value="C#">C#</option>
+                            <option value="C++">C++</option>
+                            <option value="JavaScript">JavaScript</option>
+                            <option value="Python">Python</option>
+                            <option value="Kotlin">Kotlin</option>
+                            <option value="PHP">PHP</option>
+                        </select>
                     </div>
 
                     <div className="inputWrapper">
@@ -93,20 +141,22 @@ export default function UserDetails() {
                         <input 
                             type="text" 
                             className="input" 
+                            value={data.total}
                         />
                         <label className="label">Amount of push notification preferred</label>
                     </div>
 
                     <div className="inputWrapper">
                         <img src={platform} alt="" />
-                        <input 
+                        <input
                             type="text" 
-                            className="input" 
+                            className="input"
+                            value={data.platform} 
                         />
                         <label className="label">Prefered platform e.g. Ms Teams or Email etc</label>
                     </div>
 
-                    <button className="submitButton" onSubmit="">Submit</button>
+                    <button className="submitButton" type='submit'>Submit</button>
 
                 </form>
             </div>
@@ -154,6 +204,38 @@ const UserDetailsStyle = styled.div`
         width: 90%;
         margin-bottom: 15px;
     }
+
+    .inputWrapperSkillsContainer {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        .progLanguagesSelection {
+            margin-bottom: 15px;
+            width: 96%;
+            border-radius: 50px;
+            outline: none;
+            text-decoration: none;
+            border: 1px solid #D3D3D3;
+            background: transparent;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            cursor: pointer;
+            text-indent: 5px;
+
+            option {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                color: #000000;
+            }
+        }
+
+        .inputWrapperSkill {
+            
+            position: relative;
+            height: 40px;
+            width: 80%;
+            margin-bottom: 15px;
+        }
+    }
+    
 
     .input {
         position: absolute;

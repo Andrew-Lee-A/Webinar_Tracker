@@ -50,7 +50,7 @@ const Register = () => {
     const onSubmit = (event) => {   
         event.preventDefault();
 
-        if(!Object.keys(errors).length) {
+        if(!Object.keys(errors).length) { /* if there is no errros */
 
             // Code to push the data to the database
             const api = ``;
@@ -72,7 +72,7 @@ const Register = () => {
 
             sendData();
 
-        } else {
+        } else { /* if errors detected */
             reminder("The registration form is not yet completed, please check it again!", "error");
             setTouched({
                 name: true,

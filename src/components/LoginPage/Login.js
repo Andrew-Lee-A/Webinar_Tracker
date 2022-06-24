@@ -30,7 +30,7 @@ export default function Login() {
       .get(urlAPI)
       .then((response) => response.data)
       .then((data) => (data.ok ? reminder("You have logged in successfully!" ,"success") : reminder("Username or password is incorrect, try again!" , "error")));
-      toast.promise(api, {
+        toast.promise(api, {
         pending: "Loading. . . please wait",
         success: false,
         error: "Error occurs, please try again!",
@@ -151,8 +151,8 @@ const LoginWrapperStyle = styled.div`
   }
 
   .usernamePassword {
-  margin-left: 90px;
-  margin-top: 10px;
+    margin-left: 90px;
+    margin-top: 10px;
   }
 
   form {
