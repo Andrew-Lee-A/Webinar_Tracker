@@ -22,20 +22,20 @@ export default function UserDetails() {
         name: "",
         company: "",
         experience: "",
-        industry: "",
+        field: '',
         occupation: "",
         country: "",
-        skill: '',
+        skill: "",
         notification: "",
         platform: "",
     })
 
+    // const handleChange = (event) => {
+    //     setData({ ...data, [event.target.name]: event.target.value})
+    // }
+
     // const [errors, setErrors] = useState({});
 
-
-
-    const [fruit, setFruit] = useState();
-    
     return (
       <>
         <UserDetailsStyle>
@@ -77,14 +77,29 @@ export default function UserDetails() {
                         <label className="label">Years of Experience </label>
                     </div>
 
-                    <div className="inputWrapper">
-                        <img src={industry} alt="" />
-                        <input 
-                            type="text" 
-                            className="input"
-                            value={data.industry}
-                        />
-                        <label className="label">Industry or Study Field </label>
+                    <div className="inputWrapperContainer">
+
+                        <div className="inputWrapperIndustry">
+                            <img src={industry} alt="" />
+                            <input 
+                                type="text" 
+                                className="input"
+                                value={data.field}
+                                disabled="yes"
+                            />
+                            <label className="label">{/* Industry or  */}Prefered Field </label>
+
+                        </div>
+
+                        <select id="Field" className="progLanguagesAndStudyFieldSelection" value={data.field} onChange={(e) => setData(e.target.value)}>
+                            <option selected value="" disabled="yes" >Choose Field</option>
+                            <option value="Civil Engineer">Civil Engineer</option>
+                            <option value="Software Engineer">Software Engineer</option>
+                            <option value="Electrical Enginner">Electrical Enginner</option>
+                            <option value="Chemical Enginner">Chemical Enginner</option>
+                            <option value="Mechanical Enginner">Mechanical Enginner</option>
+                        </select>
+
                     </div>
 
                     <div className="inputWrapper">
@@ -107,7 +122,7 @@ export default function UserDetails() {
                         <label className="label">Country of Origin </label>
                     </div>
 
-                    <div className="inputWrapperSkillsContainer">
+                    <div className="inputWrapperContainer">
 
                         <div className="inputWrapperSkill">
 
@@ -115,7 +130,7 @@ export default function UserDetails() {
                             <input
                                 type="text" 
                                 className="input" 
-                                value={data}
+                                value= {data.skill}
                                 disabled="yes"
                             >
                             </input>
@@ -123,7 +138,7 @@ export default function UserDetails() {
                             
                         </div>
 
-                        <select id="fruits" className="progLanguagesSelection" value={data.skill} onChange={(e) => setData(e.target.value)}>
+                        <select id="programmingSkill" className="progLanguagesAndStudyFieldSelection" value={data.skill} onChange={(e) => setData(e.target.value)}>
                             <option selected value="" disabled="yes" >Programming Languages</option>
                             <option value="Java">Java</option>
                             <option value="C">C</option>
@@ -205,11 +220,11 @@ const UserDetailsStyle = styled.div`
         margin-bottom: 15px;
     }
 
-    .inputWrapperSkillsContainer {
+    .inputWrapperContainer {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
 
-        .progLanguagesSelection {
+        .progLanguagesAndStudyFieldSelection {
             margin-bottom: 15px;
             width: 96%;
             border-radius: 50px;
@@ -221,6 +236,10 @@ const UserDetailsStyle = styled.div`
             cursor: pointer;
             text-indent: 5px;
 
+            :hover {
+                border: 1px solid #000000;
+            }
+
             option {
                 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
                 color: #000000;
@@ -229,6 +248,13 @@ const UserDetailsStyle = styled.div`
 
         .inputWrapperSkill {
             
+            position: relative;
+            height: 40px;
+            width: 80%;
+            margin-bottom: 15px;
+        }
+
+        .inputWrapperIndustry {
             position: relative;
             height: 40px;
             width: 80%;
@@ -287,7 +313,6 @@ const UserDetailsStyle = styled.div`
         /* font-weight: bold; */
         transition: 0.5s;
         z-index: 0;
-
     }
 
     .submitButton {
