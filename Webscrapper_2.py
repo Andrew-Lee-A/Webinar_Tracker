@@ -9,7 +9,7 @@ import requests
 import pandas as pd
 from pandas import DataFrame
 from urllib.parse import urljoin
-
+from pymongo_test_insert import get_database
 
 
 # In[2]:
@@ -161,7 +161,7 @@ reg_link = soup.findAll('a',class_='link-complex link--no-style',href=True)
 
 def prepend(list, str):
     str +='{0}'
-    list = [str.format(i) for i in list]
+    #list = [str.format(i) for i in list]
     return (list)
 
 
@@ -182,7 +182,7 @@ reg = CPD_Convert(reg)
 # In[18]:
 
 
-reg = prepend(reg,title)
+reg = prepend(reg,base_url)
 
 
 # In[19]:
@@ -193,6 +193,20 @@ reg = prepend(reg,title)
 
 result = list(zip(title,price,CPD,date_time,reg))
 result
+
+dbname = get_database()
+collection_name = dbname["webinars"]
+
+for i in result:
+    py_collection = {
+    "Webinar Title" : result[i].title,
+    "price" : result[i].price,
+    "CPD" : result[i].CPD,
+    "date_time" : result[i].date_time,
+    "link" : result[i].reg
+    }
+    collection_name.insert_one[py_collection]
+
 
 df = pd.set_option('display.max_rows',5000)
 df = pd.set_option('display.max_columns',5000)
