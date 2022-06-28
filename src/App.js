@@ -11,6 +11,8 @@ import UserDetails from './components/AdditionalDetailsPage/UserDetails'
 import UserProfile from './components/UserProfilePage/UserProfile'
 import UserSetting from './components/UserProfilePage/UserSetting/UserSetting'
 
+// TESTING ONLY
+
 export default function App() {
   return (
       <div className='App'>

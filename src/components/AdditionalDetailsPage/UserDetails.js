@@ -13,7 +13,7 @@ import skill from '../AdditionalDetailsPage/AdditionalDetailsImages/skill.png'
 import total from '../AdditionalDetailsPage/AdditionalDetailsImages/platform.png'
 import platform from '../AdditionalDetailsPage/AdditionalDetailsImages/amount.png'
 
-// JS file
+/* JS file */
 // import { validate } from "./ValidateForm"
 
 export default function UserDetails() {
@@ -95,9 +95,9 @@ export default function UserDetails() {
                             <option selected value="" disabled="yes" >Choose Field</option>
                             <option value="Civil Engineer">Civil Engineer</option>
                             <option value="Software Engineer">Software Engineer</option>
-                            <option value="Electrical Enginner">Electrical Enginner</option>
-                            <option value="Chemical Enginner">Chemical Enginner</option>
-                            <option value="Mechanical Enginner">Mechanical Enginner</option>
+                            <option value="Electrical Enginner">Electrical Engineer</option>
+                            <option value="Chemical Enginner">Chemical Engineer</option>
+                            <option value="Mechanical Enginner">Mechanical Engineer</option>
                         </select>
 
                     </div>
@@ -151,24 +151,48 @@ export default function UserDetails() {
                         </select>
                     </div>
 
-                    <div className="inputWrapper">
-                        <img src={total} alt="" />
-                        <input 
-                            type="text" 
-                            className="input" 
-                            value={data.total}
-                        />
-                        <label className="label">Amount of push notification preferred</label>
+                    <div className="inputWrapperContainer">
+
+                        <div className="inputWrapperTotal">
+                            <img src={total} alt="" />
+                            <input 
+                                type="text" 
+                                className="input" 
+                                value={data.total}
+                                disabled="yes"
+                            />
+                            <label className="label">Push Notification</label>
+                        </div>
+
+                        <select id="programmingSkill" className="progLanguagesAndStudyFieldSelection" value={data.total} onChange={(e) => setData(e.target.value)}>
+                            <option selected value="" disabled="yes" >Choose Amount</option>
+                            <option value="Weekly">Weekly</option>
+                            <option value="Fortnightly">Fortnightly (every 2 weeks)</option>
+                            <option value="Monthly">Monthly</option>
+                            <option value="Quarterly">Quarterly (every 4 months) </option>
+                            <option value="Yearly">Yearly</option>
+                        </select>
                     </div>
 
-                    <div className="inputWrapper">
-                        <img src={platform} alt="" />
-                        <input
-                            type="text" 
-                            className="input"
-                            value={data.platform} 
-                        />
-                        <label className="label">Prefered platform e.g. Ms Teams or Email etc</label>
+                    <div className="inputWrapperContainer">
+
+                        <div className="inputWrapperPlatform">
+                            <img src={platform} alt="" />
+                            <input
+                                type="text" 
+                                className="input"
+                                value={data.platform}
+                                disabled="yes"
+                            />
+                            <label className="label">Prefered platform</label>
+                        </div>
+
+                        <select id="programmingSkill" className="progLanguagesAndStudyFieldSelection" value={data.platform} onChange={(e) => setData(e.target.value)}>
+                            <option selected value="" disabled="yes" >Choose Platform</option>
+                            <option value="Microsoft Teams">Microsoft Teams</option>
+                            <option value="Email">Email</option>
+                            <option value="Slack">Slack</option>
+                        </select>
                     </div>
 
                     <button className="submitButton" type='submit'>Submit</button>
@@ -255,6 +279,20 @@ const UserDetailsStyle = styled.div`
         }
 
         .inputWrapperIndustry {
+            position: relative;
+            height: 40px;
+            width: 80%;
+            margin-bottom: 15px;
+        }
+
+        .inputWrapperTotal {
+            position: relative;
+            height: 40px;
+            width: 80%;
+            margin-bottom: 15px;
+        }
+
+        .inputWrapperPlatform {
             position: relative;
             height: 40px;
             width: 80%;
