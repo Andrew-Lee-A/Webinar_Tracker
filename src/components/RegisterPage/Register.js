@@ -37,9 +37,14 @@ const Register = () => {
 
     const handleChange = (event) => {
         if (event.target.name === "isAccepted") {
-            setData({ ...data, [event.target.name]: event.target.checked });
+
+            setData({ 
+                ...data, [event.target.name]: event.target.checked 
+            });
         } else {
-            setData({ ...data, [event.target.name]: event.target.value });
+            setData({ 
+                ...data, [event.target.name]: event.target.value
+            });
         }
     };
 
@@ -107,7 +112,7 @@ const Register = () => {
                                         placeholder="Your Username" 
                                         type="text" 
                                         name="name"
-                                        value={data.username}
+                                        value={data.name}
                                         onChange={handleChange}
                                         onFocus={handleFocus}
                                         autoComplete="off"

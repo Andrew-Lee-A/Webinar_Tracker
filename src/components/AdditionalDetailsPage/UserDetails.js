@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 // background images
@@ -14,13 +14,13 @@ import total from '../AdditionalDetailsPage/AdditionalDetailsImages/platform.png
 import platform from '../AdditionalDetailsPage/AdditionalDetailsImages/amount.png'
 
 /* JS file */
-// import { validate } from "./ValidateForm"
+import { validation } from './ValidateForm'
 
-export default function UserDetails() {
+const UserDetails = () => {
 
-    const [data, setData] = useState ({
-        name: "",
-        company: "",
+    const [values, setValues] = useState ({
+        preferedname: "",
+        thecompany: "",
         experience: "",
         field: '',
         occupation: "",
@@ -29,12 +29,24 @@ export default function UserDetails() {
         notification: "",
         platform: "",
     })
+    
+    const [errors, setErrors] = useState({});
 
-    // const handleChange = (event) => {
-    //     setData({ ...data, [event.target.name]: event.target.value})
-    // }
+    const handleChange = (e) => {
+        setValues({
+            ...values,
+            [e.target.name]: e.target.value,
+        });
+    };
 
-    // const [errors, setErrors] = useState({});
+    const handleSubmit = (event) => {
+        
+    }
+    
+    const handleClick = (e) => {
+        e.preventDefault();
+        setErrors(validation(values))
+    };
 
     return (
       <>
@@ -42,7 +54,7 @@ export default function UserDetails() {
 
             <div className="userDetailsWrapper">
 
-                <form action="" className="UserDetailsForm" onSubmit="/* TODO HERE */">
+                <form action="" className="UserDetailsForm" onSubmit={handleSubmit}>
 
                     <h2 className="formTitle">Additional Details Form</h2>
                     <p>Dear customer you are required to fill in the form to proceed</p>
@@ -52,30 +64,42 @@ export default function UserDetails() {
                         <input  
                             type="text" 
                             className="input"
-                            value={data.name}
+                            name='preferedname'
+                            value={values.preferedname}
+                            onChange={handleChange}
                         />
+                        
                         <label className="label">Prefered Name </label>
                     </div>
+                    {errors.preferedname && <p className="error">{errors.preferedname}</p>}
 
                     <div className="inputWrapper">
                         <img src={company} alt="" />
                         <input 
                             type="text" 
                             className="input"
-                            value={data.company}
+                            name="thecompany"
+                            value={values.thecompany}
+                            onChange={handleChange}
                         />
+
                         <label className="label">Company's Name </label>
                     </div>
+                    {errors.thecompany && <p className="error">{errors.thecompany}</p>}
 
                     <div className="inputWrapper">
                         <img src={experience} alt="" />
                         <input 
                             type="text" 
-                            className="input" 
-                            value={data.experience}
+                            className="input"
+                            name="experience"
+                            value={values.experience}
+                            onChange={handleChange}
                         />
+
                         <label className="label">Years of Experience </label>
                     </div>
+                    {errors.experience && <p className="error">{errors.experience}</p>}
 
                     <div className="inputWrapperContainer">
 
@@ -84,14 +108,16 @@ export default function UserDetails() {
                             <input 
                                 type="text" 
                                 className="input"
-                                value={data.field}
+                                name="field"
+                                value={values.field}
                                 disabled="yes"
                             />
-                            <label className="label">{/* Industry or  */}Prefered Field </label>
+
+                        <label className="label">{/* Industry or  */} Prefered Field </label>
 
                         </div>
 
-                        <select id="Field" className="progLanguagesAndStudyFieldSelection" value={data.field} onChange={(e) => setData(e.target.value)}>
+                        <select id="Field" className="progLanguagesAndStudyFieldSelection" name='field' value={values.field} onChange={handleChange} >
                             <option selected value="" disabled="yes" >Choose Field</option>
                             <option value="Civil Engineer">Civil Engineer</option>
                             <option value="Software Engineer">Software Engineer</option>
@@ -107,20 +133,28 @@ export default function UserDetails() {
                         <input 
                             type="text" 
                             className="input"
-                            value={data.occupation}
+                            name='occupation'
+                            value={values.occupation}
+                            onChange={handleChange}
                         />
+
                         <label className="label">Occupation </label>
                     </div>
+                    {errors.occupation && <p className="error">{errors.occupation}</p>}
 
                     <div className="inputWrapper">
                         <img src={country} alt="" />
                         <input 
                             type="text" 
                             className="input" 
-                            value={data.country}
+                            name='country'
+                            value={values.country}
+                            onChange={handleChange}
                         />
+
                         <label className="label">Country of Origin </label>
                     </div>
+                    {errors.country && <p className="error">{errors.country}</p>}
 
                     <div className="inputWrapperContainer">
 
@@ -129,8 +163,9 @@ export default function UserDetails() {
                             <img src={skill} alt="" />
                             <input
                                 type="text" 
-                                className="input" 
-                                value= {data.skill}
+                                className="input"
+                                name='skill'
+                                value= {values.skill}
                                 disabled="yes"
                             >
                             </input>
@@ -138,7 +173,7 @@ export default function UserDetails() {
                             
                         </div>
 
-                        <select id="programmingSkill" className="progLanguagesAndStudyFieldSelection" value={data.skill} onChange={(e) => setData(e.target.value)}>
+                        <select id="programmingSkill" className="progLanguagesAndStudyFieldSelection" name='skill' value={values.skill} onChange={handleChange}>
                             <option selected value="" disabled="yes" >Programming Languages</option>
                             <option value="Java">Java</option>
                             <option value="C">C</option>
@@ -157,14 +192,15 @@ export default function UserDetails() {
                             <img src={total} alt="" />
                             <input 
                                 type="text" 
-                                className="input" 
-                                value={data.total}
+                                className="input"
+                                name='total'
+                                value={values.total}
                                 disabled="yes"
                             />
                             <label className="label">Push Notification</label>
                         </div>
 
-                        <select id="programmingSkill" className="progLanguagesAndStudyFieldSelection" value={data.total} onChange={(e) => setData(e.target.value)}>
+                        <select id="programmingSkill" className="progLanguagesAndStudyFieldSelection" name='total' value={values.total} onChange={handleChange}>
                             <option selected value="" disabled="yes" >Choose Amount</option>
                             <option value="Weekly">Weekly</option>
                             <option value="Fortnightly">Fortnightly (every 2 weeks)</option>
@@ -181,13 +217,14 @@ export default function UserDetails() {
                             <input
                                 type="text" 
                                 className="input"
-                                value={data.platform}
+                                name='platform'
+                                value={values.platform}
                                 disabled="yes"
                             />
                             <label className="label">Prefered platform</label>
                         </div>
 
-                        <select id="programmingSkill" className="progLanguagesAndStudyFieldSelection" value={data.platform} onChange={(e) => setData(e.target.value)}>
+                        <select id="programmingSkill" className="progLanguagesAndStudyFieldSelection" name='platform' value={values.platform} onChange={handleChange}>
                             <option selected value="" disabled="yes" >Choose Platform</option>
                             <option value="Microsoft Teams">Microsoft Teams</option>
                             <option value="Email">Email</option>
@@ -195,7 +232,7 @@ export default function UserDetails() {
                         </select>
                     </div>
 
-                    <button className="submitButton" type='submit'>Submit</button>
+                    <button className="submitButton" type='submit' onClick={handleClick} >Submit</button>
 
                 </form>
             </div>
@@ -216,7 +253,7 @@ const UserDetailsStyle = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 110vh;
+        height: 120vh;
 
         background-image: url(${backgroundImg});
         background-size:  cover;
@@ -271,7 +308,6 @@ const UserDetailsStyle = styled.div`
         }
 
         .inputWrapperSkill {
-            
             position: relative;
             height: 40px;
             width: 80%;
@@ -300,7 +336,6 @@ const UserDetailsStyle = styled.div`
         }
     }
     
-
     .input {
         position: absolute;
         background: none;
@@ -376,6 +411,12 @@ const UserDetailsStyle = styled.div`
         }
     }
 
+    .error {
+        font-size: 12px;
+        color: red;
+        margin-left: 7vh;
+    }
+
     h2 {
         margin-top: 0px;
     }
@@ -387,3 +428,5 @@ const UserDetailsStyle = styled.div`
         margin-top: 8px;
     }
 `
+
+export default UserDetails;
