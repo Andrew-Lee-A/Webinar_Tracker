@@ -24,5 +24,23 @@ export const validation = (values) => {
         errors.country = "Your country is required"
     }
 
+    /* dropdown menus */
+
+    if (!values.field) {
+        errors.field = "Your field is required"
+    }
+
+    if (!values.skill) {
+        errors.skill = "Your insterested skill of learning programming is required"
+    }
+
+    if (!values.total) {
+        errors.total = "Your push notification is required"
+    }
+
+    if (!values.platform) {
+        errors.platform = "Your prefered platform is required"
+    }
+
     return  errors;
 }

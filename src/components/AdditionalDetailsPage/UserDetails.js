@@ -22,7 +22,7 @@ const UserDetails = () => {
         preferedname: "",
         thecompany: "",
         experience: "",
-        field: '',
+        field: "",
         occupation: "",
         country: "",
         skill: "",
@@ -127,6 +127,8 @@ const UserDetails = () => {
                         </select>
 
                     </div>
+                    {errors.field && <p className="error">{errors.field}</p>}
+
 
                     <div className="inputWrapper">
                         <img src={occupation} alt="" />
@@ -185,6 +187,7 @@ const UserDetails = () => {
                             <option value="PHP">PHP</option>
                         </select>
                     </div>
+                    {errors.skill && <p className="error">{errors.skill}</p>}
 
                     <div className="inputWrapperContainer">
 
@@ -201,7 +204,7 @@ const UserDetails = () => {
                         </div>
 
                         <select id="programmingSkill" className="progLanguagesAndStudyFieldSelection" name='total' value={values.total} onChange={handleChange}>
-                            <option selected value="" disabled="yes" >Choose Amount</option>
+                            <option selected value="" disabled="yes" >Type of push</option>
                             <option value="Weekly">Weekly</option>
                             <option value="Fortnightly">Fortnightly (every 2 weeks)</option>
                             <option value="Monthly">Monthly</option>
@@ -209,6 +212,7 @@ const UserDetails = () => {
                             <option value="Yearly">Yearly</option>
                         </select>
                     </div>
+                    {errors.total && <p className="error">{errors.total}</p>}
 
                     <div className="inputWrapperContainer">
 
@@ -231,6 +235,7 @@ const UserDetails = () => {
                             <option value="Slack">Slack</option>
                         </select>
                     </div>
+                    {errors.platform && <p className="error">{errors.platform}</p>}
 
                     <button className="submitButton" type='submit' onClick={handleClick} >Submit</button>
 
@@ -253,7 +258,7 @@ const UserDetailsStyle = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 120vh;
+        height: 141vh;
 
         background-image: url(${backgroundImg});
         background-size:  cover;
