@@ -8,6 +8,7 @@ const path = require('path')
 
 const helmet = require('helmet')
 const cors = require('cors')
+const webinar = require('./models/webinar');
 
 // const articleRouter = require('./routes/article')
 // const authRouter = require('./routes/authentication')
@@ -18,6 +19,42 @@ app.use(express.json())
 app.use(helmet())
 app.use(cors({ origin: true, credentials: true }))
 
+// mongoose and mongo sandbiox routes
+app.get('/add-webinar', (req, res) => {
+  const webinar1 = new webinar({
+    title: 'Intro to OOP part 2',
+    cpd_hours: 1
+  });
+
+  webinar1.save()
+    .then((result) => {
+      res.send(result)
+    })
+    .catch((err) => {
+      console.log(err);
+    })
+
+})
+
+app.get('/all-webinar', (req, res) => {
+  webinar.find()
+    .then((result) => {
+      res.send(result);
+    })
+    .catch((err) => {
+      console.log(err);
+    })
+})
+
+app.get('/single-webinar', (req, res) => {
+  webinar.findById('62c316becb82dda1a3336e02')
+    .then((result) => {
+      res.send(result)
+    })
+    .catch((err) => {
+      console.log(err);
+    })
+})
 //route
 app.get('/api', (req, res) => {
   res.json({ users: ['userOne', 'userTwo', 'userThree'] })
@@ -64,10 +101,15 @@ mongoose
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
-  .then(() => console.log('DB CONNECTED'))
-  .catch((err) => console.log('DB CONNECTION ERROR', err))
+  .then(() => {
+    console.log("DB CONNECTED");
+    const server = app.listen(port, () =>
+      console.log(`Server is running on port ${port}`)
+    );
+  })
+  .catch((err) => console.log("DB CONNECTION ERROR", err));
 
 // listener
-const server = app.listen(port, () =>
-  console.log(`Server is running on port ${port}`)
-)
+// const server = app.listen(port, () =>
+//   console.log(`Server is running on port ${port}`)
+// )
