@@ -61,7 +61,12 @@ const UserDetails = () => {
 
                     <div className="inputWrapper">
                         <img src={nameIcon} alt="" />
-                        <input  
+                        <input
+                            onKeyPress={(event) => {
+                                if(!/[a-zA-Z]/.test(event.key)) {
+                                    event.preventDefault();
+                                }
+                            }}  
                             type="text" 
                             className="input"
                             name='preferedname'
@@ -69,13 +74,18 @@ const UserDetails = () => {
                             onChange={handleChange}
                         />
                         
-                        <label className="label">Prefered Name </label>
+                        <label className="label"> Prefered Name </label>
                     </div>
                     {errors.preferedname && <p className="error">{errors.preferedname}</p>}
 
                     <div className="inputWrapper">
                         <img src={company} alt="" />
-                        <input 
+                        <input
+                            onKeyPress={(event) => {
+                                if(!/[a-zA-Z]/.test(event.key)) {
+                                    event.preventDefault();
+                                }
+                            }}   
                             type="text" 
                             className="input"
                             name="thecompany"
@@ -83,13 +93,18 @@ const UserDetails = () => {
                             onChange={handleChange}
                         />
 
-                        <label className="label">Company's Name </label>
+                        <label className="label"> Company's Name </label>
                     </div>
                     {errors.thecompany && <p className="error">{errors.thecompany}</p>}
 
                     <div className="inputWrapper">
                         <img src={experience} alt="" />
-                        <input 
+                        <input
+                            onKeyPress={(event) => {
+                                if(!/[0-9]/.test(event.key)) {
+                                    event.preventDefault();
+                                }
+                            }}
                             type="text" 
                             className="input"
                             name="experience"
@@ -97,7 +112,7 @@ const UserDetails = () => {
                             onChange={handleChange}
                         />
 
-                        <label className="label">Years of Experience </label>
+                        <label className="label"> Years of Experience </label>
                     </div>
                     {errors.experience && <p className="error">{errors.experience}</p>}
 
@@ -113,7 +128,7 @@ const UserDetails = () => {
                                 disabled="yes"
                             />
 
-                        <label className="label">{/* Industry or  */} Prefered Field </label>
+                        <label className="label"> Prefered Field </label>
 
                         </div>
 
@@ -132,7 +147,12 @@ const UserDetails = () => {
 
                     <div className="inputWrapper">
                         <img src={occupation} alt="" />
-                        <input 
+                        <input
+                            onKeyPress={(event) => {
+                                if(!/[a-zA-Z]/.test(event.key)) {
+                                    event.preventDefault();
+                                }
+                            }}   
                             type="text" 
                             className="input"
                             name='occupation'
@@ -146,7 +166,12 @@ const UserDetails = () => {
 
                     <div className="inputWrapper">
                         <img src={country} alt="" />
-                        <input 
+                        <input
+                            onKeyPress={(event) => {
+                                if(!/[a-zA-Z]/.test(event.key)) {
+                                    event.preventDefault();
+                                }
+                            }}   
                             type="text" 
                             className="input" 
                             name='country'
@@ -204,7 +229,7 @@ const UserDetails = () => {
                         </div>
 
                         <select id="programmingSkill" className="progLanguagesAndStudyFieldSelection" name='total' value={values.total} onChange={handleChange}>
-                            <option selected value="" disabled="yes" >Type of push</option>
+                            <option selected value="" disabled="yes" >Type of Push</option>
                             <option value="Weekly">Weekly</option>
                             <option value="Fortnightly">Fortnightly (every 2 weeks)</option>
                             <option value="Monthly">Monthly</option>
