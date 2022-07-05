@@ -63,7 +63,7 @@ const UserDetails = () => {
                         <img src={nameIcon} alt="" />
                         <input
                             onKeyPress={(event) => {
-                                if(!/[a-zA-Z]/.test(event.key)) {
+                                if(!/[a-zA-Z ]/.test(event.key)) {
                                     event.preventDefault();
                                 }
                             }}  
@@ -82,7 +82,7 @@ const UserDetails = () => {
                         <img src={company} alt="" />
                         <input
                             onKeyPress={(event) => {
-                                if(!/[a-zA-Z]/.test(event.key)) {
+                                if(!/[a-zA-Z ]/.test(event.key)) {
                                     event.preventDefault();
                                 }
                             }}   
@@ -149,7 +149,7 @@ const UserDetails = () => {
                         <img src={occupation} alt="" />
                         <input
                             onKeyPress={(event) => {
-                                if(!/[a-zA-Z]/.test(event.key)) {
+                                if(!/[a-zA-Z ]/.test(event.key)) {
                                     event.preventDefault();
                                 }
                             }}   
@@ -168,7 +168,7 @@ const UserDetails = () => {
                         <img src={country} alt="" />
                         <input
                             onKeyPress={(event) => {
-                                if(!/[a-zA-Z]/.test(event.key)) {
+                                if(!/[a-zA-Z ]/.test(event.key)) {
                                     event.preventDefault();
                                 }
                             }}   
