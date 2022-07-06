@@ -136,9 +136,10 @@ const UserDetails = () => {
                             <option selected value="" disabled="yes" >Choose Field</option>
                             <option value="Civil Engineer">Civil Engineer</option>
                             <option value="Software Engineer">Software Engineer</option>
-                            <option value="Electrical Enginner">Electrical Engineer</option>
-                            <option value="Chemical Enginner">Chemical Engineer</option>
-                            <option value="Mechanical Enginner">Mechanical Engineer</option>
+                            <option value="Electrical Engineer">Electrical Engineer</option>
+                            <option value="Chemical Engineer">Chemical Engineer</option>
+                            <option value="Mechanical Engineer">Mechanical Engineer</option>
+                            <option value="Architectural Engineer">Architectural Engineer</option>
                         </select>
 
                     </div>
@@ -423,21 +424,23 @@ const UserDetailsStyle = styled.div`
         margin-left: 120px;
         margin-top: 10px;
         padding: 10px 30px;
-        border-radius: 50px;
+        border-radius: 5px;
         border-style: none;
+        border: 2px solid #000000;
 
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         font-weight: bold;
-        font-size: 20px;
+        font-size: 13px;
 
-        background-color: purple;
-        color: #FFF;
+        background-color: transparent;
+        color: purple;
         cursor: pointer;
 
         :hover {
             background-color: #000000;
-            color: cyan;
+            color: #FFF;
             transition: ease-in-out 0.1s;
+            transform: rotate(-3deg);
         }
     }
 

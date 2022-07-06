@@ -45,6 +45,7 @@ export default function Login() {
     }
   };
 
+
   const onFocus = (e) => {
     setTouched({ ...touched, [e.target.name]: true})
   }
@@ -54,7 +55,6 @@ export default function Login() {
     confirmData(data);
   }
 
-  
   return (
       <>
           <LoginWrapperStyle>

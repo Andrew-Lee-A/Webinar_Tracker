@@ -2,6 +2,15 @@ import React from 'react'
 import styled from 'styled-components'
 
 export default function UserSetting() {
+
+    const handleKeyPressLetters = () => {
+    
+    }
+
+    const handleKeyPressNumbers = () => {
+    
+    }
+    
   return (
     <>
         <UserSettingStyle>
@@ -11,10 +20,39 @@ export default function UserSetting() {
                 <span></span>
                 <span></span>
                 <span></span>
-
                 <Form>
                     <form className='form'>
                         <div className="formContainer">
+                            <div className="firstContainer">
+                                <h3>Set up your personal information below:</h3>
+                            </div>
+                            <div className="secondContainer">
+                                <label>Full name</label>
+                                <label>Date of Birth</label>
+
+                                <input type='text' ></input>
+                                <input type='Date' ></input>
+                            </div>
+
+                            <div className="thirdContainer">
+                                <label>Age</label>
+                                <label>Status</label>
+
+                                <input type='text' ></input>
+                                <input type='text' ></input>
+                            </div>
+
+                            <div className="forthContainer">
+                                <label>Home Address</label>
+                                <label>Occupation</label>
+
+                                <input type='text' ></input>
+                                <input type='text' ></input>
+                            </div>
+
+                            <div>
+                                <button type='submit'>Send</button>
+                            </div>
                             
                         </div>
                     </form>
@@ -128,4 +166,29 @@ const Form = styled.div`
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(14px);
     border-radius: 0.8rem;
+
+    .formContainer {
+        padding: 50px 50px;
+    }
+
+    
+    .secondContainer, .thirdContainer, .forthContainer {
+        margin-bottom: 20px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: minmax(40px, auto);
+        column-gap: 40px;
+    }
+
+    input {
+        border-radius: 5px;
+        opacity: 1;
+        text-indent: 10px;
+    }
+
+    h3, label, button {
+        font-family: 'Space Grotesk', sans-serif;
+    }
+
+    
 `
