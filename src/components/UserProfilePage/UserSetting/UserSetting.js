@@ -1,6 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 
+// img
+import BGimg from '../UserProfileImages/kevin-kandlbinder-WrjxzLskZK0-unsplash.jpg'
+
 export default function UserSetting() {
 
     const handleKeyPressLetters = () => {
@@ -20,39 +23,42 @@ export default function UserSetting() {
                 <span></span>
                 <span></span>
                 <span></span>
+
                 <Form>
                     <form className='form'>
                         <div className="formContainer">
-                            <div className="firstContainer">
-                                <h3>Set up your personal information below:</h3>
-                            </div>
-                            <div className="secondContainer">
-                                <label>Full name</label>
-                                <label>Date of Birth</label>
+                            <form>
+                                <div className="firstContainer">
+                                    <h3>Set up your personal information below:</h3>
+                                </div>
+                                <div className="secondContainer">
+                                    <label>Full name</label>
+                                    <label>Date of Birth</label>
 
-                                <input type='text' ></input>
-                                <input type='Date' ></input>
-                            </div>
+                                    <input type='text' ></input>
+                                    <input type='Date' ></input>
+                                </div>
 
-                            <div className="thirdContainer">
-                                <label>Age</label>
-                                <label>Status</label>
+                                <div className="thirdContainer">
+                                    <label>Age</label>
+                                    <label>Status</label>
 
-                                <input type='text' ></input>
-                                <input type='text' ></input>
-                            </div>
+                                    <input type='text' ></input>
+                                    <input type='text' ></input>
+                                </div>
 
-                            <div className="forthContainer">
-                                <label>Home Address</label>
-                                <label>Occupation</label>
+                                <div className="forthContainer">
+                                    <label>Home Address</label>
+                                    <label>Occupation</label>
 
-                                <input type='text' ></input>
-                                <input type='text' ></input>
-                            </div>
+                                    <input type='text' ></input>
+                                    <input type='text' ></input>
+                                </div>
 
-                            <div>
-                                <button type='submit'>Send</button>
-                            </div>
+                                <div>
+                                    <button  className='submitButton' type='submit'>Send</button>
+                                </div>
+                            </form>
                             
                         </div>
                     </form>
@@ -67,111 +73,28 @@ export default function UserSetting() {
 const UserSettingStyle = styled.div`
 
     .background {
-        position: fixed;
         width: 100vw;
         height: 100vh;
-        top: 0;
-        left: 0;
-        background: #3E1E68;
-        overflow: hidden;
-
+       
         display: flex;
         align-items: center;
         justify-content: center;
-    }
 
-    .background span {
-        width: 14vmin;
-        height: 14vmin;
-        border-radius: 14vmin;
-        backface-visibility: hidden;
-        position: absolute;
-        animation: move;
-        animation-duration: 29;
-        animation-timing-function: linear;
-        animation-iteration-count: infinite;
+        background-image: url(${BGimg});
+        background-size: cover;
     }
-
-    .background span:nth-child(0) {
-        color: #FFACAC;
-        top: 6%;
-        left: 14%;
-        animation-duration: 19s;
-        animation-delay: -77s;
-        transform-origin: 4vw -2vh;
-        box-shadow: 28vmin 0 4.387010734264363vmin currentColor;
-    }
-
-    .background span:nth-child(1) {
-        color: #E45A84;
-        top: 49%;
-        left: 23%;
-        animation-duration: 32s;
-        animation-delay: -57s;
-        transform-origin: -19vw 15vh;
-        box-shadow: -28vmin 0 3.5064203115044466vmin currentColor;
-    }
-
-    .background span:nth-child(2) {
-        color: #E45A84;
-        top: 77%;
-        left: 14%;
-        animation-duration: 90s;
-        animation-delay: -198s;
-        transform-origin: -4vw -16vh;
-        box-shadow: -28vmin 0 3.7073627099990407vmin currentColor;
-    }
-
-    .background span:nth-child(3) {
-        color: #E45A84;
-        top: 13%;
-        left: 8%;
-        animation-duration: 115s;
-        animation-delay: -206s;
-        transform-origin: 7vw 1vh;
-        box-shadow: 28vmin 0 3.550989417073249vmin currentColor;
-    }
-
-    .background span:nth-child(4) {
-        color: #E45A84;
-        top: 78%;
-        left: 70%;
-        animation-duration: 182s;
-        animation-delay: -161s;
-        transform-origin: 5vw -12vh;
-        box-shadow: 28vmin 0 3.868470437186696vmin currentColor;
-    }
-
-    .background span:nth-child(5) {
-        color: #E45A84;
-        top: 13%;
-        left: 72%;
-        animation-duration: 117s;
-        animation-delay: -23s;
-        transform-origin: 19vw 9vh;
-        box-shadow: -28vmin 0 3.8744997423586973vmin currentColor;
-    }
-
-    @keyframes move {
-        100% {
-            transform: translate3d(0, 0, 1px) rotate(360deg);
-        }
-    }
-
 `
 
 const Form = styled.div`
     height: 90vh;
     width: 80vw;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(14px);
     border-radius: 0.8rem;
-
+    background: rgba(255, 255, 255, 0.08);
+    
     .formContainer {
         padding: 50px 50px;
     }
 
-    
     .secondContainer, .thirdContainer, .forthContainer {
         margin-bottom: 20px;
         display: grid;
@@ -179,16 +102,42 @@ const Form = styled.div`
         grid-auto-rows: minmax(40px, auto);
         column-gap: 40px;
     }
+    
+    .submitButton {
+        margin-top: 10px;
+        width: 10vw;
+        height: 4vh;
+        border: 1px solid magenta;
+        background-color: transparent;
+        border-radius: 5px;
+
+        :hover {
+            cursor: pointer;
+            border: 1px solid yellow;
+            color: yellow;
+        }
+    }
 
     input {
         border-radius: 5px;
-        opacity: 1;
         text-indent: 10px;
+        outline-style: none;
+
+        :hover {
+            border: 3px solid blueviolet;
+            border-radius: 5px;
+        }
     }
 
-    h3, label, button {
+    h3 {
         font-family: 'Space Grotesk', sans-serif;
+        font-weight: 800;
+        color: #FFF;
     }
-
     
+
+    label, button {
+        font-family: 'Space Grotesk', sans-serif;
+        color: magenta;
+    }
 `
