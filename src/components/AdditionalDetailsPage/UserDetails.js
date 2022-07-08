@@ -145,7 +145,6 @@ const UserDetails = () => {
                     </div>
                     {errors.field && <p className="error">{errors.field}</p>}
 
-
                     <div className="inputWrapper">
                         <img src={occupation} alt="" />
                         <input

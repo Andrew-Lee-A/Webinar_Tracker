@@ -10,46 +10,46 @@ function Footer() {
 
     return (
         <>
-        <FooterStyle>
-            <div className="footerContainer">
-                <div className="babcockCompany">
-                    CPD Hub Company
+            <FooterStyle>
+                <div className="footerContainer">
+                    <div className="babcockCompany">
+                        CPD Hub Company
 
-                    <div className="babcockCompanyDetails">
-                        <span>Webinar Tracker</span>                        
-                        <span>331 Queen st, GGWP </span>                        
-                        <span>Auckland CBD</span>                        
-                        <span>+64 022 1122 0001</span>                        
+                        <div className="babcockCompanyDetails">
+                            <span>Webinar Tracker</span>                        
+                            <span>331 Queen st, GGWP </span>                        
+                            <span>Auckland CBD</span>                        
+                            <span>+64 022 1122 0001</span>                        
+                        </div>
+                    </div>
+
+                    <div className="siteInfo">
+                        Site Information
+
+                        <div className="siteDetails">
+                            <span>User login</span>                        
+                            <span>Our details </span>                        
+                            <span>Privacy policy</span>                        
+                            <span>Terms of Service</span>                        
+                        </div>
+                    </div>
+
+                    <div className="socialMedia">
+                        Social Media
+
+                        <div className="socialMediaImages">
+                            <img className="smImages" src={Facebook} alt="" />
+                            <img className="smImages" src={Twitter} alt="" />
+                            <img className="smImages" src={Instagram} alt="" />
+                            <img className="smImages" src={Whatsapp} alt="" />
+                        </div>
                     </div>
                 </div>
 
-                <div className="siteInfo">
-                    Site Information
-
-                    <div className="siteDetails">
-                        <span>User login</span>                        
-                        <span>Our details </span>                        
-                        <span>Privacy policy</span>                        
-                        <span>Terms of Service</span>                        
-                    </div>
+                <div className="bottomPart">
+                    <p className="babcockBottom" >CPD hub company </p> copy right reserved
                 </div>
-
-                <div className="socialMedia">
-                    Social Media
-
-                    <div className="socialMediaImages">
-                        <img className="smImages" src={Facebook} alt="" />
-                        <img className="smImages" src={Twitter} alt="" />
-                        <img className="smImages" src={Instagram} alt="" />
-                        <img className="smImages" src={Whatsapp} alt="" />
-                    </div>
-                </div>
-            </div>
-
-            <div className="bottomPart">
-                <p className="babcockBottom" >CPD hub company </p> copy right reserved
-            </div>
-        </FooterStyle>
+            </FooterStyle>
         </>
     );
 }
@@ -69,7 +69,6 @@ const FooterStyle = styled.div`
         margin-top: 20px;
         font-weight: lighter;
     }
-
 
     .footerContainer {
         display: flex;      

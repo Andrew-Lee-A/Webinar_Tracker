@@ -3,29 +3,28 @@ import headImage from "../../img/samantha-borges-EeS69TTPQ18-unsplash.jpg"
 import Babcock from "../../img/approved (2).png"
 import { Link } from 'react-router-dom';
 
-
 function HeadPage () {
     return (
         <>
             <HeadPageStyle>
-            <div className="navbarItems">
-                <img className="babcock" src={Babcock} alt=""></img>
-                <span>CPD Hub</span>
+                <div className="navbarItems">
+                    <img className="babcock" src={Babcock} alt=""></img>
+                    <span>CPD Hub</span>
 
-                <ul>
-                    <li className='about' href="">About</li>
-                    <li className='services' href="">Services</li>
-                    <li className='contact' href="">Contact</li>
-                </ul>
-                
-                <Link to="/login">
-                    <button className='loginButton'>Login</button>
-                </Link>
-                
-                <Link to="/register">
-                    <button className='signupButton'>Register</button>
-                </Link>
-          </div>
+                    <ul>
+                        <li className='about' href="">About</li>
+                        <li className='services' href="">Services</li>
+                        <li className='contact' href="">Contact</li>
+                    </ul>
+                    
+                    <Link to="/login">
+                        <button className='loginButton'>Login</button>
+                    </Link>
+                    
+                    <Link to="/register">
+                        <button className='signupButton'>Register</button>
+                    </Link>
+                </div>
             </HeadPageStyle>
         </>
     )
@@ -103,7 +102,6 @@ const HeadPageStyle = styled.div`
         font-family: 'Space Grotesk', sans-serif;
 
         cursor: pointer;
-
     }
 
     .loginButton, .signupButton {

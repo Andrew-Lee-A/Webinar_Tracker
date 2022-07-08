@@ -6,7 +6,7 @@ import Home from './components/Home/HomeIndex'
 import Login from './components/LoginPage/Login'
 import Register from './components/RegisterPage/Register'
 import Dashboard from './components/DashboardPage/Dashboard'
-// import ForgetPassword from './components/ForgetPasswordPage/ForgetPassword'
+import ForgetPassword from './components/ForgetPasswordPage/ForgetPassword'
 import UserDetails from './components/AdditionalDetailsPage/UserDetails'
 import UserProfile from './components/UserProfilePage/UserProfile'
 import UserSetting from './components/UserProfilePage/UserSetting/UserSetting'
@@ -24,7 +24,7 @@ export default function App() {
             <Route path='/userdetails' element={<UserDetails/>} />
             <Route path='/userprofile' element={<UserProfile/>} />
             <Route path='/usersetting' element={<UserSetting/>} />
-            {/* <Route path='/forget-password' element={<ForgetPassword/>} /> */}
+            <Route path='/forgetpassword' element={<ForgetPassword/>} />
         </Routes>
       </div>
   )

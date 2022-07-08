@@ -22,6 +22,7 @@ function Quality() {
                                 there you go! you're ready to go xD
                             </span>
                     </div>
+                    
                     <div className="rightArea">
                         <img src={Webinar} alt="" className="webinarImageOne" />
                     </div>

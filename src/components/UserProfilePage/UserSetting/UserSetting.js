@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 // img
@@ -6,60 +6,147 @@ import BGimg from '../UserProfileImages/kevin-kandlbinder-WrjxzLskZK0-unsplash.j
 
 export default function UserSetting() {
 
-    const handleKeyPressLetters = () => {
-    
+    /* set up the array of personal information */
+    const [personalInformation, setPersonalInformation] = useState({
+        fullname: "",
+        dateofbirth: "",
+        age: "",
+        status: "",
+        homeaddress: "",
+        occupation: "",
+    });
+
+    /* only letters allowed when pressing the keyboards */
+    const handleKeyPressLetters = (event) => {
+        if(!/[a-zA-Z ]/.test(event.key)) {
+            event.preventDefault();
+        }
     }
 
-    const handleKeyPressNumbers = () => {
-    
+    const onSubmit = (e) => {
+        e.preventDefault();
+        console.log(personalInformation)
     }
-    
+
+    const onChange = (e) => {
+        setPersonalInformation({
+            ...personalInformation,
+            [e.target.name]: e.target.value,
+        })
+    }
+
+    /* to set the default date to the current date instead of showing the yyyy-mm-dd */
+    const today = new Date();
+    const numberOfDaysToAdd = 1; /* add 1 to match NZ date */
+    const date = today.setDate(today.getDate() + numberOfDaysToAdd); 
+    const defaultValue = new Date(date).toISOString().split('T')[0] // convert the date to ISO string
+    // ================================================================= //
+
   return (
     <>
         <UserSettingStyle>
             <div className="background">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-
                 <Form>
-                    <form className='form'>
+                    <form className='form' onSubmit={onSubmit}>
                         <div className="formContainer">
-                            <form>
-                                <div className="firstContainer">
-                                    <h3>Set up your personal information below:</h3>
-                                </div>
-                                <div className="secondContainer">
-                                    <label>Full name</label>
-                                    <label>Date of Birth</label>
 
-                                    <input type='text' ></input>
-                                    <input type='Date' ></input>
-                                </div>
+                            <div className="firstContainer">
+                                <h3>Set up your personal information below:</h3>
+                            </div>
 
-                                <div className="thirdContainer">
-                                    <label>Age</label>
-                                    <label>Status</label>
+                            <div className="secondContainer">
+                                <label>Full name</label>
+                                <label>Date of Birth</label>
 
-                                    <input type='text' ></input>
-                                    <input type='text' ></input>
-                                </div>
+                                {/* Full name */}
+                                <input 
+                                    type="text" 
+                                    required="yes"
+                                    maxLength="22"
+                                    name='fullname'
+                                    value={personalInformation.fullname}
+                                    onChange={onChange}
+                                    onKeyPress={handleKeyPressLetters}>
+                                </input>
 
-                                <div className="forthContainer">
-                                    <label>Home Address</label>
-                                    <label>Occupation</label>
+                                {/* Date */}
+                                <input 
+                                    type="Date"
+                                    required="yes"
+                                    max="2004-12-31" 
+                                    min="1934-12-31"
+                                    name='dateofbirth'
+                                    value={personalInformation.dateOfBirth}
+                                    onChange={onChange}
+                                    defaultValue={defaultValue}>
+                                </input>
+                               
+                            </div>
 
-                                    <input type='text' ></input>
-                                    <input type='text' ></input>
-                                </div>
+                            <div className="thirdContainer">
+                                <label>Age</label>
+                                <label>Status</label>
 
-                                <div>
-                                    <button  className='submitButton' type='submit'>Send</button>
-                                </div>
-                            </form>
-                            
+                                {/* Age */}
+                                <input 
+                                    type='number'
+                                    required="yes"
+                                    min="15" 
+                                    max="70"
+                                    name='age'
+                                    value={personalInformation.age}
+                                    onChange={onChange}
+                                    >
+                                </input>
+
+                                {/* Status */}
+                                <input
+                                    type='text' 
+                                    required="yes"
+                                    maxLength="15"
+                                    name='status' 
+                                    value={personalInformation.status}
+                                    onChange={onChange}
+                                    onKeyPress={handleKeyPressLetters}>
+                                </input>
+
+                            </div>
+
+                            <div className="forthContainer">
+                                <label>Home Address</label>
+                                <label>Occupation</label>
+
+                                {/* Home Address */}
+                                <input 
+                                    type='text' 
+                                    required="yes"
+                                    maxLength="35"
+                                    name='homeaddress' 
+                                    value={personalInformation.homeaddress}
+                                    onChange={onChange}>
+                                </input>
+
+                                {/* occupation */}
+                                <input 
+                                    type='text' 
+                                    required="yes"
+                                    maxLength="30"
+                                    name='occupation' 
+                                    value={personalInformation.occupation}
+                                    onChange={onChange}
+                                    onKeyPress={handleKeyPressLetters}>
+                                </input>
+
+                            </div>
+
+                            <div>
+                                <button  
+                                    className='submitButton' 
+                                    type='submit'
+                                    onKeyPress={handleKeyPressLetters}>
+                                    Save Changes
+                                </button>
+                            </div>
                         </div>
                     </form>
                 </Form>
@@ -135,7 +222,6 @@ const Form = styled.div`
         color: #FFF;
     }
     
-
     label, button {
         font-family: 'Space Grotesk', sans-serif;
         color: magenta;
