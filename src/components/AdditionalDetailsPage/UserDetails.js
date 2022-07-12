@@ -66,10 +66,12 @@ const UserDetails = () => {
                                 if(!/[a-zA-Z ]/.test(event.key)) {
                                     event.preventDefault();
                                 }
-                            }}  
+                            }}
+                            required="yes"
                             type="text" 
                             className="input"
                             name='preferedname'
+                            maxLength="32"
                             value={values.preferedname}
                             onChange={handleChange}
                         />
@@ -85,7 +87,9 @@ const UserDetails = () => {
                                 if(!/[a-zA-Z ]/.test(event.key)) {
                                     event.preventDefault();
                                 }
-                            }}   
+                            }}
+                            required="yes"
+                            maxLength="35"
                             type="text" 
                             className="input"
                             name="thecompany"
@@ -105,7 +109,10 @@ const UserDetails = () => {
                                     event.preventDefault();
                                 }
                             }}
-                            type="text" 
+                            required="yes"
+                            type="number"
+                            min="0"
+                            max="60"
                             className="input"
                             name="experience"
                             value={values.experience}
@@ -120,7 +127,8 @@ const UserDetails = () => {
 
                         <div className="inputWrapperIndustry">
                             <img src={industry} alt="" />
-                            <input 
+                            <input
+                                required="yes"
                                 type="text" 
                                 className="input"
                                 name="field"
@@ -152,9 +160,11 @@ const UserDetails = () => {
                                 if(!/[a-zA-Z ]/.test(event.key)) {
                                     event.preventDefault();
                                 }
-                            }}   
+                            }}
+                            required="yes"
                             type="text" 
                             className="input"
+                            maxLength="32"
                             name='occupation'
                             value={values.occupation}
                             onChange={handleChange}
@@ -171,9 +181,11 @@ const UserDetails = () => {
                                 if(!/[a-zA-Z ]/.test(event.key)) {
                                     event.preventDefault();
                                 }
-                            }}   
+                            }}
+                            required="yes"
                             type="text" 
-                            className="input" 
+                            className="input"
+                            maxLength="22" 
                             name='country'
                             value={values.country}
                             onChange={handleChange}
@@ -218,7 +230,8 @@ const UserDetails = () => {
 
                         <div className="inputWrapperTotal">
                             <img src={total} alt="" />
-                            <input 
+                            <input
+                                required="yes"
                                 type="text" 
                                 className="input"
                                 name='total'
@@ -244,6 +257,7 @@ const UserDetails = () => {
                         <div className="inputWrapperPlatform">
                             <img src={platform} alt="" />
                             <input
+                                required="yes"
                                 type="text" 
                                 className="input"
                                 name='platform'
@@ -257,7 +271,6 @@ const UserDetails = () => {
                             <option selected value="" disabled="yes" >Choose Platform</option>
                             <option value="Microsoft Teams">Microsoft Teams</option>
                             <option value="Email">Email</option>
-                            <option value="Slack">Slack</option>
                         </select>
                     </div>
                     {errors.platform && <p className="error">{errors.platform}</p>}
@@ -386,7 +399,7 @@ const UserDetailsStyle = styled.div`
         padding: 0 20px;
         z-index: 1;
 
-        :focus + .label {
+        :focus + .label, :valid + .label {
             top: -7px;
             left: 50px;
             z-index: 10;
@@ -394,7 +407,7 @@ const UserDetailsStyle = styled.div`
             font-weight: bold;
             color: purple;
 
-            border: 1px solid #000000;
+            /* border: 1px solid #000000; */
             border-radius: 50px;
         }
 

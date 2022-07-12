@@ -86,11 +86,11 @@ export default function UserProfile() {
 
               <div className="userProfileDetailsContainer" >
                 <div className="leftSide">
-                    <h1>About Me</h1>
+                    {/* <h1>About Me</h1>
                     <div className="titleBorder"></div>
 
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur dolore explicabo laborum eum officia quae accusantium dolorum. Nostrum ea sint cupiditate? A, repudiandae. Maxime sapiente perferendis, odio provident repellat nesciunt!</p>
-                    <p>lorem ipsum</p>
+                    <p>lorem ipsum</p> */}
                 </div>
 
                 <div className="rightSide">
