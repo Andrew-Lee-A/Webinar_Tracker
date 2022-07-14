@@ -1,6 +1,5 @@
 import styled from "styled-components";
-import headImage from "../../img/samantha-borges-EeS69TTPQ18-unsplash.jpg"
-import Babcock from "../../img/approved (2).png"
+import headImage from "../../img/cpd-hub.png"
 import { Link } from 'react-router-dom';
 
 function HeadPage () {
@@ -8,15 +7,23 @@ function HeadPage () {
         <>
             <HeadPageStyle>
                 <div className="navbarItems">
-                    <img className="babcock" src={Babcock} alt=""></img>
-                    <span>CPD Hub</span>
+                    {/* <img className="babcock" src={Babcock} alt=""></img>
+                    <span>CPD Hub</span> */}
 
                     <ul>
-                        <li className='about' href="">About</li>
-                        <li className='services' href="">Services</li>
-                        <li className='contact' href="">Contact</li>
+                        <div className="about">
+                            <li className='about' href="">About</li>
+                        </div>
+                        <div className="services">
+                            <li className='services' href="">Services</li>
+                        </div>
+                        <div className="contact">
+                            <li className='contact' href="">Contact</li>
+                        </div>
                     </ul>
-                    
+                </div>
+
+                <div className="buttonsContainer">
                     <Link to="/login">
                         <button className='loginButton'>Login</button>
                     </Link>
@@ -35,20 +42,12 @@ const HeadPageStyle = styled.div`
     margin: 0;
     padding: 0;
     width: 99.9%;
-    height: 45rem;
+    height: 37rem;
     clip-path: polygon(0 100%, 0 0, 100% 0, 100% 85%);
     background-image: url(${headImage});
     background-size: cover;
     background-repeat: no-repeat;
-    color: darkorange;
 
-    .headMessage {
-        font-size: 70px;
-        font-weight: bold;
-        padding: 40px;
-        font-family: 'Beau Rivage', cursive;
-    }
-    
     span {
         display: flex;
         align-items: center;
@@ -56,11 +55,22 @@ const HeadPageStyle = styled.div`
         font-size: 2rem;
     }
 
-    .navbarItems {
+    ul {
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+
+    .navbarItems {
         padding: 30px 10px;
+    }
+
+    .buttonsContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 44vh;
+        margin-right: 13px;
     }
 
     .babcock {
@@ -80,40 +90,44 @@ const HeadPageStyle = styled.div`
         font-family: 'Space Grotesk', sans-serif;
         font-weight: bold;
         
-        color: darkorange;
+        color: aqua;
 
+    }
+    
+    .about, .services, .contact {
+        
         :hover {
-            margin-top: 10px;
-            border-bottom: 2px black solid;
-            border-width: 50%;
-            transform-origin: left;
-            transition: all 0.5s ease;
+            /* margin-top: 4px;
+            transition: all 0.6s ease; */
+            border-bottom: 1px solid #ccc;
         }
     }
+
+    
 
     .loginButton, .signupButton {
         margin-left: 20px;
-        padding: 9px 50px;
-        background-color: rgba(0, 0, 0, 2);
+        padding: 9px 40px;
         border: none;
-        border-radius: 50px;
+        border-radius: 5px;
+        background-color: transparent;
+        border: 2px solid #000000;
+        color: #fff;
+        font-weight: lighter;
         color: white;
-        transition: all ease 0.3s ease 0s;
+        transition: all ease 0.3s;
         font-family: 'Space Grotesk', sans-serif;
 
         cursor: pointer;
-    }
-
-    .loginButton, .signupButton {
-        background-color: transparent;
-        border: 3px solid #000000;
-        color: red;
-        font-weight: bold;
 
         :hover {
             background-color: #000000;
-            color: darkorange;
+            color: aqua;
         }
+    }
+
+    .signupButton {
+        width: 25vh;
     }
 
 `

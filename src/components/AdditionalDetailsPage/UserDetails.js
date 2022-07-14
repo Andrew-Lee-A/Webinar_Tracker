@@ -70,8 +70,8 @@ const UserDetails = () => {
                             required="yes"
                             type="text" 
                             className="input"
-                            name='preferedname'
                             maxLength="32"
+                            name='preferedname'
                             value={values.preferedname}
                             onChange={handleChange}
                         />

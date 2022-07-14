@@ -60,7 +60,8 @@ export default function Login() {
           <LoginWrapperStyle>
             <div className="formContainer">
               
-                <h2>Happy to see you here</h2>
+                <h2>Welcome to our login page</h2>
+                <span>Glad seeing you here today ^_^</span>
                 <form onSubmit={onSubmit} autoComplete="off">
                     <div>
                         <label className='usernameLabel' >Your Username</label><br/>
@@ -130,10 +131,17 @@ const LoginWrapperStyle = styled.div`
     font-size: 45px;
     font-family: 'Space Grotesk', sans-serif;
     color: #FFF;
+    margin-bottom: 1vh;
+    margin-top: 1.5vh;
 
     :hover {
       color: darkgoldenrod;
     }
+  }
+
+  span {
+    color: #FFF;
+    font-family: 'Space Grotesk', sans-serif;
   }
 
   .footerWrapper {
@@ -158,7 +166,7 @@ const LoginWrapperStyle = styled.div`
 
   form {
     padding: 2rem;
-    margin: 2rem 0 1rem 0;
+    margin: 2rem 0 2rem 0;
   }
 
   p {

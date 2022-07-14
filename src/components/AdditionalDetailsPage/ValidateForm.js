@@ -31,7 +31,7 @@ export const validation = (values) => {
     }
 
     if (!values.skill) {
-        errors.skill = "Your insterested skill of learning programming is required"
+        errors.skill = "Your interested skill of learning programming is required"
     }
 
     if (!values.total) {
