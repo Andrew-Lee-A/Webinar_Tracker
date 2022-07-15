@@ -5,92 +5,38 @@ import styled from 'styled-components';
 // Link
 import { Link } from 'react-router-dom'
 // imgs
-import Home from '../UserProfilePage/UserProfileImages/home.png'
-import Setting from '../UserProfilePage/UserProfileImages/skills.png'
-import Logout from '../UserProfilePage/UserProfileImages/log-out.png'
+// import Home from '../UserProfilePage/UserProfileImages/home.png'
+// import Setting from '../UserProfilePage/UserProfileImages/skills.png'
+// import Logout from '../UserProfilePage/UserProfileImages/log-out.png'
 import BGimg from '../UserProfilePage/UserProfileImages/circle-scatter.png'
 
 export default function UserProfile() {
 
-  /* handling the icons' names */
-  const [HoverDashboard, setHoveringDashboard] = useState(false);
-  const [HoverSetting, setHoveringSetting] = useState(false);
-  const [HoverLogout, setHoveringLogout] = useState(false);
-
-  const MouseOverHandlerOne = () => {
-    setHoveringDashboard(true);
-  }
-
-  const MouseOverHandlerTwo = () => {
-    setHoveringSetting(true);
-  }
-
-  const MouseOverHandlerThree = () => {
-    setHoveringLogout(true);
-  }
-  
-  const MouseOutHandlerOne = () => {
-    setHoveringDashboard(false);
-  }
-
-  const MouseOutHandlerTwo = () => {
-    setHoveringSetting(false);
-  }
-
-  const MouseOutHandlerThree = () => {
-    setHoveringLogout(false);
-  }
-
-  // ============================================================ //
-  
   return (
       <>
         <UserProfileStyle>
           <div className="userProfileContainer">
 
-          <span></span>
-          <span></span>
-          <span></span>
+              <div className="nav">
+                <input type="checkbox" />
+                  <span/>
 
-              <div className="imagesContainer">
-
-                <div className="dashboardContainer" onMouseOver={MouseOverHandlerOne} onMouseOut={MouseOutHandlerOne}>
-                    <Link to="/dashboard">
-                      <img 
-                        src={Home} 
-                        alt="" 
-                      />
-                    </Link>
-                  {HoverDashboard && <label className='dashboard'>Dashboard</label>}
-                </div>
-
-                <div className="settingContainer" onMouseOver={MouseOverHandlerTwo} onMouseOut={MouseOutHandlerTwo}>
-                  <Link to="/usersetting">
-                    <img 
-                    src={Setting} 
-                    alt="" />
+                <div className="menu">
+                  <Link to="/dashboard">
+                    <li>Dashboard</li>
                   </Link>
-                  {HoverSetting && <label className='setting'>Setting</label>}
-                </div>
-
-                <div className="logoutContainer" onMouseOver={MouseOverHandlerThree} onMouseOut={MouseOutHandlerThree}>
+                  <Link to="/usersetting" >
+                    <li>Setting</li>
+                  </Link>
                   <Link to="/">
-                    <img  
-                      src={Logout} 
-                      alt="">
-                    </img>
+                    <li>Logout</li>
                   </Link>
-                  {HoverLogout && <label className='logout'>Logout</label> }
                 </div>
               </div>
 
               <div className="userProfileDetailsContainer" >
                 <div className="leftSide">
-                    {/* <h1>About Me</h1>
-                    <div className="titleBorder"></div>
-
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur dolore explicabo laborum eum officia quae accusantium dolorum. Nostrum ea sint cupiditate? A, repudiandae. Maxime sapiente perferendis, odio provident repellat nesciunt!</p>
-                    <p>lorem ipsum</p> */}
+                  
                 </div>
 
                 <div className="rightSide">
@@ -164,40 +110,123 @@ const UserProfileStyle = styled.div`
       color: #FFF;
     }
 
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      margin: 0px 5px;
+      padding: 10px;
+      
+      position: relative;
+      background-color: #fff;
+      transition: 0.5s;
+      border-radius: 50px;
+      overflow: hidden;
+      box-shadow: 0 8px 15px rgba(0,0,0,.2);
+
+      input {
+        width: 40px;
+        height: 30px;
+        cursor: pointer;
+        opacity: 0;
+      }
+
+      span {
+        position: absolute;
+        left: 18px;
+        width: 30px;
+        height: 5px;
+        border-radius: 50px;
+        pointer-events: none;
+        transition: 0.5s;
+        background: crimson;
+      }
+
+      .menu {
+        margin: 0;
+        padding: 0;
+        width: 0;
+        overflow: hidden;
+        transition: 0.5s;
+
+        display: flex;
+
+        a {
+          text-decoration: none;
+          color: #161919;
+        }
+        
+        li {
+          list-style: none;
+          margin: 0 8px;
+          text-transform: uppercase;
+          font-weight: 600;
+          transition: 0.5s;
+          
+          :hover {
+            color: #DC143C;
+          }
+        }
+      }
+
+      input:checked ~ .menu {
+        width: 260px;
+      }
+
+      input:checked ~ span {
+        background-color: green;
+      } 
+    }
+
     .userProfileContainer {
       width: 100%;
       height: 100vh;
       
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: center;  
       justify-content: center;
       color: #F49F1C;
     }
 
     .imagesContainer {
-      width: 50vh;
-      height: 55px;
-      border-radius: 50px;
+      width: 250px;
+      height: 50px;
+      padding: 0 1em;
+      border-radius: 25px;
+      /* border: 1px solid crimson; */
 
       display: flex;
       align-items: center;
-      justify-content: space-evenly;
+      justify-content: space-around;
       background-color: #FFF;
-
-      border-bottom: 2px solid #FFF;
+      position: relative;
+      box-shadow: 0 0 10px #202020;
 
       img {
-        width: 25px;
-        height: 25px;
+        width: 20px;
+        height: 20px;
       }
     }
 
     .dashboardContainer, .settingContainer, .logoutContainer {
+
+      width: 30px;
+      height: 30px;
+
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+
+      :hover {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+
+        background-color: #C1C1C1
+      }
     }
 
     .userProfileDetailsContainer {

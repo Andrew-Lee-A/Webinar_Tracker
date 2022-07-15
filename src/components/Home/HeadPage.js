@@ -96,14 +96,13 @@ const HeadPageStyle = styled.div`
     
     .about, .services, .contact {
         
+        
         :hover {
-            /* margin-top: 4px;
-            transition: all 0.6s ease; */
             border-bottom: 1px solid #ccc;
+            transition: ease-in 0.4s;
         }
-    }
 
-    
+    }
 
     .loginButton, .signupButton {
         margin-left: 20px;
@@ -123,6 +122,7 @@ const HeadPageStyle = styled.div`
         :hover {
             background-color: #000000;
             color: aqua;
+            
         }
     }
 

@@ -445,14 +445,15 @@ const UserDetailsStyle = styled.div`
         font-size: 13px;
 
         background-color: transparent;
-        color: purple;
+        color: #000000;
         cursor: pointer;
 
         :hover {
-            background-color: #000000;
+            background-color: #355070;
             color: #FFF;
-            transition: ease-in-out 0.1s;
-            transform: rotate(-3deg);
+            border: 2px solid #355070;
+            transition: ease-in-out 0.6s;
+            transform: scale(1.1);
         }
     }
 

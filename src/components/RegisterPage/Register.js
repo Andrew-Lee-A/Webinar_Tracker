@@ -207,7 +207,7 @@ const Register = () => {
                     <ToastContainer />
 
                     <footer>
-                        <p className="homepageLink" ><Link to="/">Back to Homepage</Link></p>
+                        <p className="homepageLink"><Link to="/">Back to Homepage</Link></p>
                     </footer>
                 </div>
                 
@@ -364,14 +364,15 @@ const RegisterStyle = styled.div`
         border: 2px solid #000000;
 
         background-color: #FFF;
-        font-weight: bold;
+        font-weight: 600;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
         :hover {
-            background-color: teal;
+            background-color: #52796f;
             color: #FFF;
             cursor: pointer;
 
-            border: 2px solid #fff;
+            border: 2px solid #52796f;
         }
     }
 
