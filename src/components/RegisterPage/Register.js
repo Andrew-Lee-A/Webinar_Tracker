@@ -169,7 +169,7 @@ const Register = () => {
 
                                     <input 
                                         className="password"  
-                                        placeholder="Your Confirm Password" 
+                                        placeholder="Re-type your password" 
                                         type="password"
                                         id="pass"
                                         name="confirmPassword"

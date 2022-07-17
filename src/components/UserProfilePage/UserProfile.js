@@ -18,8 +18,9 @@ export default function UserProfile() {
           <div className="userProfileContainer">
 
               <div className="nav">
-                <input type="checkbox" />
-                  <span/>
+                <input type="checkbox" ></input>
+                  <span></span>
+                  <span></span>
 
                 <div className="menu">
                   <Link to="/dashboard">
@@ -126,6 +127,7 @@ const UserProfileStyle = styled.div`
       box-shadow: 0 8px 15px rgba(0,0,0,.2);
 
       input {
+
         width: 40px;
         height: 30px;
         cursor: pointer;
@@ -133,6 +135,10 @@ const UserProfileStyle = styled.div`
       }
 
       span {
+
+        display: flex;
+        flex-direction: column;
+        
         position: absolute;
         left: 18px;
         width: 30px;
@@ -178,6 +184,8 @@ const UserProfileStyle = styled.div`
         background-color: green;
       } 
     }
+
+    
 
     .userProfileContainer {
       width: 100%;

@@ -70,7 +70,7 @@ const HeadPageStyle = styled.div`
         align-items: center;
         justify-content: center;
         margin-top: 44vh;
-        margin-right: 13px;
+        margin-right: 20px;
     }
 
     .babcock {
@@ -91,7 +91,6 @@ const HeadPageStyle = styled.div`
         font-weight: bold;
         
         color: aqua;
-
     }
     
     .about, .services, .contact {
@@ -106,7 +105,7 @@ const HeadPageStyle = styled.div`
 
     .loginButton, .signupButton {
         margin-left: 20px;
-        padding: 9px 40px;
+        padding: 8px 40px;
         border: none;
         border-radius: 5px;
         background-color: transparent;
