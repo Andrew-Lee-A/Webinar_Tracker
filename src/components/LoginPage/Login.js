@@ -170,7 +170,7 @@ const LoginWrapperStyle = styled.div`
   }
 
   p {
-  font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
   }
 
   form label {
@@ -185,13 +185,13 @@ const LoginWrapperStyle = styled.div`
   }
 
   .right-label {
-  float: right;
-  cursor: pointer;
+    float: right;
+    cursor: pointer;
 
-  color: #FFF;
-  margin-bottom: 10px;
+    color: #FFF;
+    margin-bottom: 10px;
 
-  font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
   }
 
   input {
@@ -207,38 +207,38 @@ const LoginWrapperStyle = styled.div`
   }
 
   Link {
-  font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
   }
 
   .passInput {
     text-decoration: none;
     list-style: none;
-    background-color: transparent;
+    background-color: #FFF;
     border: 2px solid #FFF;
     
   }
 
   #sub_btn {
-  margin-top: 40px;
+    margin-top: 40px;
 
-  display: block;
-  width: 100%;
-  height: 40px;
-  padding: .3rem;
-  border: none;
-  background: darkgoldenrod;
-  color: #fff;
-  border-radius: 50px;
-  cursor: pointer;
-  font-weight: bold;
-  font-family: 'Space Grotesk', sans-serif;
+    display: block;
+    width: 100%;
+    height: 40px;
+    padding: .3rem;
+    border: none;
+    background: darkgoldenrod;
+    color: #fff;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: 'Space Grotesk', sans-serif;
 
-  :hover {
-      background: teal;
-      color: #000000;
-      font-weight: bold;
-      transition: all .5s;
-  }
+    :hover {
+        background: teal;
+        color: #000000;
+        font-weight: bold;
+        transition: all .5s;
+    }
   }
 
   footer p {

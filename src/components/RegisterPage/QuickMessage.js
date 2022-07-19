@@ -4,8 +4,8 @@ export const reminder = (text, type) => {
 
     if (type === "success") {
         toast.success(text, {
-            position: "top-left",
-            autoClose: 5000,
+            position: "top-right",
+            autoClose: 4000,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
@@ -14,8 +14,8 @@ export const reminder = (text, type) => {
         });
     } else if (type === "warning") {
         toast.warn(text, {
-          position: "top-left",
-          autoClose: 5000,
+          position: "top-right",
+          autoClose: 4000,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,
@@ -24,8 +24,8 @@ export const reminder = (text, type) => {
         });
       } else {
         toast.error(text, {
-          position: "top-left",
-          autoClose: 5000,
+          position: "top-right",
+          autoClose: 4000,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,
