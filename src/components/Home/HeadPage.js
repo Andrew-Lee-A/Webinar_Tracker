@@ -42,7 +42,7 @@ const HeadPageStyle = styled.div`
     margin: 0;
     padding: 0;
     width: 99.9%;
-    height: 37rem;
+    height: 100vh;
     clip-path: polygon(0 100%, 0 0, 100% 0, 100% 85%);
     background-image: url(${headImage});
     background-size: cover;
