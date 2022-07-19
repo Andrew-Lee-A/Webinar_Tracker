@@ -198,7 +198,7 @@ const UserProfileStyle = styled.div`
       }
 
       input:checked ~ .menu {
-        width: 260px;
+        width: 20vw;
       }
 
       input:checked ~ span {

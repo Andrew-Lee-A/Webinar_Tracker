@@ -111,13 +111,16 @@ const LoginWrapperStyle = styled.div`
 
   margin: 0px;
   padding: 0px;
-
   height: 100vh;
   width: 100vw;
 
   background-image: url(${LoginImg});
   background-size: cover;
   background-position: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   .formContainer {
       display: flex;

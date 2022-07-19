@@ -226,6 +226,10 @@ const RegisterStyle = styled.div`
     background-position: center;
     height: 100vh;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     .registerContainer {
         display: flex;
         flex-direction: column;
