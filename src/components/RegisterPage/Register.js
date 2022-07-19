@@ -258,7 +258,7 @@ const RegisterStyle = styled.div`
         }
     }
 
-    H5 {
+    h5 {
         color: white;
         margin-top: 5px;
         font-family: 'Krona One', sans-serif;

@@ -58,14 +58,19 @@ export default function Login() {
   return (
       <>
           <LoginWrapperStyle>
-            <div className="formContainer">
-              
+
+            <div className="headerTitleContainer">
                 <h2>Welcome to our login page</h2>
                 <span>Glad seeing you here today ^_^</span>
+            </div>
+
+            <div className="formContainer">
+              
                 <form onSubmit={onSubmit} autoComplete="off">
                     <div>
                         <label className='usernameLabel' >Your Username</label><br/>
-                        <input 
+                        <input
+                          className='usernameInput'
                           type="text" 
                           name='username'
                           value={data.username}
@@ -119,17 +124,29 @@ const LoginWrapperStyle = styled.div`
   background-position: center;
 
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 
-  .formContainer {
+  
+  .headerTitleContainer {
+      height: 20vh;
+
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-/* 
-      height: 99vh;
-      border: 1px solid red; */
+
+    }
+    
+  .formContainer {
+      height: 80vh;
+    
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
   }
 
   h2 {
@@ -137,7 +154,7 @@ const LoginWrapperStyle = styled.div`
     font-size: 45px;
     font-family: 'Space Grotesk', sans-serif;
     color: #FFF;
-    margin-top: 1vh;
+    margin-top: 10vh;
     margin-bottom: 1vh;
 
     :hover {
@@ -156,7 +173,7 @@ const LoginWrapperStyle = styled.div`
     font-size: 20px;
     font-weight: bold;
 
-    margin-bottom: 10vh;
+    margin-bottom: 20vh;
   }
 
   .linkWrapper {
@@ -175,7 +192,6 @@ const LoginWrapperStyle = styled.div`
 
   form {
     padding: 2rem;
-    margin: 2rem 0 2rem 0;
   }
 
   p {
@@ -219,11 +235,10 @@ const LoginWrapperStyle = styled.div`
     font-family: 'Space Grotesk', sans-serif;
   }
 
-  .passInput {
+  .passInput, .usernameInput {
     text-decoration: none;
     list-style: none;
     background-color: #FFF;
-    border: 2px solid #FFF;
     
   }
 
