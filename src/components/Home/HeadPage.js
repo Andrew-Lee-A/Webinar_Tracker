@@ -94,7 +94,8 @@ const HeadPageStyle = styled.div`
     }
     
     .about, .services, .contact {
-        
+
+        margin-left: 10px;
         
         :hover {
             border-bottom: 1px solid #ccc;
@@ -123,10 +124,6 @@ const HeadPageStyle = styled.div`
             color: aqua;
             
         }
-    }
-
-    .signupButton {
-        width: 25vh;
     }
 
 `
