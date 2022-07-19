@@ -263,6 +263,8 @@ const RegisterStyle = styled.div`
         margin-top: 5px;
         font-family: 'Krona One', sans-serif;
 
+        margin-bottom: 3vh;
+
         :hover {
             color: teal;
         }

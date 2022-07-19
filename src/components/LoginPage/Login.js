@@ -127,6 +127,9 @@ const LoginWrapperStyle = styled.div`
       flex-direction: column;
       align-items: center;
       justify-content: center;
+/* 
+      height: 99vh;
+      border: 1px solid red; */
   }
 
   h2 {
@@ -134,8 +137,8 @@ const LoginWrapperStyle = styled.div`
     font-size: 45px;
     font-family: 'Space Grotesk', sans-serif;
     color: #FFF;
+    margin-top: 1vh;
     margin-bottom: 1vh;
-    margin-top: 1.5vh;
 
     :hover {
       color: darkgoldenrod;
@@ -145,21 +148,24 @@ const LoginWrapperStyle = styled.div`
   span {
     color: #FFF;
     font-family: 'Space Grotesk', sans-serif;
+    margin-bottom: 15vh;
   }
 
   .footerWrapper {
-  color: #FFF;
-  font-size: 20px;
-  font-weight: bold;
+    color: #FFF;
+    font-size: 20px;
+    font-weight: bold;
+
+    margin-bottom: 10vh;
   }
 
   .linkWrapper {
-  color: #FFF;
-  font-weight: lighter;
+    color: #FFF;
+    font-weight: lighter;
   }
 
   .usernameLabel {
-  margin-left: 90px;
+    margin-left: 90px;
   }
 
   .usernamePassword {
@@ -242,6 +248,10 @@ const LoginWrapperStyle = styled.div`
         font-weight: bold;
         transition: all .5s;
     }
+  }
+
+  .submitButton {
+    /* margin-bottom: 10vh; */
   }
 
   footer p {
