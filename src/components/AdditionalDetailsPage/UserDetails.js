@@ -206,7 +206,7 @@ const UserDetails = () => {
                                 name='skill'
                                 value= {values.skill}
                                 disabled="yes"
-                            >
+                                multiple accept=', , ,'                            >
                             </input>
                             <label className="label">Programming Skill</label>
                             

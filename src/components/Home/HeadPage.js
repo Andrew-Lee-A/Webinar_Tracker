@@ -105,7 +105,7 @@ const HeadPageStyle = styled.div`
 
     .loginButton, .signupButton {
         margin-left: 20px;
-        padding: 8px 40px;
+        padding: 7px 40px;
         border: none;
         border-radius: 5px;
         background-color: transparent;

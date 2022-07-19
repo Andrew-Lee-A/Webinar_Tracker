@@ -12,6 +12,15 @@ import BGimg from '../UserProfilePage/UserProfileImages/circle-scatter.png'
 
 export default function UserProfile() {
 
+  const [imgfile, uploadimg] = useState([])
+  	console.log("Image FIles",imgfile);
+
+  const imgFilehandler = (e) => {
+    if (e.target.files.length !== 0 || e.target.files.length < 2) {
+      uploadimg(imgfile => [...imgfile, URL.createObjectURL(e.target.files[0])])
+    }
+  }
+
   return (
       <>
         <UserProfileStyle>
@@ -37,6 +46,18 @@ export default function UserProfile() {
 
               <div className="userProfileDetailsContainer" >
                 <div className="leftSide">
+                <center>
+                  <input  className='fileinput' type="file" onChange={imgFilehandler} />
+                  <hr />
+                  {imgfile.map((element) => {
+                    return <>
+                      <span key={element}>
+                        <img src={element} height="500" width="400" alt="med1" />
+                      </span>
+                    </>
+                  })}
+                </center>
+                  
                   
                 </div>
 
@@ -285,6 +306,6 @@ const UserProfileStyle = styled.div`
           grid-auto-rows: minmax(120px, auto);
         }
       }
-      
+
     }
 `
