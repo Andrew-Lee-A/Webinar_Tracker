@@ -294,17 +294,16 @@ const UserDetailsStyle = styled.div`
     padding: 0;
     background-color: #FFF;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    height: 100vh;
+    height: 101vh;
     /* width: 100vw; */
+    background-image: url(${backgroundImg});
+    background-size:  cover;
+    background-position: center;
 
     .userDetailsWrapper {
         display: flex;
         justify-content: center;
         align-items: center;
-
-        background-image: url(${backgroundImg});
-        background-size:  cover;
-        background-position: center;
     }
 
     .UserDetailsForm {
