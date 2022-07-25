@@ -402,8 +402,7 @@ const UserDetailsStyle = styled.div`
         border: 1px solid #D3D3D3;
         border-radius: 50px;
         font-size: 17px;
-        /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
-        /* font-weight: bold; */
+        color: #000000;
         font-family: 'Space Grotesk', sans-serif;
         font-size: 14px;
         text-align: left;
@@ -431,12 +430,13 @@ const UserDetailsStyle = styled.div`
 
     .label {
         position: absolute;
-        top: 9px;
+        top: 12px;
         left: 44px;
         padding: 0 4px;
         background-color: #FFF;
         color: #DADCE0;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 13px;
         transition: 0.5s;
         z-index: 0;
     }
@@ -445,7 +445,7 @@ const UserDetailsStyle = styled.div`
         width: 50%;
         background-image: linear-gradient(to left, #2b5876 0%, #4e4376  51%, #2b5876  100%);
         margin: 10px;
-        margin-left: 17vh;
+        margin-left: 120px;
         letter-spacing: 0.1em;
         padding: 12px 55px;
         text-transform: uppercase;
@@ -485,6 +485,18 @@ const UserDetailsStyle = styled.div`
         height: 25px;
         margin-left: 10px;
         margin-top: 8px;
+    }
+
+    input {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 13px;
+    }
+
+    option {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 13px;
+        color: #000000;
+        font-weight: bold;
     }
 
 `

@@ -288,6 +288,8 @@ const RegisterStyle = styled.div`
         text-decoration: none;
         border-style: none;
 
+         font-family: 'Space Grotesk', sans-serif;
+
         ::placeholder {
             font-weight: bold;
         }
@@ -323,7 +325,6 @@ const RegisterStyle = styled.div`
 
         text-align: left;
         text-indent: 40px;
-
     }
 
     .emailAddress {

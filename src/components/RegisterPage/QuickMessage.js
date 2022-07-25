@@ -8,7 +8,7 @@ export const reminder = (text, type) => {
             autoClose: 4000,
             hideProgressBar: false,
             closeOnClick: false,
-            pauseOnHover: true,
+            pauseOnHover: false,
             draggable: true,
             progress: undefined,
         });
@@ -18,7 +18,7 @@ export const reminder = (text, type) => {
           autoClose: 4000,
           hideProgressBar: false,
           closeOnClick: false,
-          pauseOnHover: true,
+          pauseOnHover: false,
           draggable: true,
           progress: undefined,
         });
@@ -28,7 +28,7 @@ export const reminder = (text, type) => {
           autoClose: 4000,
           hideProgressBar: false,
           closeOnClick: false,
-          pauseOnHover: true,
+          pauseOnHover: false,
           draggable: true,
           progress: undefined,
         });
