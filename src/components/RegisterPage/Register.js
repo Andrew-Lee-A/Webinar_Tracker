@@ -270,6 +270,10 @@ const RegisterStyle = styled.div`
         }
     }
 
+    p {
+        letter-spacing: 1px;
+    }
+
     form {
         background-color: transparent;
         width: 400px;
@@ -280,8 +284,9 @@ const RegisterStyle = styled.div`
     }
 
     input {
-
-        outline: none;
+        outline-style: none;
+        text-decoration: none;
+        border-style: none;
 
         ::placeholder {
             font-weight: bold;
@@ -314,14 +319,11 @@ const RegisterStyle = styled.div`
         height: 40px;
         border-radius: 50px;
         border-style: none;
-        border: 2px solid #000000;
+        border: 1px solid #000000;
 
         text-align: left;
         text-indent: 40px;
 
-        :hover {
-            border: 2px solid #fff;
-        }
     }
 
     .emailAddress {
@@ -332,14 +334,11 @@ const RegisterStyle = styled.div`
         height: 40px;
         border-radius: 50px;
         border-style: none;
-        border: 2px solid #000000;
+        border: 1px solid #000000;
 
         text-align: left;
         text-indent: 40px;
 
-        :hover {
-            border: 2px solid #fff;
-        }
     }
 
     .password {
@@ -350,14 +349,11 @@ const RegisterStyle = styled.div`
         height: 40px;
         border-radius: 50px;
         border-style: none;
-        border: 2px solid #000000;
+        border: 1px solid #000000;
 
         text-align: left;
         text-indent: 40px;
 
-        :hover {
-            border: 2px solid #fff;
-        }
     }
 
     .registerButton {
@@ -367,18 +363,20 @@ const RegisterStyle = styled.div`
         width: 18rem;
         height: 40px;
         border-radius: 5px;
-        border: 2px solid #000000;
+        border: 1px solid #000000;
 
         background-color: #FFF;
-        font-weight: 600;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: 500%;
+        font-size: 13px;
+        letter-spacing: 0.1em;
 
         :hover {
             background-color: #52796f;
             color: #FFF;
             cursor: pointer;
 
-            border: 2px solid #52796f;
+            border: 1px solid #52796f;
         }
     }
 

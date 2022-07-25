@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 
 // img
-import BGimg from '../UserProfileImages/kevin-kandlbinder-WrjxzLskZK0-unsplash.jpg'
+import BGimg from '../UserProfileImages/alex-bierwagen-5tW1ca0Zq18-unsplash.jpg'
 
 export default function UserSetting() {
 
@@ -61,6 +61,7 @@ export default function UserSetting() {
                                 {/* Full name */}
                                 <input 
                                     type="text" 
+                                    placeholder='E.g. James Holden'
                                     required="yes"
                                     maxLength="22"
                                     name='fullname'
@@ -90,6 +91,7 @@ export default function UserSetting() {
                                 {/* Age */}
                                 <input 
                                     type='number'
+                                    placeholder='In between 15 and 70'
                                     required="yes"
                                     min="15" 
                                     max="70"
@@ -101,7 +103,8 @@ export default function UserSetting() {
 
                                 {/* Status */}
                                 <input
-                                    type='text' 
+                                    type='text'
+                                    placeholder='E.g. Single'
                                     required="yes"
                                     maxLength="15"
                                     name='status' 
@@ -118,7 +121,8 @@ export default function UserSetting() {
 
                                 {/* Home Address */}
                                 <input 
-                                    type='text' 
+                                    type='text'
+                                    placeholder='E.g. 45 wild and young street, newmarket'
                                     required="yes"
                                     maxLength="35"
                                     name='homeaddress' 
@@ -128,7 +132,8 @@ export default function UserSetting() {
 
                                 {/* occupation */}
                                 <input 
-                                    type='text' 
+                                    type='text'
+                                    placeholder='E.g. Lawyer'
                                     required="yes"
                                     maxLength="30"
                                     name='occupation' 
@@ -194,14 +199,14 @@ const Form = styled.div`
         margin-top: 10px;
         width: 10vw;
         height: 4vh;
-        border: 1px solid magenta;
+        border: 1px solid crimson;
         background-color: transparent;
         border-radius: 5px;
 
         :hover {
             cursor: pointer;
-            border: 1px solid yellow;
-            color: yellow;
+            border: 1px solid #FF0000;
+            color: #FF0000;
         }
     }
 
@@ -209,9 +214,13 @@ const Form = styled.div`
         border-radius: 5px;
         text-indent: 10px;
         outline-style: none;
+        background: rgba(255, 255, 255, 0.1);
+        border: rgba(255, 255, 255, 0.08);
+        color: #fff;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
 
         :hover {
-            border: 3px solid blueviolet;
+            border: 1px solid #FFF;
             border-radius: 5px;
         }
     }
@@ -224,6 +233,6 @@ const Form = styled.div`
     
     label, button {
         font-family: 'Space Grotesk', sans-serif;
-        color: magenta;
+        color: crimson;
     }
 `

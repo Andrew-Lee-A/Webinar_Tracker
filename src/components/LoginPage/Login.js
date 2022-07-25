@@ -170,7 +170,7 @@ const LoginWrapperStyle = styled.div`
 
   .footerWrapper {
     color: #FFF;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
 
     margin-bottom: 20vh;
@@ -229,6 +229,8 @@ const LoginWrapperStyle = styled.div`
     border: none;
 
     text-align: center;
+    font-family: 'Space Grotesk', sans-serif;
+    
   }
 
   Link {
@@ -239,34 +241,42 @@ const LoginWrapperStyle = styled.div`
     text-decoration: none;
     list-style: none;
     background-color: #FFF;
-    
+
+    :focus {
+      box-shadow: 0px 4px 5px 0px rgba(129,129,129,0.75);
+      -webkit-box-shadow: 0px 4px 5px 0px rgba(129,129,129,0.75);
+      -moz-box-shadow: 0px 4px 5px 0px rgba(129,129,129,0.75);
+    }
   }
-
-  #sub_btn {
+  
+  .submitButton {
     margin-top: 40px;
-
-    display: block;
+  
     width: 100%;
     height: 40px;
     padding: .3rem;
-    border: none;
-    background: darkgoldenrod;
+    background-color: goldenrod;
     color: #fff;
     border-radius: 50px;
+    transition: 0.5s;
     cursor: pointer;
-    font-weight: bold;
-    font-family: 'Space Grotesk', sans-serif;
-
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-style: none;
+    outline-style: none;
+    font-size: 12px;
+  
     :hover {
-        background: teal;
-        color: #000000;
         font-weight: bold;
-        transition: all .5s;
+        letter-spacing: 0.25em;
+        transition: all 0.5s linear;
+        outline-style: none;
+        border-style: none;
+        cursor: pointer;
+        color: #FFF;
     }
-  }
 
-  .submitButton {
-    /* margin-bottom: 10vh; */
   }
 
   footer p {

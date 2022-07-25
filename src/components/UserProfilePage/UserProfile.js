@@ -5,9 +5,9 @@ import styled from 'styled-components';
 // Link
 import { Link } from 'react-router-dom'
 // imgs
-// import Home from '../UserProfilePage/UserProfileImages/home.png'
-// import Setting from '../UserProfilePage/UserProfileImages/skills.png'
-// import Logout from '../UserProfilePage/UserProfileImages/log-out.png'
+import Dashboard from '../UserProfilePage/UserProfileImages/dashboard.png'
+import Setting from '../UserProfilePage/UserProfileImages/skills.png'
+import Logout from '../UserProfilePage/UserProfileImages/log-out.png'
 import BGimg from '../UserProfilePage/UserProfileImages/circle-scatter.png'
 
 export default function UserProfile() {
@@ -29,18 +29,29 @@ export default function UserProfile() {
               <div className="nav">
                 <input type="checkbox" ></input>
                   <span></span>
-                  <span></span>
 
                 <div className="menu">
-                  <Link to="/dashboard">
-                    <li>Dashboard</li>
-                  </Link>
-                  <Link to="/usersetting" >
-                    <li>Setting</li>
-                  </Link>
-                  <Link to="/">
-                    <li>Logout</li>
-                  </Link>
+
+                  <div className="dashboardContainer">
+                      <img alt="" src={Dashboard} ></img>
+                      <Link to="/dashboard">
+                        <li>Dashboard</li>
+                      </Link>
+                  </div>
+
+                  <div className="settingContainer">
+                      <img  alt="" src={Setting}></img>
+                      <Link to="/usersetting" >
+                        <li>Setting</li>
+                      </Link>
+                  </div>
+
+                  <div className="logoutContainer">
+                      <img alt="" src={Logout}  ></img>
+                      <Link to="/">
+                        <li>Logout</li>
+                      </Link>
+                  </div>
                 </div>
               </div>
 
@@ -137,7 +148,6 @@ const UserProfileStyle = styled.div`
       align-items: center;
       justify-content: center;
 
-      margin: 0px 5px;
       padding: 10px;
       
       position: relative;
@@ -147,8 +157,9 @@ const UserProfileStyle = styled.div`
       overflow: hidden;
       box-shadow: 0 8px 15px rgba(0,0,0,.2);
 
-      input {
+      background: rgba(255,255,255,.356789);
 
+      input {
         width: 40px;
         height: 30px;
         cursor: pointer;
@@ -167,7 +178,7 @@ const UserProfileStyle = styled.div`
         border-radius: 50px;
         pointer-events: none;
         transition: 0.5s;
-        background: crimson;
+        background: red;
       }
 
       .menu {
@@ -178,6 +189,8 @@ const UserProfileStyle = styled.div`
         transition: 0.5s;
 
         display: flex;
+        align-items: center;
+        justify-content: center;
 
         a {
           text-decoration: none;
@@ -186,28 +199,51 @@ const UserProfileStyle = styled.div`
         
         li {
           list-style: none;
-          margin: 0 8px;
+          margin: 0px 5px;
+          margin-top: 10px;
           text-transform: uppercase;
           font-weight: 600;
           transition: 0.5s;
-          
+
           :hover {
             color: #DC143C;
           }
         }
+
+        img {
+          width: 20px;
+          height: 20px;
+
+          margin-top: 10px;
+        }
       }
 
       input:checked ~ .menu {
-        width: 20vw;
+        width: 25vw;
       }
 
       input:checked ~ span {
-        background-color: green;
+        background-color: lightgreen;
       } 
+      
+      .dashboardContainer, .settingContainer, .logoutContainer {
+
+        padding: .8rem;
+        
+        width: 100px;
+        height: 10px;
+        margin-bottom: 10px;
+  
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+      }
+
+      .logoutContainer {
+      }
     }
-
     
-
     .userProfileContainer {
       width: 100%;
       height: 100vh;
@@ -218,46 +254,8 @@ const UserProfileStyle = styled.div`
       justify-content: center;
       color: #F49F1C;
     }
-
-    .imagesContainer {
-      width: 250px;
-      height: 50px;
-      padding: 0 1em;
-      border-radius: 25px;
-      /* border: 1px solid crimson; */
-
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      background-color: #FFF;
-      position: relative;
-      box-shadow: 0 0 10px #202020;
-
-      img {
-        width: 20px;
-        height: 20px;
-      }
-    }
-
-    .dashboardContainer, .settingContainer, .logoutContainer {
-
-      width: 30px;
-      height: 30px;
-
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-
-      :hover {
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-
-        background-color: #C1C1C1
-      }
-    }
-
+    
+    
     .userProfileDetailsContainer {
 
       margin-top: 5vh;

@@ -18,7 +18,7 @@ export default function SideMenu() {
       <>
         <StyledBox>
           <Grid container>
-            <Grid item >
+            <Grid ite m >
 
             Side menu
             </Grid>

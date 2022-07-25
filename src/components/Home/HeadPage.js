@@ -12,7 +12,7 @@ function HeadPage () {
 
                     <ul>
                         <div className="about">
-                            <li className='about' href="">About</li>
+                            <li className='about' href="">About us</li>
                         </div>
                         <div className="services">
                             <li className='services' href="">Services</li>
@@ -43,7 +43,7 @@ const HeadPageStyle = styled.div`
     padding: 0;
     width: 99.9%;
     height: 100vh;
-    clip-path: polygon(0 100%, 0 0, 100% 0, 100% 85%);
+    /* clip-path: polygon(0 100%, 0 0, 100% 0, 100% 85%); */
     background-image: url(${headImage});
     background-size: cover;
     background-repeat: no-repeat;
@@ -95,8 +95,8 @@ const HeadPageStyle = styled.div`
     
     .about, .services, .contact {
 
-        margin-left: 10px;
-        
+        font-size: medium;
+
         :hover {
             border-bottom: 1px solid #ccc;
             transition: ease-in 0.4s;
@@ -113,6 +113,7 @@ const HeadPageStyle = styled.div`
         border: 2px solid #000000;
         color: #fff;
         font-weight: lighter;
+        letter-spacing: 0.1em;
         color: white;
         transition: all ease 0.3s;
         font-family: 'Space Grotesk', sans-serif;
@@ -122,9 +123,12 @@ const HeadPageStyle = styled.div`
         :hover {
             background-color: #000000;
             color: aqua;
-            
+            letter-spacing: 0.2em;
         }
     }
+
+    
+
 
 `
 export default HeadPage;

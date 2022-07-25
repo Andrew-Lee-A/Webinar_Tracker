@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 
 // background images
@@ -16,7 +16,7 @@ import platform from '../AdditionalDetailsPage/AdditionalDetailsImages/amount.pn
 /* JS file */
 import { validation } from './ValidateForm'
 
-const UserDetails = () => {
+const UserDetails = ({submitForm}) => {
 
     const [values, setValues] = useState ({
         preferedname: "",
@@ -40,7 +40,6 @@ const UserDetails = () => {
     };
 
     const handleSubmit = (event) => {
-
         // !TODO
         
         
@@ -48,7 +47,7 @@ const UserDetails = () => {
     
     const handleClick = (e) => {
         e.preventDefault();
-        setErrors(validation(values))
+        setErrors(validation(values));
     };
 
     return (
@@ -93,6 +92,7 @@ const UserDetails = () => {
                             }}
                             required="yes"
                             maxLength="35"
+                            spellCheck="true"
                             type="text" 
                             className="input"
                             name="thecompany"
@@ -139,7 +139,7 @@ const UserDetails = () => {
                                 disabled="yes"
                             />
 
-                        <label className="label"> Prefered Field </label>
+                            <label className="label"> Prefered Field </label>
 
                         </div>
 
@@ -169,6 +169,7 @@ const UserDetails = () => {
                             className="input"
                             maxLength="32"
                             name='occupation'
+                            spellCheck="true"
                             value={values.occupation}
                             onChange={handleChange}
                         />
@@ -190,6 +191,7 @@ const UserDetails = () => {
                             className="input"
                             maxLength="22" 
                             name='country'
+                            spellCheck="true"
                             value={values.country}
                             onChange={handleChange}
                         />
@@ -329,7 +331,7 @@ const UserDetailsStyle = styled.div`
         position: relative;
         height: 40px;
         width: 90%;
-        margin-bottom: 15px;
+        margin-bottom: 13px;
     }
 
     .inputWrapperContainer {
@@ -400,8 +402,10 @@ const UserDetailsStyle = styled.div`
         border: 1px solid #D3D3D3;
         border-radius: 50px;
         font-size: 17px;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
         /* font-weight: bold; */
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 14px;
         text-align: left;
         text-indent: 30px;
         padding: 0 20px;
@@ -432,36 +436,37 @@ const UserDetailsStyle = styled.div`
         padding: 0 4px;
         background-color: #FFF;
         color: #DADCE0;
-        /* color: #D3D3D3; */
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        /* font-weight: bold; */
         transition: 0.5s;
         z-index: 0;
     }
 
     .submitButton {
         width: 50%;
-        margin-left: 120px;
-        margin-top: 10px;
-        padding: 10px 30px;
-        border-radius: 5px;
+        background-image: linear-gradient(to left, #2b5876 0%, #4e4376  51%, #2b5876  100%);
+        margin: 10px;
+        margin-left: 17vh;
+        letter-spacing: 0.1em;
+        padding: 12px 55px;
+        text-transform: uppercase;
+        transition: 0.5s;
+        background-size: 200% auto;
+        color: #FFF;            
+        box-shadow: 0 0 20px #EEE;
+        border-radius: 10px;
         border-style: none;
-        border: 2px solid #000000;
-
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        font-weight: bold;
+        font-weight: 500%;
         font-size: 13px;
 
-        background-color: transparent;
-        color: #000000;
-        cursor: pointer;
-
         :hover {
-            background-color: #355070;
-            color: #FFF;
-            border: 2px solid #355070;
-            transition: ease-in-out 0.6s;
-            transform: scale(1.1);
+          background-position: right center; /* change the direction of the change here */
+          letter-spacing: 0.25em;
+          transform: scale(1.05);
+          transition: ease-in-out 0.6s;
+          color: #fff;
+          text-decoration: none;
+          cursor: pointer;
         }
     }
 
@@ -481,6 +486,7 @@ const UserDetailsStyle = styled.div`
         margin-left: 10px;
         margin-top: 8px;
     }
+
 `
 
 export default UserDetails;
