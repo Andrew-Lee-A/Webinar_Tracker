@@ -34,8 +34,8 @@ export const validation = (values) => {
         errors.skill = "Your interested skill of learning programming is required"
     }
 
-    if (!values.total) {
-        errors.total = "Your push notification is required"
+    if (!values.notification) {
+        errors.notification = "Your push notification is required"
     }
 
     if (!values.platform) {

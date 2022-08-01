@@ -1,22 +1,22 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 
-// background images
-import backgroundImg from '../AdditionalDetailsPage/AdditionalDetailsImages/gradienta-bKESVqfxass-unsplash.jpg'
-import nameIcon from '../AdditionalDetailsPage/AdditionalDetailsImages/preferedname.png'
-import company from '../AdditionalDetailsPage/AdditionalDetailsImages/company.png'
-import experience from '../AdditionalDetailsPage/AdditionalDetailsImages/experience.png'
-import industry from '../AdditionalDetailsPage/AdditionalDetailsImages/industrial.png'
-import occupation from '../AdditionalDetailsPage/AdditionalDetailsImages/occupation.png'
-import country from '../AdditionalDetailsPage/AdditionalDetailsImages/country.png'
-import skill from '../AdditionalDetailsPage/AdditionalDetailsImages/skill.png'
-import total from '../AdditionalDetailsPage/AdditionalDetailsImages/platform.png'
-import platform from '../AdditionalDetailsPage/AdditionalDetailsImages/amount.png'
+// images
+import backgroundImg from '../../img/AdditionalDetails/gradienta-bKESVqfxass-unsplash.jpg'
+import nameIcon from '../../img/AdditionalDetails/preferedname.png'
+import company from '../../img/AdditionalDetails/company.png'
+import experience from '../../img/AdditionalDetails/experience.png'
+import industry from '../../img/AdditionalDetails/industrial.png'
+import occupation from '../../img/AdditionalDetails/occupation.png'
+import country from '../../img/AdditionalDetails/country.png'
+import skill from '../../img/AdditionalDetails/skill.png'
+import total from '../../img/AdditionalDetails/platform.png'
+import platform from '../../img/AdditionalDetails/amount.png'
 
 /* JS file */
 import { validation } from './ValidateForm'
 
-const UserDetails = ({submitForm}) => {
+const UserDetails = () => {
 
     const [values, setValues] = useState ({
         preferedname: "",
@@ -40,8 +40,7 @@ const UserDetails = ({submitForm}) => {
     };
 
     const handleSubmit = (event) => {
-        // !TODO
-        
+        // !TODO => To push the data to the database
         
     }
     
@@ -49,6 +48,8 @@ const UserDetails = ({submitForm}) => {
         e.preventDefault();
         setErrors(validation(values));
     };
+
+    console.log(values);
 
     return (
       <>
@@ -143,7 +144,7 @@ const UserDetails = ({submitForm}) => {
 
                         </div>
 
-                        <select id="Field" className="progLanguagesAndStudyFieldSelection" name='field' value={values.field} onChange={handleChange} >
+                        <select id="Field" className="progLanguagesAndStudyFieldSelection" multiple={false} name='field'  value={values.field} onChange={handleChange} >
                             <option selected value="" disabled="yes" >Choose Field</option>
                             <option value="Civil Engineer">Civil Engineer</option>
                             <option value="Software Engineer">Software Engineer</option>
@@ -210,14 +211,13 @@ const UserDetails = ({submitForm}) => {
                                 className="input"
                                 name='skill'
                                 value= {values.skill}
-                                disabled="yes"
-                                multiple accept=', , ,'                            >
+                                disabled="yes">
                             </input>
                             <label className="label">Programming Skill</label>
                             
                         </div>
 
-                        <select id="programmingSkill" className="progLanguagesAndStudyFieldSelection" name='skill' value={values.skill} onChange={handleChange}>
+                        <select id="programmingSkill" className="progLanguagesAndStudyFieldSelection" multiple={false} name='skill' value={values.skill} onChange={handleChange}>
                             <option selected value="" disabled="yes" >Programming Languages</option>
                             <option value="Java">Java</option>
                             <option value="C">C</option>
@@ -239,23 +239,23 @@ const UserDetails = ({submitForm}) => {
                                 required="yes"
                                 type="text" 
                                 className="input"
-                                name='total'
-                                value={values.total}
+                                name='notification'
+                                value={values.notification}
                                 disabled="yes"
                             />
                             <label className="label">Push Notification</label>
                         </div>
 
-                        <select id="programmingSkill" className="progLanguagesAndStudyFieldSelection" name='total' value={values.total} onChange={handleChange}>
+                        <select id="programmingSkill" className="progLanguagesAndStudyFieldSelection" multiple={false} name='notification' value={values.notification} onChange={handleChange}>
                             <option selected value="" disabled="yes" >Type of Push</option>
                             <option value="Weekly">Weekly</option>
                             <option value="Fortnightly">Fortnightly (every 2 weeks)</option>
                             <option value="Monthly">Monthly</option>
-                            <option value="Quarterly">Quarterly (every 4 months) </option>
+                            <option value="Quarterly">Quarterly (every 3 months) </option>
                             <option value="Yearly">Yearly</option>
                         </select>
                     </div>
-                    {errors.total && <p className="error">{errors.total}</p>}
+                    {errors.notification && <p className="error">{errors.notification}</p>}
 
                     <div className="inputWrapperContainer">
 
@@ -325,6 +325,7 @@ const UserDetailsStyle = styled.div`
         font-size: 40px;
         margin-bottom: 5px;
         color: purple;
+        font-family: 'Josefin Sans', sans-serif;
     }
 
     .inputWrapper {
@@ -443,7 +444,7 @@ const UserDetailsStyle = styled.div`
 
     .submitButton {
         width: 50%;
-        background-image: linear-gradient(to left, #2b5876 0%, #4e4376  51%, #2b5876  100%);
+        background-image: linear-gradient(to right, #2b5876 0%, #4e4376 50%, #2b5876 100%);
         margin: 10px;
         margin-left: 120px;
         letter-spacing: 0.1em;

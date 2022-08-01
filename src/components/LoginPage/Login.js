@@ -23,7 +23,7 @@ export default function Login() {
   const confirmData = (object) => {
     const {username, password} = object;
 
-    // TO DO 
+    // TO DO (to fetch the data from the server)
     const urlAPI = ``;
 
     const api = Axios
@@ -44,7 +44,6 @@ export default function Login() {
       setData({ ...data, [e.target.name]: e.target.value });
     }
   };
-
 
   const onFocus = (e) => {
     setTouched({ ...touched, [e.target.name]: true})
@@ -152,7 +151,7 @@ const LoginWrapperStyle = styled.div`
   h2 {
     font-weight: bold;
     font-size: 45px;
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Raleway', sans-serif;
     color: #FFF;
     margin-top: 10vh;
     margin-bottom: 1vh;
@@ -246,6 +245,8 @@ const LoginWrapperStyle = styled.div`
       box-shadow: 0px 4px 5px 0px rgba(129,129,129,0.75);
       -webkit-box-shadow: 0px 4px 5px 0px rgba(129,129,129,0.75);
       -moz-box-shadow: 0px 4px 5px 0px rgba(129,129,129,0.75);
+
+      border: 2px solid #000000;
     }
   }
   
@@ -276,7 +277,6 @@ const LoginWrapperStyle = styled.div`
         cursor: pointer;
         color: #FFF;
     }
-
   }
 
   footer p {

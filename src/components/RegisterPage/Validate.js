@@ -12,8 +12,8 @@ export const validate = (data, type) => {
 
     if (!data.password) {
         errors.password = "Password is required";
-    } else if (!(data.password.length >= 5)) {
-        errors.password = "Your password is too short, must be greater than 4 digits.";
+    } else if (!(data.password.length > 6)) {
+        errors.password = "Your password is too short, must be greater than 6 digits.";
     } else {
         delete errors.password;
     }
@@ -22,7 +22,13 @@ export const validate = (data, type) => {
 
         if (!data.name.trim()) {
             errors.name = "Username field is empty, please fill it up to proceed";
-        } else {
+        } else if (data.name.length < 5) {
+            errors.name = "Username is too short, not less than 5 characters";
+        }
+        else if (data.name.length > 12) {
+            errors.name = "Username must not more than 12 characters";
+        } 
+        else {
             delete errors.name;
         }
 

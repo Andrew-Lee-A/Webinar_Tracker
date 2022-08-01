@@ -96,6 +96,7 @@ const HeadPageStyle = styled.div`
     .about, .services, .contact {
 
         font-size: medium;
+        font-family: 'Raleway', sans-serif;
 
         :hover {
             border-bottom: 1px solid #ccc;

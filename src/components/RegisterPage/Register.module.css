@@ -1,6 +1,5 @@
 .invalidSign > input {
     border: 2px solid crimson !important;
-    
 }
 
 .validSign > input {

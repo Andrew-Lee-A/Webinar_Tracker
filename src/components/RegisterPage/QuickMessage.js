@@ -9,7 +9,7 @@ export const reminder = (text, type) => {
             hideProgressBar: false,
             closeOnClick: false,
             pauseOnHover: false,
-            draggable: true,
+            draggable: false,
             progress: undefined,
         });
     } else if (type === "warning") {
@@ -19,7 +19,7 @@ export const reminder = (text, type) => {
           hideProgressBar: false,
           closeOnClick: false,
           pauseOnHover: false,
-          draggable: true,
+          draggable: false,
           progress: undefined,
         });
       } else {
@@ -29,7 +29,7 @@ export const reminder = (text, type) => {
           hideProgressBar: false,
           closeOnClick: false,
           pauseOnHover: false,
-          draggable: true,
+          draggable: false,
           progress: undefined,
         });
       }

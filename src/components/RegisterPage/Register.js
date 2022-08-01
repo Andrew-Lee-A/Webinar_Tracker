@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
-// image
-import RegisterImg from '../RegisterPage/RegisterImages/kelly-sikkema-tk9RQCq5eQo-unsplash.jpg';
-import username from '../RegisterPage/RegisterImages/user.png'
-import email from '../RegisterPage/RegisterImages/mail.png'
-import pwd from '../RegisterPage/RegisterImages/lock.png'
-import confirmpwd from '../RegisterPage/RegisterImages/reset-password.png'
+// images
+import RegisterImg from '../../img/register/kelly-sikkema-tk9RQCq5eQo-unsplash.jpg';
+import username from '../../img/register/user.png'
+import email from '../../img/register/mail.png'
+import pwd from '../../img/register/lock.png'
+import confirmpwd from '../../img/register/reset-password.png'
 // styled-components
 import styled from "styled-components";
 // import "react-toastify/dist/ReactToastify.css";
@@ -25,7 +25,7 @@ const Register = () => {
         email: "",
         password: "",
         confirmPassword: "",
-        IsAccepted: false,
+        // IsAccepted: false,
     })
 
     const [errors, setErrors] = useState({});
@@ -84,13 +84,13 @@ const Register = () => {
                 email: true,
                 password: true,
                 confirmPassword: true,
-                IsAccepted: false,
+                // IsAccepted: false,
             });
         }
     }
 
-    /* handles the visibility of the password and confirm password input */
-    
+    console.log(data);
+
     return (
         <>
             <RegisterStyle>
@@ -288,7 +288,7 @@ const RegisterStyle = styled.div`
         text-decoration: none;
         border-style: none;
 
-         font-family: 'Space Grotesk', sans-serif;
+        font-family: 'Space Grotesk', sans-serif;
 
         ::placeholder {
             font-weight: bold;
@@ -354,7 +354,6 @@ const RegisterStyle = styled.div`
 
         text-align: left;
         text-indent: 40px;
-
     }
 
     .registerButton {
@@ -367,10 +366,9 @@ const RegisterStyle = styled.div`
         border: 1px solid #000000;
 
         background-color: #FFF;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        font-weight: 500%;
+        font-family: 'Space Grotesk', sans-serif;
         font-size: 13px;
-        letter-spacing: 0.1em;
+        letter-spacing: 0.05em;
 
         :hover {
             background-color: #52796f;

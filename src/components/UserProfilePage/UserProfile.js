@@ -128,10 +128,14 @@ const UserProfileStyle = styled.div`
 
     h1 {
       color: #FFF;
+      font-family: 'Raleway', sans-serif;
+      font-size: 28px;
     }
 
     h3 {
       color: crimson;
+      /* font-family: 'Raleway', sans-serif; */
+      font-size: 18px;
     }
 
     label {

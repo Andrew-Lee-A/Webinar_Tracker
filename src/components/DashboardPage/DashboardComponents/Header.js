@@ -13,7 +13,6 @@ import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import SearchIcon from '@mui/icons-material/Search'
 import React from 'react'
 
-
 const AppBarStyle  = styled(AppBar)({
     backgroundColor: 'white',
   });
