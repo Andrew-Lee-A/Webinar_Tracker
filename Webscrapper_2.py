@@ -6,6 +6,7 @@ from time import sleep
 import requests
 import pandas as pd
 from pandas import DataFrame
+import pymongo_connect
 
 # created funtion that convert a list into string that is sperated by a comma 
 def CPD_Convert(str):
@@ -126,20 +127,6 @@ print(df['Date/Time'])
 print('--------Registration-----')        
 print(df['Registration'])     
 
-# import pymongo
-# from pymongo import MongoClient
 
-# data_dict = df.to_dict("records")
-
-# # connecting to the MongoDB 
-# cluster = MongoClient("mongodb+srv://Tom-Thankachan-99:T0md2vid99@cluster0.wnexe70.mongodb.net/?retryWrites=true&w=majority")
-
-# #connecting to the CPD cluster inside the MongoDB 
-# db = cluster["CPD"]
-
-# # giving access to the collections inside MongoDB
-# collection  = db["test"]
-
-# #inserting the scraped into the MongoDB 
-# collection.insert_many(data_dict)
+# pymongo_connect.push_to_db(<outputhere>)
 
