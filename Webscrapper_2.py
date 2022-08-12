@@ -3,9 +3,11 @@
 
 from bs4 import BeautifulSoup
 from time import sleep
+from numpy import dtype
 import requests
 import pandas as pd
 from pandas import DataFrame
+import pymongo_connect
 
 # created funtion that convert a list into string that is sperated by a comma 
 def CPD_Convert(str):
@@ -35,7 +37,7 @@ url_reg = "https://www.engineeringnz.org/courses-events/"
 base_link = "https://www.engineeringnz.org/courses-events/?p="
 for i in range (1, n_page+1):
     url = base_link+str(i)
-    print(url)
+    #print(url)
     response = requests.get(url)
     soup = BeautifulSoup(response.content,'html.parser')
 
@@ -74,6 +76,7 @@ for i in range (1, n_page+1):
         date_time.append(date)
 
 
+
 CPD_Hours =" ".join([str(item) for item in CPD_Hours])
 CPD_Hours = CPD_Hours.replace("\\n","")
 CPD_Hours = CPD_Hours.replace("  ","")
@@ -108,38 +111,25 @@ reg = prepend(url_reg,reg)
 # creating a Pandas Dataframe 
 # creating pandas dictionary with the scraped data and contents
 result = list(zip(title,price,CPD_Hours,date_time,reg))
-result
+
 
 df= pd.set_option('display.max_colwidth', None)
 # naming all the columns of the pandas dataframe 
 df = pd.DataFrame(result, columns=['Webinar Title','Price','CPD Points','Date/Time','Registration'])
 
-#displaying the pandas dataframe
-print('------------Webinar-------')
-print(df['Webinar Title'])     
-print('-------------Price--------')
-print(df['Price'])  
-print('----------CPD Points------')   
-print(df['CPD Points'])
-print('----------Date/Time-------')   
-print(df['Date/Time'])     
-print('--------Registration-----')        
-print(df['Registration'])     
+result_dict =df.to_dict('index')
+print("\n",result_dict,"\n")
 
-# import pymongo
-# from pymongo import MongoClient
+pymongo_connect.push_to_db(result_dict)
 
-# data_dict = df.to_dict("records")
-
-# # connecting to the MongoDB 
+# connecting to the MongoDB 
 # cluster = MongoClient("mongodb+srv://Tom-Thankachan-99:T0md2vid99@cluster0.wnexe70.mongodb.net/?retryWrites=true&w=majority")
 
 # #connecting to the CPD cluster inside the MongoDB 
 # db = cluster["CPD"]
 
-# # giving access to the collections inside MongoDB
+# # giving access to the collectio3oDB
 # collection  = db["test"]
-
 # #inserting the scraped into the MongoDB 
 # collection.insert_many(data_dict)
 
