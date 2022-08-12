@@ -122,14 +122,3 @@ print("\n",result_dict,"\n")
 
 pymongo_connect.push_to_db(result_dict)
 
-# connecting to the MongoDB 
-# cluster = MongoClient("mongodb+srv://Tom-Thankachan-99:T0md2vid99@cluster0.wnexe70.mongodb.net/?retryWrites=true&w=majority")
-
-# #connecting to the CPD cluster inside the MongoDB 
-# db = cluster["CPD"]
-
-# # giving access to the collectio3oDB
-# collection  = db["test"]
-# #inserting the scraped into the MongoDB 
-# collection.insert_many(data_dict)
-
