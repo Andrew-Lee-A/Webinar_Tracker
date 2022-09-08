@@ -23,6 +23,11 @@ function HeadPage () {
                     </ul>
                 </div>
 
+                <div className="titleContainer">
+                    <h2>CPD HUB</h2>
+                    <h4>webinar tracker</h4>
+                </div>
+
                 <div className="buttonsContainer">
                     <Link to="/login">
                         <button className='loginButton'>Login</button>
@@ -41,13 +46,16 @@ const HeadPageStyle = styled.div`
 
     margin: 0;
     padding: 0;
-    width: 99.9%;
+    width: 100vw;
     height: 100vh;
     /* clip-path: polygon(0 100%, 0 0, 100% 0, 100% 85%); */
-    background-image: url(${headImage});
+    /* background-image: url(${headImage});
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
 
+    background: linear-gradient(to top, #295074 , #040A0E);
+
+    
     span {
         display: flex;
         align-items: center;
@@ -63,14 +71,41 @@ const HeadPageStyle = styled.div`
 
     .navbarItems {
         padding: 30px 10px;
+
+        /* border: 1px solid #FFF; */
+    }
+    
+    .titleContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        margin-top: 10vh;
+
+        h2, h4 {
+            font-weight: lighter;
+    
+            color: #FFF;
+            /* border: 1px solid #FFF; */
+            font-family: 'Krona One', sans-serif;
+        }
+
+        h2 {
+            font-size: 2.9em;
+        }
     }
 
     .buttonsContainer {
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-top: 44vh;
+
+        margin-top: 10vh;
         margin-right: 20px;
+
+
+        /* border: 1px solid #FFF; */
     }
 
     .babcock {
@@ -86,23 +121,24 @@ const HeadPageStyle = styled.div`
         display: inline-block;
         padding: 0px 20px;
         transition:  0.3s ease 0s;
-        cursor: pointer;
-        font-family: 'Space Grotesk', sans-serif;
+        
+        font-family: 'Krona One', sans-serif;
         font-weight: bold;
+        
+        cursor: pointer;
         
         color: aqua;
     }
     
     .about, .services, .contact {
 
-        font-size: medium;
-        font-family: 'Raleway', sans-serif;
+        font-family: 'Krona One', sans-serif;
+        font-size: 12px;
 
         :hover {
             border-bottom: 1px solid #ccc;
             transition: ease-in 0.4s;
         }
-
     }
 
     .loginButton, .signupButton {
@@ -111,25 +147,25 @@ const HeadPageStyle = styled.div`
         border: none;
         border-radius: 5px;
         background-color: transparent;
-        border: 2px solid #000000;
+        border: 1px solid #FFF;
         color: #fff;
-        font-weight: lighter;
         letter-spacing: 0.1em;
         color: white;
         transition: all ease 0.3s;
-        font-family: 'Space Grotesk', sans-serif;
+        /* font-family: 'Space Grotesk', sans-serif; */
+
+        font-family: 'Krona One', sans-serif;
+        font-weight: lighter;
+        font-size: 20px;
 
         cursor: pointer;
 
         :hover {
-            background-color: #000000;
+            /* background-color: aqua; */
+            border: 1px solid aqua;
             color: aqua;
             letter-spacing: 0.2em;
         }
     }
-
-    
-
-
 `
 export default HeadPage;

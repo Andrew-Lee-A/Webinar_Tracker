@@ -10,8 +10,7 @@ import ForgetPassword from './components/ForgetPasswordPage/ForgetPassword'
 import UserDetails from './components/AdditionalDetailsPage/UserDetails'
 import UserProfile from './components/UserProfilePage/UserProfile'
 import UserSetting from './components/UserProfilePage/UserSetting/UserSetting'
-
-// TESTING ONLY
+import Calendar from './components/Calendar/Calendar'
 
 export default function App() {
   return (
@@ -25,6 +24,7 @@ export default function App() {
             <Route path='/userprofile' element={<UserProfile/>} />
             <Route path='/usersetting' element={<UserSetting/>} />
             <Route path='/forgetpassword' element={<ForgetPassword/>} />
+            <Route path='/calendar' element={<Calendar/>} />
         </Routes>
       </div>
   )

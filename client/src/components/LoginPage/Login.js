@@ -127,7 +127,6 @@ const LoginWrapperStyle = styled.div`
   align-items: center;
   justify-content: center;
 
-  
   .headerTitleContainer {
       height: 20vh;
 
@@ -135,8 +134,7 @@ const LoginWrapperStyle = styled.div`
       flex-direction: column;
       align-items: center;
       justify-content: center;
-
-    }
+  }
     
   .formContainer {
       height: 80vh;
@@ -145,7 +143,6 @@ const LoginWrapperStyle = styled.div`
       flex-direction: column;
       align-items: center;
       justify-content: center;
-
   }
 
   h2 {
@@ -229,7 +226,6 @@ const LoginWrapperStyle = styled.div`
 
     text-align: center;
     font-family: 'Space Grotesk', sans-serif;
-    
   }
 
   Link {

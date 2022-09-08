@@ -230,14 +230,7 @@ const RegisterStyle = styled.div`
     align-items: center;
     justify-content: center;
 
-    .registerContainer {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .inputContainer {
+    .registerContainer, .inputContainer {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -410,5 +403,4 @@ const RegisterStyle = styled.div`
     }
 
 `
-
 export default Register;
