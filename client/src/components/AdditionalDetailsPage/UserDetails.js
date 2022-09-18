@@ -303,7 +303,6 @@ const UserDetailsStyle = styled.div`
     background-position: center;
 
     .userDetailsWrapper {
-
         display: flex;
         justify-content: center;
         align-items: center;
