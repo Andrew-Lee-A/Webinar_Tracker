@@ -120,5 +120,5 @@ df = pd.DataFrame(result, columns=['Webinar Title','Price','CPD Points','Date/Ti
 result_dict =df.to_dict('index')
 print("\n",result_dict,"\n")
 
-pymongo_connect.push_to_db(result_dict)
+#pymongo_connect.push_to_db(result_dict)
 
