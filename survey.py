@@ -142,7 +142,7 @@ class Survey(Tk):
         # if user if they want to quit or not.
         self.protocol("WM_DELETE_WINDOW", self.on_closing)
 
-        Tk.wm_title(self, "Survey (中文版)")
+        Tk.wm_title(self, "Survey")
 
         # get position of window with respect to screen
         windowWidth, windowHeight = 555, 400
@@ -209,12 +209,12 @@ class StartPage(Frame):
         start_label.pack(pady=10, padx=10, ipadx=5, ipady=3)
 
         # add labels and buttons to window
-        info_text = "Thank you for participating in our survey.\nThe survey is composed of 4 four parts:\nLifestyle: 25 questions\nConsumption Trends: 16 questions\nFuture Consumption Trends: 5 questions\nGeneral Information: 10 questions\n\nAfter each section, a small window will notify you."
+        info_text = "Congratulations on completing the CPD event. Please only take this survey if you attended and completed the booked CPD Event."
         info_label = Label(self, text=info_text, font=("Verdana", 12),
                            borderwidth=2, relief="ridge")
         info_label.pack(pady=10, padx=10, ipadx=20, ipady=3)
 
-        purpose_text = "Explain here the purpose of the survey."
+        purpose_text = "The answers to this survey will be used purely to improve recommended CPD events in the future."
         purpose_text = Label(self, text=purpose_text, font=("Verdana", 12),
                            borderwidth=2, relief="ridge")
         purpose_text.pack(pady=10, padx=10, ipadx=5, ipady=3)
@@ -248,7 +248,7 @@ class CPS_Questions(Frame):
         ttk.Label(self, text="CPD Survey", font=('Verdana', 20),
                   borderwidth=2, relief="ridge").pack(padx=10, pady=10)
 
-        self.questions = ["How would you rate the CPD Event, How much of the activity was relevant to the following, How relevant was the event to your area of expertise, Did you find this relevant to any other area of expertise"]
+        self.questions = ["How would you rate the CPD Event", "How much of the activity was relevant to the following", "How relevant was the event to your area of expertise", "Did you find this relevant to any other area of expertise"]
 
         # set index in questions list 
         self.index = 0
