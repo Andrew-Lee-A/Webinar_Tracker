@@ -118,7 +118,6 @@ df= pd.set_option('display.max_colwidth', None)
 df = pd.DataFrame(result, columns=['Webinar Title','Price','CPD Points','Date/Time','Registration'])
 
 result_dict =df.to_dict('index')
-print("\n",result_dict,"\n")
+#print("\n",result_dict,"\n")
 
-pymongo_connect.push_to_db(result_dict)
-
+#pymongo_connect.push_to_db(result_dict)
