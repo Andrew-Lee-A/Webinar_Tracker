@@ -17,28 +17,26 @@ ratings = np.random.randint(1,5,size=(len(user_ID),len(title)))
 
 course_ratings = pd.DataFrame(ratings,columns=title,index=user_ID)
 
-def standardize(row):
-    new_row = (row - row.mean()) /(row.max()-row.min())
-    return new_row
-
 def get_sim_course(title,ratings):
-    sim_score = pd.DataFrame(course_sim_df[title]*(ratings-2.5))
-    
+    sim_score = pd.DataFrame(course_sim_df[title]*(ratings-(15 /len(title))))
+    sim_score =sim_score.sort_values(by=sim_score[title])
+
     return sim_score
 
-course_ratings_std = course_ratings.apply(standardize)
-course_sim = cosine_similarity(course_ratings_std)
+course_sim = course_ratings.corr(method='pearson')
 
 course_sim_df =pd.DataFrame(course_sim,index=title,columns=title)
-#print(get_sim_course("A day in the life of a Water Engineer",5))
+#print(course_sim_df)
+print(get_sim_course("An Introduction to Health and Safety by Design",5))
 
-test_user = [("A day in the life of a Water Engineer",5),("Waterproofing performance of deep basements",1),("An Introduction to Health and Safety by Design",4)]
 
-similar_CPD_events = pd. DataFrame()
-for course,ratings in test_user:
-     similar_CPD_events = similar_CPD_events.append(get_sim_course(course,ratings))
+# test_user = [("A day in the life of a Water Engineer",5),("Waterproofing performance of deep basements",1),("An Introduction to Health and Safety by Design",4)]
+
+# similar_CPD_events = pd. DataFrame()
+# for course,ratings in test_user:
+#      similar_CPD_events = similar_CPD_events.append(get_sim_course(course,ratings))
 
 # similar_CPD_events.sum()
-print(similar_CPD_events)
+# print(similar_CPD_events)
 
 
